@@ -5,4 +5,4 @@ Disallow: /templates/
 Disallow: /scripts/
 Disallow: /checks/
 
-# Sitemap declaration withheld until final domain ownership is confirmed.
+Sitemap: https://staywide.cc/sitemap.xml
