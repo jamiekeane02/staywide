@@ -51,7 +51,7 @@ const cart = `<dialog id="cart-dialog" aria-labelledby="cart-title" aria-describ
 const consent = prefix => fill(fs.readFileSync('templates/consent.html', 'utf8'), { prefix });
 for (const page of ['home', 'info']) {
   const template = fs.readFileSync(`templates/${page}.html`, 'utf8');
-  fs.writeFileSync(page === 'home' ? 'index.html' : 'info.html', fill(template, { head: head(page === 'home' ? { title: 'Stay Wide \u2014 Irish Streetwear', description: 'Stay Wide is an independent Irish streetwear brand. Discover the latest drop, clothing and releases from Stay Wide.', route: '/', home: true } : { title: 'Shipping, Sizing & Info \u2014 Stay Wide', description: 'Shipping, dispatch, sizing, contact and privacy information for the Stay Wide collection preview.', route: 'info.html' }), brand: brand(''), footer: footer(''), cart, consent: consent(''), cards: products.map((p, i) => card(p, '', i > 1, products.length === 3 ? 3 : 2)).join('\n') }));
+  fs.writeFileSync(page === 'home' ? 'index.html' : 'info.html', fill(template, { head: head(page === 'home' ? { title: 'Stay Wide \u2014 Drop 001', description: 'Stay Wide. Drop 001. Independent clothing from Ireland.', route: '/', home: true } : { title: 'Shipping, Sizing & Info \u2014 Stay Wide', description: 'Shipping, dispatch, sizing, contact and privacy information for the Stay Wide collection preview.', route: 'info.html' }), brand: brand(''), footer: footer(''), cart, consent: consent(''), cards: products.map((p, i) => card(p, '', i > 1, products.length === 3 ? 3 : 2)).join('\n') }));
 }
 const template = fs.readFileSync('templates/product.html', 'utf8');
 for (const product of products) {
