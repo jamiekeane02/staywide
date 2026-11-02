@@ -142,5 +142,6 @@
   "singleImage": "pass",
   "threeImages": "pass",
   "failedImage": "primary retained",
+  "failedImageRecovery": "fail",
   "runtimeErrors": []
 }

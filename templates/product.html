@@ -14,7 +14,7 @@
 </head>
 <body data-page="product" data-product="{{id}}">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="announcement"><span>STAY WIDE / DROP 001</span><span>Collection preview</span></div>
+  <div class="announcement"><span>STAY WIDE / DROP 001</span><span>DROP 001</span></div>
   <header class="site-header">
     <a class="wordmark" href="../index.html" aria-label="Stay Wide home">{{brand}}</a>
     <nav aria-label="Main navigation">
@@ -31,28 +31,26 @@
       </div>
       <div class="purchase-panel">
         <p class="micro kicker">DROP 001 / {{kind}}</p>
-        <div class="product-title-row"><h1 id="product-title">{{name}}</h1><span class="detail-price">{{price}}</span></div>
+        <div class="product-title-row"><h1 id="product-title">{{name}}</h1>{{price}}</div>
 {{state}}
-        <form id="purchase-form" novalidate aria-describedby="purchase-note">
-          <fieldset class="size-picker" aria-describedby="size-note size-status"><legend>Choose size <span id="selected-size"></span></legend>
+        <form id="purchase-form" novalidate>
+          <fieldset {{unconfirmed}} class="size-picker" aria-describedby="size-note size-status"><legend>Choose size <span id="selected-size"></span></legend>
 <div class="size-options">{{sizes}}</div>
             <!-- INVENTORY TODO: use disabled on unavailable variant inputs and include "unavailable" in their accessible label. Do not invent availability. -->
-            <p class="field-hint" id="size-note">Preview sizes — availability and measurements to be confirmed.</p>
+            <p class="field-hint" id="size-note">Select your size.</p>
             <p id="size-status" class="form-status" aria-live="polite"></p>
           </fieldset>
-          <p class="fit-note">{{fit}} <a href="#size-guide">Size guide</a></p>
+          <p {{unconfirmed}} class="fit-note">{{fit}} <a href="#size-guide">Size guide</a></p>
           <!-- SHOPIFY TODO: map selected size to a verified variant and call the cart adapter. This button currently reports the unconnected state only. -->
           <button class="button button-dark add-to-cart" type="submit" disabled>{{action}}</button>
-          <p class="purchase-note" id="purchase-note">Collection preview. Price to be confirmed. Shopping is not connected yet.</p>
           <p id="purchase-status" class="form-status" role="status"></p>
-          <noscript><p>Enable JavaScript to preview size and image interactions. Shopping is not connected.</p></noscript>
         </form>
-<p class="description-placeholder">{{description}}</p>
-        <div class="product-details">
+<p {{unconfirmed}} class="description-placeholder">{{description}}</p>
+        <div {{unconfirmed}} class="product-details">
           <details id="size-guide"><summary>Fit &amp; size guide</summary><p>{{fit}} {{sizeGuide}}</p></details>
           <details><summary>Materials &amp; decoration</summary><p>{{materials}}<br>{{decoration}}</p></details>
           <details><summary>Care</summary><p>{{care}}</p></details>
-          <details><summary>Shipping, dispatch &amp; returns</summary><p>[POLICIES TO BE CONFIRMED] <a class="inline-link" href="../info.html">Shipping / dispatch / returns ↗</a></p></details>
+          <details><summary>Shipping, dispatch &amp; returns</summary><p><a class="inline-link" href="../info.html">Shipping / dispatch / returns ↗</a></p></details>
         </div>
       </div>
     </article>

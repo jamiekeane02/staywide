@@ -26,8 +26,8 @@ const stayWideCatalog = {
     ...product,
     development: true, // Keep true until all visible product data is approved.
     commerceReady: false, // Requires authoritative Shopify products/cart/checkout.
-    metaDescription: null, // Final short description; otherwise a labelled preview description.
-    socialImage: product.images ? { ...product.images[0], src: `assets/products/${product.id}-front-share.jpg` } : null,
+    metaDescription: null, // Final short description; otherwise concise drop copy.
+    socialImage: product.images ? { src: `assets/products/${product.id}-share.jpg`, width: 1200, height: 630, alt: product.images[0].alt + ", with Stay Wide logo" } : null,
     sku: null,
     colour: null,
     shopifyProductId: null,

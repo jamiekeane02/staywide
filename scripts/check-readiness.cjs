@@ -39,7 +39,7 @@ const assert = require('node:assert/strict');
     await ev(`document.querySelector('#consent-analytics').click();document.querySelector('[data-cookie-save]').click()`);
     assert(await ev(`stayWideConsent.get().analytics && !stayWideConsent.get().advertising && document.querySelector('#cookie-panel').hidden`));
     await visit('products/hoodie-01.html?size=M');
-    assert(await ev(`stayWideConsent.get().analytics && document.querySelector('#cookie-panel').hidden && document.querySelector('[rel=canonical]').href==='https://staywide.com/products/hoodie-01.html'`));
+    assert(await ev(`stayWideConsent.get().analytics && document.querySelector('#cookie-panel').hidden && document.querySelector('[rel=canonical]').href==='https://staywide.cc/products/hoodie-01.html'`));
     await ev(`document.querySelector('[data-cookie-settings]').click();document.querySelector('#consent-analytics').click();document.querySelector('#consent-advertising').click();document.querySelector('[data-cookie-save]').click()`);
     assert(await ev(`!stayWideConsent.get().analytics && stayWideConsent.get().advertising`));
     await ev(`document.querySelector('[data-cookie-settings]').click();document.querySelector('[data-cookie-reject]').click()`);
@@ -70,7 +70,7 @@ const assert = require('node:assert/strict');
     await visit(page);
     assert(await ev(`document.querySelectorAll('h1').length===1 && document.querySelectorAll('title').length===1 && document.querySelectorAll('meta[name=description]').length===1 && document.querySelectorAll('[rel=canonical]').length===1 && !document.querySelector('meta[name=robots]')`));
     assert(await ev(`document.querySelector('meta[property="og:image"]') && [...document.images].filter(i=>i.loading!=='lazy').every(i=>i.complete && i.naturalWidth>0)`));
-    if(page.startsWith('products')) assert(await ev(`document.querySelector('.dispatch').textContent.includes('Estimated dispatch') && document.querySelector('.description-placeholder').textContent && document.querySelector('.detail-price').textContent`));
+    if(page.startsWith('products')) assert(await ev(`!document.querySelector('.dispatch') && !document.querySelector('.detail-price') && document.querySelector('.add-to-cart').disabled && document.querySelector('.size-picker').hidden`));
   }
   await send('Emulation.setScriptExecutionDisabled',{value:false});
   assert.equal((await fetch(root+'missing/deep/page')).status,404);

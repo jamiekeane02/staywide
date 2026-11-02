@@ -23,10 +23,10 @@ button:disabled { cursor:not-allowed; }
 .skip-link { position:fixed; top:8px; left:8px; transform:translateY(-180%); z-index:20; background:white; padding:12px 20px; border:2px solid; }
 .skip-link:focus { transform:none; }
 .announcement { display:flex; justify-content:space-between; gap:12px; padding:5px var(--pad); background:var(--ink); color:white; font:10px/1.5 'Courier New',monospace; text-transform:uppercase; }
-.site-header { position:sticky; top:0; z-index:5; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:5px var(--pad); background:rgba(255,255,255,.98); border-bottom:1px solid var(--line); }
+.site-header { position:sticky; top:0; z-index:5; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:1px var(--pad); background:rgba(255,255,255,.98); border-bottom:1px solid var(--line); }
 .wordmark { display:inline-flex; align-items:center; min-height:44px; font-size:clamp(24px,2.3vw,34px); font-weight:900; letter-spacing:-.085em; white-space:nowrap; }
 .wordmark>span { align-self:flex-start; font-size:12px; margin:9px 0 0 4px; }
-.brand-logo { display:block; width:80px; height:auto; }
+.brand-logo { display:block; width:96px; height:auto; }
 .site-footer .brand-logo { width:108px; }
 nav { display:flex; align-items:center; gap:24px; }
 nav a,.text-button { display:inline-flex; align-items:center; min-height:44px; min-width:44px; font-size:13px; font-weight:700; }
@@ -149,6 +149,7 @@ dialog>.button { width:100%; }
 }
 @keyframes gallery-reveal { from { opacity:.92; } to { opacity:1; } }
 @media (min-width:700px) {
+  .site-header .brand-logo { width:104px; }
   .section-space { padding-block:64px; }
   .opening { padding-block:30px; }
   .product-grid { gap:28px; }

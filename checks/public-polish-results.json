@@ -1,0 +1,379 @@
+{
+  "metadata": [
+    {
+      "page": "index.html",
+      "title": "Stay Wide — Drop 001",
+      "description": "Drop 001.",
+      "canonical": "https://staywide.cc/",
+      "image": "https://staywide.cc/assets/brand/stay-wide-share.jpg",
+      "alt": "Stay Wide logo on white"
+    },
+    {
+      "page": "products/hoodie-01.html",
+      "title": "Hoodie 01 — Stay Wide",
+      "description": "Stay Wide / Drop 001.",
+      "canonical": "https://staywide.cc/products/hoodie-01.html",
+      "image": "https://staywide.cc/assets/products/hoodie-01-share.jpg",
+      "alt": "Stay Wide Hoodie 01, black phone-print hoodie flat lay, with Stay Wide logo"
+    },
+    {
+      "page": "products/tshirt-01.html",
+      "title": "T-shirt 01 — Stay Wide",
+      "description": "Stay Wide / Drop 001.",
+      "canonical": "https://staywide.cc/products/tshirt-01.html",
+      "image": "https://staywide.cc/assets/products/tshirt-01-share.jpg",
+      "alt": "Stay Wide T-shirt 01, white T-shirt with blue logo flat lay, with Stay Wide logo"
+    },
+    {
+      "page": "products/tshirt-02.html",
+      "title": "T-shirt 02 — Stay Wide",
+      "description": "Stay Wide / Drop 001.",
+      "canonical": "https://staywide.cc/products/tshirt-02.html",
+      "image": "https://staywide.cc/assets/products/tshirt-02-share.jpg",
+      "alt": "Stay Wide T-shirt 02, white ashtray-print T-shirt flat lay, with Stay Wide logo"
+    }
+  ],
+  "headers": [
+    {
+      "page": "index.html",
+      "viewport": "375x812",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 79.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "info.html",
+      "viewport": "375x812",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 79.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "404.html",
+      "viewport": "375x812",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 143,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/hoodie-01.html",
+      "viewport": "375x812",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 79.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/tshirt-01.html",
+      "viewport": "375x812",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 79.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/tshirt-02.html",
+      "viewport": "375x812",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 79.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "index.html",
+      "viewport": "390x844",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 94.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "info.html",
+      "viewport": "390x844",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 94.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "404.html",
+      "viewport": "390x844",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 158,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/hoodie-01.html",
+      "viewport": "390x844",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 94.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/tshirt-01.html",
+      "viewport": "390x844",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 94.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/tshirt-02.html",
+      "viewport": "390x844",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 94.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "index.html",
+      "viewport": "430x932",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 134.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "info.html",
+      "viewport": "430x932",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 134.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "404.html",
+      "viewport": "430x932",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 198,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/hoodie-01.html",
+      "viewport": "430x932",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 134.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/tshirt-01.html",
+      "viewport": "430x932",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 134.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/tshirt-02.html",
+      "viewport": "430x932",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 134.984375,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "index.html",
+      "viewport": "1440x1000",
+      "logoWidth": 104,
+      "logoHeight": 57.84375,
+      "headerHeight": 60.84375,
+      "gap": 1000.390625,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "info.html",
+      "viewport": "1440x1000",
+      "logoWidth": 104,
+      "logoHeight": 57.84375,
+      "headerHeight": 60.84375,
+      "gap": 1000.390625,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "404.html",
+      "viewport": "1440x1000",
+      "logoWidth": 104,
+      "logoHeight": 57.84375,
+      "headerHeight": 60.84375,
+      "gap": 1094.40625,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/hoodie-01.html",
+      "viewport": "1440x1000",
+      "logoWidth": 104,
+      "logoHeight": 57.84375,
+      "headerHeight": 60.84375,
+      "gap": 1000.390625,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/tshirt-01.html",
+      "viewport": "1440x1000",
+      "logoWidth": 104,
+      "logoHeight": 57.84375,
+      "headerHeight": 60.84375,
+      "gap": 1000.390625,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/tshirt-02.html",
+      "viewport": "1440x1000",
+      "logoWidth": 104,
+      "logoHeight": 57.84375,
+      "headerHeight": 60.84375,
+      "gap": 1000.390625,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44,
+        44
+      ]
+    }
+  ],
+  "socialAssets": "pass",
+  "icoFrames": [
+    16,
+    32,
+    48
+  ],
+  "internalCopy": "absent except approved campaign placeholder",
+  "noSocialDownloads": true,
+  "runtimeErrors": []
+}

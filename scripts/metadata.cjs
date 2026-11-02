@@ -28,27 +28,24 @@ function productSchema(product, route) {
   }
   return jsonld(data);
 }
-function head({ title, description, route, product, home = false, noindex = false }) {
+function head({ title, description, socialDescription = description, route, product, home = false, noindex = false }) {
   const lines = [`<title>${escape(title)}</title>`, `<meta name="description" content="${escape(description)}">`];
   if (noindex) lines.push('<meta name="robots" content="noindex, follow">');
-  else lines.push(`<!-- Provisional domain: confirm ownership before deployment. -->`, `<link rel="canonical" href="${escape(url(route))}">`);
-  for (const [key, value] of Object.entries({ title, description, url: url(route), type: 'website', site_name: config.siteName })) lines.push(`<meta property="og:${key}" content="${escape(value)}">`);
+  else lines.push(`<link rel="canonical" href="${escape(url(route))}">`);
+  for (const [key, value] of Object.entries({ title, description: socialDescription, url: url(route), type: 'website', site_name: config.siteName })) lines.push(`<meta property="og:${key}" content="${escape(value)}">`);
   const social = product ? product.socialImage : config.defaultSocialImage;
-  lines.push(`<meta name="twitter:card" content="${social ? 'summary_large_image' : 'summary'}">`, `<meta name="twitter:title" content="${escape(title)}">`, `<meta name="twitter:description" content="${escape(description)}">`);
+  lines.push(`<meta name="twitter:card" content="${social ? 'summary_large_image' : 'summary'}">`, `<meta name="twitter:title" content="${escape(title)}">`, `<meta name="twitter:description" content="${escape(socialDescription)}">`);
   if (social) {
     if (!social.width || !social.height || !social.alt) throw new Error('Social image dimensions and alt required');
     const src = asset(social.src);
     for (const [key, value] of Object.entries({ image: src, 'image:width': social.width, 'image:height': social.height, 'image:alt': social.alt })) lines.push(`<meta property="og:${key}" content="${escape(value)}">`);
     lines.push(`<meta name="twitter:image" content="${escape(src)}">`, `<meta name="twitter:image:alt" content="${escape(social.alt)}">`);
   } else lines.push('<!-- FINAL OG SHARE IMAGE REQUIRED (1200 × 630). Large X card enabled when a real image is configured. -->');
-  // Retain the original temporary SW text favicon; this is not the final logo.
-  if (!config.icons.ico && !config.icons.png && !config.icons.svg) lines.push(`<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='white'/%3E%3Ctext x='5' y='43' font-family='Arial' font-weight='900' font-size='30'%3ESW%3C/text%3E%3C/svg%3E">`);
   for (const [type, src] of Object.entries(config.icons)) if (src) {
     asset(src);
-    const prefix = route.startsWith('products/') ? '../' : route === '404.html' ? '/' : '';
-    lines.push(`<link rel="${type === 'apple' ? 'apple-touch-icon' : 'icon'}" ${type === 'apple' ? 'sizes="180x180"' : type === 'svg' ? 'type="image/svg+xml"' : type === 'png' ? 'type="image/png"' : ''} href="${escape(prefix + src)}">`);
+    const attributes = type === 'apple' ? 'sizes="180x180"' : type === 'png' ? 'type="image/png" sizes="48x48"' : type === 'svg' ? 'type="image/svg+xml"' : 'type="image/x-icon" sizes="16x16 32x32 48x48"';
+    lines.push(`<link rel="${type === 'apple' ? 'apple-touch-icon' : 'icon'}" ${attributes} href="/${escape(src)}">`);
   }
-  lines.push('<!-- Final favicon.ico, PNG (48px+), SVG and Apple 180px slots: js/site-config.js. -->');
   if (home) {
     const org = { '@type': 'Organization', '@id': url('#organization'), name: config.siteName, url: url('/') };
     if (config.organizationLogo) org.logo = asset(config.organizationLogo);
@@ -57,7 +54,6 @@ function head({ title, description, route, product, home = false, noindex = fals
     lines.push(jsonld({ '@context': 'https://schema.org', '@graph': [ { '@type': 'WebSite', name: config.siteName, url: url('/'), publisher: { '@id': url('#organization') } }, org ] }));
   }
   if (product) {
-    if (product.development) lines.push('<!-- Development meta description: finalise with confirmed product copy before launch. -->');
     lines.push(productSchema(product, route));
   }
   return lines.join('\n  ');

@@ -1,5 +1,7 @@
 # Stay Wide — product image interactions
 
+Update, 2 November 2026: Current public copy, header sizing, icons and social exports are documented in [PUBLIC-POLISH.md](PUBLIC-POLISH.md). Gallery and hover code remain unchanged. Normal interactions passed again; the existing failed-image recovery test now fails because an empty failure marker is tested for truthiness. The earlier recovery claim below is superseded by checks/image-interactions-results.json. Other text below records the earlier interaction pass.
+
 Local implementation of the follow-up photography/logo/gallery brief, 30 October 2026. The existing local build is retained. No deployment, commit, push, dependencies, new photography or commercial data changes.
 
 ## Assets reviewed and selections

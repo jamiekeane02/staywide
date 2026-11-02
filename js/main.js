@@ -180,6 +180,14 @@
     const sizeStatus = document.querySelector('#size-status');
     const status = document.querySelector('#purchase-status');
     const options = [...form.querySelectorAll('[name="size"]')];
+    // Keep the future size/cart flow intact, but never enable unconfirmed commerce.
+    if (product.development || !product.commerceReady) {
+      button.disabled = true;
+      button.textContent = 'COMING SOON';
+      options.forEach(input => { input.disabled = true; });
+      form.addEventListener('submit', event => event.preventDefault());
+      return;
+    }
     const soldOut = product.status !== 'available' || !product.variants.some(variant => variant.available);
     button.disabled = soldOut;
     button.textContent = soldOut ? (product.status === 'coming_soon' ? 'Coming soon' : 'Sold out') : 'Select a size';
@@ -214,7 +222,7 @@
         if (!variant) throw new Error('Unavailable variant');
         const result = await commerce.addItem({ variantId: variant.shopifyVariantId, quantity: 1 });
         if (!result.accepted) {
-          status.textContent = 'Size ' + size.value + ' selected. Shopping is not connected yet — nothing was added to your cart.';
+          status.textContent = 'Orders are not open yet. Nothing was added to your cart.';
         }
         // INTEGRATION TODO: render the returned Shopify cart on verified success, then
         // call stayWideTrack('add_to_cart', { currency, value, items }). Never emit for this preview.

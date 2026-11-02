@@ -70,21 +70,10 @@ const assert = require('node:assert/strict');
           await evaluate(`(async()=>{while(document.querySelector('[data-gallery]').hasAttribute('aria-busy'))await new Promise(r=>setTimeout(r,10));})()`);
         assert(await evaluate(`!document.querySelector('#image-1').hidden`), 'Swipe gallery');
         }
-        if (page.endsWith('tshirt-02.html')) {
-          assert(await evaluate(`document.querySelector('.add-to-cart').disabled && [...document.querySelectorAll('[name=size]')].every(input=>input.disabled)`));
-        } else {
-          await evaluate(`document.querySelector('.add-to-cart').click()`);
-          assert(await evaluate(`document.activeElement.name==='size' && document.querySelector('#size-status').textContent.includes('Choose')`), `Size validation ${page} ${width}: ${await evaluate('document.activeElement.outerHTML')}`);
-          await evaluate(`document.querySelector('[name=size]:not(:disabled)').click();document.querySelector('.add-to-cart').click()`);
-          assert(await evaluate(`document.querySelector('#purchase-status').textContent.includes('nothing was added') && document.querySelector('.cart-count').textContent==='0'`));
-        }
-        await evaluate(`document.querySelector('.fit-note a').click()`);
-        assert(await evaluate(`document.querySelector('#size-guide').open`));
-        await new Promise(resolve => setTimeout(resolve, 100));
-        await evaluate(`document.querySelector('summary').focus()`);
-        await send('Input.dispatchKeyEvent', { type:'keyDown', key:'Enter', code:'Enter', text:'\r', windowsVirtualKeyCode:13 });
-        await send('Input.dispatchKeyEvent', { type:'keyUp', key:'Enter', code:'Enter', windowsVirtualKeyCode:13 });
-        assert(await evaluate(`!document.querySelector('#size-guide').open`), `Accordion keyboard at ${page} ${width}; focus: ${await evaluate('document.activeElement.outerHTML')}`);
+        assert(await evaluate(`document.querySelector('.add-to-cart').disabled && document.querySelector('.add-to-cart').textContent==='COMING SOON' && document.querySelector('.size-picker').hidden && !document.querySelector('[name=size]')`), 'Unconfirmed commerce stays disabled');
+        assert(await evaluate(`!document.querySelector('.detail-price') && !document.querySelector('.dispatch') && document.querySelector('.product-details').hidden`), 'Unconfirmed commercial details withheld');
+        await evaluate(`document.querySelector('#purchase-form').requestSubmit()`);
+        assert(await evaluate(`document.querySelector('.cart-count').textContent==='0' && !document.querySelector('#purchase-status').textContent`), 'Submit cannot fabricate a cart');
       }
       results.push({ page, viewport: `${width}x${height}`, ...layout });
     }
@@ -108,6 +97,6 @@ const assert = require('node:assert/strict');
     const shot=await send('Page.captureScreenshot',{format:'png'});
     fs.writeFileSync(`checks/${name}.png`,Buffer.from(shot.data,'base64'));
   }
-  console.log(`PASS: ${results.length} page/viewport checks, 2/3/4-card layouts, size validation, sold out, gallery buttons, keyboard accordions, cart Escape/focus/scroll and disabled checkout. No JS exceptions.`);
+  console.log(`PASS: ${results.length} page/viewport checks, 2/3/4-card layouts, coming-soon controls, withheld unconfirmed details, gallery buttons, cart Escape/focus/scroll and disabled checkout. No JS exceptions.`);
   socket.close();
 })().catch(error => { console.error(error); process.exit(1); });

@@ -17,7 +17,7 @@ for(const page of ['index.html','info.html',...products.map(p=>'products/'+p.id+
   }
   for(const match of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)) JSON.parse(match[1]);
 }
-assert(!fs.readFileSync('robots.txt','utf8').includes('Sitemap:'));
+assert.equal(fs.readFileSync('robots.txt','utf8').includes('Sitemap: https://staywide.cc/sitemap.xml'), config.domainConfirmed);
 assert.equal((fs.readFileSync('sitemap.xml','utf8').match(/<loc>/g)||[]).length,2+products.length);
 assert(productSchema(products[0],'products/hoodie-01.html').includes('withheld'));
 assert.throws(()=>productSchema({...products[0],development:false},'products/hoodie-01.html'),/Incomplete/);
@@ -29,5 +29,5 @@ assert.equal(parse(productSchema({...fixture,status:'sold_out'},'products/hoodie
 assert.equal(parse(productSchema({...fixture,status:'coming_soon'},'products/hoodie-01.html')).offers,undefined);
 assert.throws(()=>productSchema({...fixture,commerceReady:false},'products/hoodie-01.html'),/Unverified/);
 assert.throws(()=>head({title:'Test',description:'Test',route:'/',product:{...products[0],socialImage:{src:'missing.png',width:1200,height:630,alt:'Test'}}}));
-assert.equal(config.GA_MEASUREMENT_ID,''); assert.equal(config.META_PIXEL_ID,''); assert.equal(config.domainConfirmed,false);
+assert.equal(config.GA_MEASUREMENT_ID,''); assert.equal(config.META_PIXEL_ID,''); assert.equal(config.domainConfirmed,true); assert.equal(config.productionUrl,'https://staywide.cc');
 console.log('PASS: local references, static metadata/JSON-LD, sitemap, blank IDs, preview schema suppression and future Offer states.');

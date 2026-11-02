@@ -1,5 +1,7 @@
 # Stay Wide — photography and logo integration
 
+Update, 2 November 2026: Current exports are documented in [PUBLIC-POLISH.md](PUBLIC-POLISH.md). The original photographic selections and 24 WebP derivatives remain unchanged. The three portrait share JPEGs below were replaced by dedicated 1200x630 cards, and square favicon assets now exist. The rest of this document records the earlier asset-integration pass.
+
 30 October 2026. Local update only. No deployment, commit, push, commerce activation, tracking IDs or dependencies. The ten supplied text attachments contain the same brief after Markdown/list formatting is removed. This report covers the current local build.
 
 Follow-up: [IMAGE-INTERACTIONS.md](IMAGE-INTERACTIONS.md) documents the subsequent requested hover previews and gallery arrows/counter. Its interaction descriptions supersede the initial interaction descriptions below; photo selections, crops, asset metrics and logo remain unchanged.

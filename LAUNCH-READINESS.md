@@ -1,6 +1,8 @@
 # Stay Wide — technical launch readiness
 
-Local iteration, 11 October 2026. **NOT ready for deployment or accepting orders.** The current local build is the source of truth. `staywide.com` is provisional; ownership is not confirmed. No migration, deployment, commit or push occurred. No Git repository or hosting configuration was found.
+Updated 2 November 2026. The website is public at **https://staywide.cc** and remains **not ready to accept orders or enable tracking**. This polish pass changed local source/templates and rebuilt the public files; it did not deploy, migrate, commit or push. The existing configuration confirms staywide.cc. Git is present; publication remains separate.
+
+Public presentation now uses concise drop/coming-soon copy, hiding unconfirmed prices, sizes, dispatch and specifications. Internal catalogue fields and commerce gates remain. Faithful square icons and four 1200x630 social cards are complete. See [PUBLIC-POLISH.md](PUBLIC-POLISH.md) for exact metadata, metrics, file lists and QA. The campaign placeholder remains intact.
 
 Asset update, 30 October 2026: three real photographed products now appear; Hoodie 02 is withheld with a genuine local 404. Header/footer use a faithful temporary logo extraction. Product and default social images are configured. All launch gates below remain in place. See [ASSET-INTEGRATION.md](ASSET-INTEGRATION.md) for the complete inventory, image metrics and new QA evidence; the earlier QA record below describes the pre-photography iteration.
 
@@ -8,26 +10,29 @@ Image interaction follow-up: fine-pointer image-area hover and keyboard focus pr
 
 ## COMPLETE
 
-- Preserved existing static generation, three visible development products and a withheld fourth record, visual identity, gallery, sizes, details and unconnected cart. No framework/dependency added.
-- Central `js/site-config.js`; build-time titles, unique descriptions, canonicals, OG and X in initial HTML. Size/query states share the primary product canonical. Removed storefront noindex; only 404 is noindexed.
-- Homepage WebSite/Organization JSON-LD includes the temporary exact logo extraction and provisional URL. Social profile slots remain empty. Product/Offer builder uses the real catalogue images but still withholds schema for development products; no fabricated rich results.
-- AVAILABLE / SOLD OUT explicitly labelled preview examples; COMING SOON supported. Every product has a separate estimated-dispatch field. No preorder default/schema.
-- Sitemap includes home, Info and three current product URLs. Robots allows storefront/assets, excludes source/check directories, and withholds its sitemap declaration until ownership confirmation. Robots exclusions are not access control; publish public files only.
+- Preserved static generation, three photographed products, withheld Hoodie 02, identity, gallery, underlying sizes/details and unconnected cart. Unconfirmed information is hidden publicly. No dependency added.
+- Central js/site-config.js; build-time titles, concise descriptions, canonicals, OG and X in initial HTML. Query/size states share the product canonical. Only 404 is noindexed.
+- Homepage WebSite/Organization JSON-LD uses the faithful logo extraction and staywide.cc. Social profiles remain empty. Product/Offer schema stays withheld for development products; no fabricated rich results.
+- Development cards/PDP status use DROP 001. Purchase actions use COMING SOON and stay disabled. Underlying status/dispatch fields remain for future confirmation; no preorder default/schema.
+- Sitemap includes home, Info and three product URLs. Robots allows storefront/assets, excludes source/check directories, and declares https://staywide.cc/sitemap.xml. Robots exclusions are not access control; publish public files only.
 - Script-free branded 404; local server returns actual HTTP 404 for unknown nested paths. Production must configure equivalent handling.
 - Equal-weight Accept all / Reject non-essential / Manage. Analytics and Advertising independent, off by default; Essential always active. Footer/Info Cookie settings, non-modal banner, safe-area spacing and keyboard support.
 - Versioned 180-day local preferences with invalid/expired/blocked-storage fallback and cross-tab changes. Optional SDKs require both their consent and a valid configured ID. Both IDs are blank.
 - Withdrawal stops helper forwarding, disables GA/revokes Meta, removes accessible associated first-party cookies and queued events, and reloads if an SDK had started. No pre-consent event replay. Previously transmitted requests cannot be retracted; provider-owned third-party cookies cannot be cleared here.
 - Only lean GA events and corresponding Meta events prepared. No generic click/size/gallery/scroll tracking or fake commerce/signup success. GA payloads omit URL queries and referrers.
-- Compact Info sections: Shipping, Dispatch, Sizing, Contact, Returns, Privacy, Cookies and Terms. Unfinished policies are explicit development placeholders.
+- Compact Info sections retain Shipping, Dispatch, Sizing, Contact, Returns, Privacy, Cookies and Terms. Unconfirmed information uses brief public notices; these are not completed policies. Cookie facts and preference controls remain.
 - System fonts and existing responsive styling retained. Product dimensions/aspect ratios reserved; primary gallery and first-row collection images eager, secondary/recommendation images lazy. Real photography replaces rendered silhouettes; unused silhouette CSS remains available in the retained styles.
 
 ## FOUNDER REQUIRED
 
 All unchecked items remain unresolved. Do not replace them with guesses.
 
-- [ ] Purchase/connect final domain; confirm ownership of `staywide.com` or supply a replacement.
-- [ ] Final logo exports: favicon.ico, PNG 48px+, optional SVG, Apple touch 180×180, organisation/logo PNG. The existing inline SW text favicon is retained temporarily; no obsolete AYW asset files were found.
-- [ ] **FINAL CAMPAIGN OG SHARE IMAGE REQUIRED**: temporary homepage/drop 1200×630 exact-logo share and real individual product shares are configured with dimensions and alt. X now uses summary_large_image. Replace the temporary default when approved campaign artwork arrives.
+- [x] Public production domain supplied and configured: staywide.cc; ownership flag already true.
+- [x] Faithful favicon.ico (16/32/48px), PNG 48px and Apple touch 180px, with root-relative references on every generated page. No invented mark or fake vector.
+- [ ] Original designer vector/high-resolution logo package and dedicated designer favicon for stronger tiny-size legibility.
+- [x] Approved white homepage/logo share and three primary-photo shares are 1200x630 with matching OG/X metadata and alt.
+- [ ] Real campaign photography/film; retain the placeholder until supplied. Campaign artwork is not required to complete this polish pass.
+- [ ] Hoodie 02 photography and approved product information before listing it.
 - [ ] Final collection count, names, descriptions/meta descriptions, EUR prices, actual availability, sizes/fit/measurements/model sizing, photographs/alt, material/colour/SKU, decoration and care. No invented identifiers/reviews.
 - [ ] Honest estimated dispatch/processing date range. Longer fulfilment is separate from order availability; do not assume preorder.
 - [ ] Shipping regions and rates. Ireland/UK likely, EU possible, all unconfirmed; no worldwide claim. Fill shipping configuration and authoritative Shopify rules together.
@@ -41,7 +46,7 @@ All unchecked items remain unresolved. Do not replace them with guesses.
 
 ## PLATFORM SETUP REQUIRED
 
-1. Confirm domain ownership, DNS, HTTPS and hosting. Update config, rebuild and inspect all URLs. Hosting must support real HTTP 301 redirects and custom HTTP 404 responses. No host is identified, so production support cannot yet be confirmed.
+1. Validate production DNS/HTTPS, redirects and custom HTTP 404 responses for staywide.cc when publishing. The public domain/configuration are supplied; this local pass does not verify hosting behavior.
 2. Verify a Google Search Console **Domain property via DNS**, submit final sitemap, inspect homepage and every launch product URL, then monitor indexing. No verification tag added.
 3. Connect Shopify authoritative products/variants, prices, inventory, cart mutations and hosted checkout. Configure shipping, taxes and payments. Keep checkout disabled until ordering and policies are verified. No legacy Buy Buttons.
 4. Create/configure GA4 property; disable enhanced measurement/unwanted automatic events, retain Google signals/ads personalisation off, check duplicate pageviews and consent gates with a real test property. No GTM container required.
@@ -58,19 +63,19 @@ All unchecked items remain unresolved. Do not replace them with guesses.
 
 ## Domain-dependent values and release gate
 
-Source: `js/site-config.js` → `productionUrl`, `domainConfirmed: false`. The flag gates robots' sitemap line only, not manual uploading. **Do not upload this preview.**
+Source: js/site-config.js: productionUrl is https://staywide.cc and domainConfirmed is true. The flag gates the robots sitemap line, not manual uploading. **Do not deploy this iteration automatically.** Ordering and tracking remain gated independently.
 
 Generated consumers (do not hand-edit):
 
 - `index.html`: canonical, og:url, WebSite/Organization URL and @id.
-- `info.html`, `products/hoodie-01.html`, `products/hoodie-02.html`, `products/tshirt-01.html`, `products/tshirt-02.html`: canonical, og:url and future Product/Offer URLs.
+- info.html, products/hoodie-01.html, products/tshirt-01.html, products/tshirt-02.html: canonical, og:url and future Product/Offer URLs. Hoodie 02 remains withheld.
 - `404.html`: og:url; no canonical and noindex.
 - `sitemap.xml`: all loc values.
-- `robots.txt`: future sitemap declaration when ownership flag is true.
+- robots.txt: sitemap declaration with the existing true ownership flag.
 - Future social/organisation images: absolute URLs derived by the metadata builder; favicon links use local paths.
 - Documentation and canonical test expectation in `scripts/check-readiness.cjs`: update if domain changes.
 
-Only publish public HTML, css, js, final assets, robots and sitemap. Exclude templates, scripts, checks, docs, typo file, browser profiles and private files. Resolve domain/data/policy/platform blockers first. If a public staging URL is created later, staging must be protected or noindexed and must not become the canonical production site. No production storefront noindex remains here.
+Only publish public HTML, css, js, assets, robots and sitemap. Exclude templates, scripts, checks, docs, typo file, browser profiles and private files. Resolve data/policy/platform blockers before enabling ordering or tracking. A staging URL must be protected or noindexed and must not become the production canonical. No storefront noindex remains here.
 
 ## Old URL / redirect preparation
 
@@ -93,6 +98,12 @@ Never send all old URLs blindly to home. No JavaScript redirects or production r
 Purchase requires verified checkout/order integration, transaction IDs and one measurement owner to avoid frontend/Shopify/Meta duplication. No purchase hook is attached to preview actions. Email signup awaits provider success. Verify adapter failures and error messages at integration time.
 
 ## Performance and QA evidence
+
+Current polish QA: 25 layout cases, 24 public-polish cases, 16 DPR-2 asset cases, all 24 responsive WebP dimensions, four social dimensions and all favicon frames passed. Consent, tracking, static metadata/schema and 404 passed. At 375x812, 390x844, 430x932, 768x1024 and 1440x1000, normal hover/focus and gallery arrows/swipe/keyboard/boundaries passed.
+
+The final failed-image retry assertion in the existing interaction suite fails: dataset.failed is set to an empty string, but the unchanged gallery tests it for truthiness. Initial failure correctly retains the primary. The gallery implementation is byte-identical to HEAD; this unrelated defect remains for a separately scoped fix. See PUBLIC-POLISH.md and checks/image-interactions-results.json.
+
+The following bullets preserve earlier implementation/QA history; current results supersede demo-size and retry-recovery claims.
 
 - Real product files now use responsive WebP; no campaign file, custom fonts or videos were added. Local LCP candidates are first-row home product imagery and PDP lead photos. See ASSET-INTEGRATION.md for weights and local observations; no Lighthouse or production CWV claim is made.
 - Arial/Helvetica and Courier New use system fallbacks: no font downloads or unused weights. No continuous animation; hover transition respects reduced motion.

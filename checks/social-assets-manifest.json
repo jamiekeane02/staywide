@@ -1,0 +1,143 @@
+{
+  "outputs": [
+    {
+      "file": "assets/brand/stay-wide-share.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 74374,
+      "source": "assets/brand/stay-wide-logo.png",
+      "composition": {
+        "x": 240,
+        "y": 114.65217391304347,
+        "width": 720,
+        "height": 400.69565217391306,
+        "scale": 0.782608695652174,
+        "sourceWidth": 920,
+        "sourceHeight": 512
+      }
+    },
+    {
+      "file": "assets/products/hoodie-01-share.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 123149,
+      "source": "assets/products/hoodie-01-front-1200.webp",
+      "composition": {
+        "photograph": {
+          "x": 369.606512890095,
+          "y": 32,
+          "width": 460.78697421981,
+          "height": 566,
+          "scale": 0.383989145183175,
+          "sourceWidth": 1200,
+          "sourceHeight": 1474
+        },
+        "brand": {
+          "x": 996,
+          "y": 487.9304347826087,
+          "width": 144,
+          "height": 80.13913043478261,
+          "scale": 0.1565217391304348,
+          "sourceWidth": 920,
+          "sourceHeight": 512
+        }
+      }
+    },
+    {
+      "file": "assets/products/tshirt-01-share.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 134621,
+      "source": "assets/products/tshirt-01-front-1200.webp",
+      "composition": {
+        "photograph": {
+          "x": 370.2300405953992,
+          "y": 32,
+          "width": 459.5399188092016,
+          "height": 566,
+          "scale": 0.38294993234100133,
+          "sourceWidth": 1200,
+          "sourceHeight": 1478
+        },
+        "brand": {
+          "x": 996,
+          "y": 487.9304347826087,
+          "width": 144,
+          "height": 80.13913043478261,
+          "scale": 0.1565217391304348,
+          "sourceWidth": 920,
+          "sourceHeight": 512
+        }
+      }
+    },
+    {
+      "file": "assets/products/tshirt-02-share.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 135711,
+      "source": "assets/products/tshirt-02-front-1200.webp",
+      "composition": {
+        "photograph": {
+          "x": 367.0781893004115,
+          "y": 32,
+          "width": 465.8436213991769,
+          "height": 566,
+          "scale": 0.38820301783264743,
+          "sourceWidth": 1200,
+          "sourceHeight": 1458
+        },
+        "brand": {
+          "x": 996,
+          "y": 487.9304347826087,
+          "width": 144,
+          "height": 80.13913043478261,
+          "scale": 0.1565217391304348,
+          "sourceWidth": 920,
+          "sourceHeight": 512
+        }
+      }
+    },
+    {
+      "file": "assets/brand/favicon-48.png",
+      "width": 48,
+      "height": 48,
+      "bytes": 2804,
+      "source": "assets/brand/stay-wide-logo.png",
+      "composition": {
+        "x": 2.88,
+        "y": 12.246260869565218,
+        "width": 42.24,
+        "height": 23.507478260869565,
+        "scale": 0.04591304347826087,
+        "sourceWidth": 920,
+        "sourceHeight": 512
+      }
+    },
+    {
+      "file": "assets/brand/apple-touch-icon.png",
+      "width": 180,
+      "height": 180,
+      "bytes": 18951,
+      "source": "assets/brand/stay-wide-logo.png",
+      "composition": {
+        "x": 10.799999999999999,
+        "y": 45.923478260869565,
+        "width": 158.4,
+        "height": 88.15304347826087,
+        "scale": 0.17217391304347826,
+        "sourceWidth": 920,
+        "sourceHeight": 512
+      }
+    },
+    {
+      "file": "assets/brand/favicon.ico",
+      "sizes": [
+        16,
+        32,
+        48
+      ],
+      "bytes": 4947,
+      "source": "assets/brand/stay-wide-logo.png"
+    }
+  ]
+}

@@ -57,12 +57,6 @@ async function main() {
         await save(file,`(()=>{const c=canvas(${width},${height});const x=c.getContext('2d');x.imageSmoothingQuality='high';x.drawImage(current,${item.crop.join(',')},0,0,c.width,c.height);return c.toDataURL('image/webp',.88);})()`);
         outputs.push({source:item.source,file,width,height,bytes:fs.statSync(file).size,crop:item.crop});
       }
-      if(item.name.endsWith('-front')){
-        const width=1200,height=Math.round(width*item.crop[3]/item.crop[2]);
-        const file=`assets/products/${item.name}-share.jpg`;
-        await save(file,`(()=>{const c=canvas(${width},${height});const x=c.getContext('2d');x.imageSmoothingQuality='high';x.drawImage(current,${item.crop.join(',')},0,0,c.width,c.height);return c.toDataURL('image/jpeg',.9);})()`);
-        outputs.push({source:item.source,file,width,height,bytes:fs.statSync(file).size});
-      }
     }
     // Isolated upright blue/white wordmark near the lower centre of the gang sheet.
     // Remove only exterior connected black pixels; preserve every interior pixel.
@@ -70,9 +64,10 @@ async function main() {
     await save('checks/logo-extraction.png',"logo.toDataURL('image/png')");
     await save('assets/brand/stay-wide-logo.png',"(()=>{const c=canvas(920,512);c.getContext('2d').drawImage(logo,0,0,920,512);return c.toDataURL('image/png');})()");
     await save('assets/brand/stay-wide-logo-320.png',"(()=>{const c=canvas(320,178);c.getContext('2d').drawImage(logo,0,0,320,178);return c.toDataURL('image/png');})()");
-    await save('assets/brand/stay-wide-share.jpg',"(()=>{const c=canvas(1200,630);const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,1200,630);x.drawImage(logo,285,140,630,350.609);return c.toDataURL('image/jpeg',.94);})()");
     fs.writeFileSync('checks/asset-manifest.json',JSON.stringify({sourceDirectory:source,inventory,outputs},null,2));
     console.log(`Prepared ${outputs.length} product derivatives and faithful logo/share assets.`);
   } finally {socket?.close();server.close();server.closeAllConnections();}
 }
-main().catch(e=>{console.error(e);process.exitCode=1;});
+main().then(() => {
+  if (!process.argv.includes('--review-only')) return require('./prepare-social-assets.cjs')();
+}).catch(e=>{console.error(e);process.exitCode=1;});

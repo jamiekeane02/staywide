@@ -164,13 +164,6 @@
       ]
     },
     {
-      "source": "IMG_1228.JPG",
-      "file": "assets/products/hoodie-01-front-share.jpg",
-      "width": 1200,
-      "height": 1474,
-      "bytes": 617814
-    },
-    {
       "source": "IMG_1231.JPG",
       "file": "assets/products/hoodie-01-detail-480.webp",
       "width": 480,
@@ -275,13 +268,6 @@
       ]
     },
     {
-      "source": "IMG_1193.JPG",
-      "file": "assets/products/tshirt-01-front-share.jpg",
-      "width": 1200,
-      "height": 1478,
-      "bytes": 671725
-    },
-    {
       "source": "IMG_1197.JPG",
       "file": "assets/products/tshirt-01-detail-480.webp",
       "width": 480,
@@ -384,13 +370,6 @@
         5350,
         6500
       ]
-    },
-    {
-      "source": "IMG_1219.JPG",
-      "file": "assets/products/tshirt-02-front-share.jpg",
-      "width": 1200,
-      "height": 1458,
-      "bytes": 636359
     },
     {
       "source": "IMG_1218.JPG",

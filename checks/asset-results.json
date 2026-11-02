@@ -11,9 +11,9 @@
       "initialPerformance": {
         "lcp": {
           "tag": "IMG",
-          "url": "http://127.0.0.1:8080/assets/products/hoodie-01-front-480.webp",
+          "url": "http://127.0.0.1:8080/assets/products/tshirt-01-front-480.webp",
           "text": "",
-          "ms": 44
+          "ms": 36
         },
         "cls": 0
       },
@@ -56,6 +56,114 @@
         "lcp": {
           "tag": "IMG",
           "url": "http://127.0.0.1:8080/assets/products/hoodie-01-front-800.webp",
+          "text": "",
+          "ms": 36
+        },
+        "cls": 0
+      },
+      "images": [
+        {
+          "src": "assets/products/hoodie-01-front-800.webp",
+          "alt": "Stay Wide Hoodie 01, black phone-print hoodie flat lay",
+          "width": 335,
+          "height": 419,
+          "fit": "contain",
+          "bytes": 232190
+        },
+        {
+          "src": "assets/products/hoodie-01-detail-800.webp",
+          "alt": "Phone print and Stay Wide logo on Hoodie 01",
+          "width": 1200,
+          "height": 1600,
+          "fit": "contain",
+          "bytes": 103622
+        }
+      ]
+    },
+    {
+      "page": "products/tshirt-01.html",
+      "viewport": "375x812",
+      "dpr": 2,
+      "overflow": false,
+      "headerHeight": 56,
+      "logoLoaded": true,
+      "headerFits": true,
+      "initialPerformance": {
+        "lcp": {
+          "tag": "IMG",
+          "url": "http://127.0.0.1:8080/assets/products/tshirt-01-front-800.webp",
+          "text": "",
+          "ms": 40
+        },
+        "cls": 0
+      },
+      "images": [
+        {
+          "src": "assets/products/tshirt-01-front-800.webp",
+          "alt": "Stay Wide T-shirt 01, white T-shirt with blue logo flat lay",
+          "width": 335,
+          "height": 419,
+          "fit": "contain",
+          "bytes": 259226
+        },
+        {
+          "src": "assets/products/tshirt-01-detail-800.webp",
+          "alt": "Blue Stay Wide logo and fabric detail on T-shirt 01",
+          "width": 1200,
+          "height": 1500,
+          "fit": "contain",
+          "bytes": 185866
+        }
+      ]
+    },
+    {
+      "page": "products/tshirt-02.html",
+      "viewport": "375x812",
+      "dpr": 2,
+      "overflow": false,
+      "headerHeight": 56,
+      "logoLoaded": true,
+      "headerFits": true,
+      "initialPerformance": {
+        "lcp": {
+          "tag": "IMG",
+          "url": "http://127.0.0.1:8080/assets/products/tshirt-02-front-800.webp",
+          "text": "",
+          "ms": 36
+        },
+        "cls": 0
+      },
+      "images": [
+        {
+          "src": "assets/products/tshirt-02-front-800.webp",
+          "alt": "Stay Wide T-shirt 02, white ashtray-print T-shirt flat lay",
+          "width": 335,
+          "height": 419,
+          "fit": "contain",
+          "bytes": 247670
+        },
+        {
+          "src": "assets/products/tshirt-02-detail-800.webp",
+          "alt": "Yellow ashtray print and fabric detail on T-shirt 02",
+          "width": 1200,
+          "height": 1600,
+          "fit": "contain",
+          "bytes": 235592
+        }
+      ]
+    },
+    {
+      "page": "index.html",
+      "viewport": "390x844",
+      "dpr": 2,
+      "overflow": false,
+      "headerHeight": 56,
+      "logoLoaded": true,
+      "headerFits": true,
+      "initialPerformance": {
+        "lcp": {
+          "tag": "IMG",
+          "url": "http://127.0.0.1:8080/assets/products/tshirt-01-front-480.webp",
           "text": "",
           "ms": 52
         },
@@ -63,114 +171,6 @@
       },
       "images": [
         {
-          "src": "assets/products/hoodie-01-front-800.webp",
-          "alt": "Stay Wide Hoodie 01, black phone-print hoodie flat lay",
-          "width": 335,
-          "height": 419,
-          "fit": "contain",
-          "bytes": 232190
-        },
-        {
-          "src": "assets/products/hoodie-01-detail-800.webp",
-          "alt": "Phone print and Stay Wide logo on Hoodie 01",
-          "width": 1200,
-          "height": 1600,
-          "fit": "contain",
-          "bytes": 103622
-        }
-      ]
-    },
-    {
-      "page": "products/tshirt-01.html",
-      "viewport": "375x812",
-      "dpr": 2,
-      "overflow": false,
-      "headerHeight": 56,
-      "logoLoaded": true,
-      "headerFits": true,
-      "initialPerformance": {
-        "lcp": {
-          "tag": "IMG",
-          "url": "http://127.0.0.1:8080/assets/products/tshirt-01-front-800.webp",
-          "text": "",
-          "ms": 56
-        },
-        "cls": 0
-      },
-      "images": [
-        {
-          "src": "assets/products/tshirt-01-front-800.webp",
-          "alt": "Stay Wide T-shirt 01, white T-shirt with blue logo flat lay",
-          "width": 335,
-          "height": 419,
-          "fit": "contain",
-          "bytes": 259226
-        },
-        {
-          "src": "assets/products/tshirt-01-detail-800.webp",
-          "alt": "Blue Stay Wide logo and fabric detail on T-shirt 01",
-          "width": 1200,
-          "height": 1500,
-          "fit": "contain",
-          "bytes": 185866
-        }
-      ]
-    },
-    {
-      "page": "products/tshirt-02.html",
-      "viewport": "375x812",
-      "dpr": 2,
-      "overflow": false,
-      "headerHeight": 56,
-      "logoLoaded": true,
-      "headerFits": true,
-      "initialPerformance": {
-        "lcp": {
-          "tag": "IMG",
-          "url": "http://127.0.0.1:8080/assets/products/tshirt-02-front-800.webp",
-          "text": "",
-          "ms": 48
-        },
-        "cls": 0
-      },
-      "images": [
-        {
-          "src": "assets/products/tshirt-02-front-800.webp",
-          "alt": "Stay Wide T-shirt 02, white ashtray-print T-shirt flat lay",
-          "width": 335,
-          "height": 419,
-          "fit": "contain",
-          "bytes": 247670
-        },
-        {
-          "src": "assets/products/tshirt-02-detail-800.webp",
-          "alt": "Yellow ashtray print and fabric detail on T-shirt 02",
-          "width": 1200,
-          "height": 1600,
-          "fit": "contain",
-          "bytes": 235592
-        }
-      ]
-    },
-    {
-      "page": "index.html",
-      "viewport": "390x844",
-      "dpr": 2,
-      "overflow": false,
-      "headerHeight": 56,
-      "logoLoaded": true,
-      "headerFits": true,
-      "initialPerformance": {
-        "lcp": {
-          "tag": "IMG",
-          "url": "http://127.0.0.1:8080/assets/products/hoodie-01-front-480.webp",
-          "text": "",
-          "ms": 48
-        },
-        "cls": 0
-      },
-      "images": [
-        {
           "src": "assets/products/hoodie-01-front-480.webp",
           "alt": "Stay Wide Hoodie 01, black phone-print hoodie flat lay",
           "width": 167,
@@ -209,7 +209,7 @@
           "tag": "IMG",
           "url": "http://127.0.0.1:8080/assets/products/hoodie-01-front-800.webp",
           "text": "",
-          "ms": 40
+          "ms": 36
         },
         "cls": 0
       },
@@ -245,7 +245,7 @@
           "tag": "IMG",
           "url": "http://127.0.0.1:8080/assets/products/tshirt-01-front-800.webp",
           "text": "",
-          "ms": 84
+          "ms": 36
         },
         "cls": 0
       },
@@ -280,6 +280,42 @@
         "lcp": {
           "tag": "IMG",
           "url": "http://127.0.0.1:8080/assets/products/tshirt-02-front-800.webp",
+          "text": "",
+          "ms": 40
+        },
+        "cls": 0
+      },
+      "images": [
+        {
+          "src": "assets/products/tshirt-02-front-800.webp",
+          "alt": "Stay Wide T-shirt 02, white ashtray-print T-shirt flat lay",
+          "width": 350,
+          "height": 438,
+          "fit": "contain",
+          "bytes": 247670
+        },
+        {
+          "src": "assets/products/tshirt-02-detail-800.webp",
+          "alt": "Yellow ashtray print and fabric detail on T-shirt 02",
+          "width": 1200,
+          "height": 1600,
+          "fit": "contain",
+          "bytes": 235592
+        }
+      ]
+    },
+    {
+      "page": "index.html",
+      "viewport": "430x932",
+      "dpr": 2,
+      "overflow": false,
+      "headerHeight": 56,
+      "logoLoaded": true,
+      "headerFits": true,
+      "initialPerformance": {
+        "lcp": {
+          "tag": "IMG",
+          "url": "http://127.0.0.1:8080/assets/products/tshirt-01-front-480.webp",
           "text": "",
           "ms": 44
         },
@@ -287,42 +323,6 @@
       },
       "images": [
         {
-          "src": "assets/products/tshirt-02-front-800.webp",
-          "alt": "Stay Wide T-shirt 02, white ashtray-print T-shirt flat lay",
-          "width": 350,
-          "height": 438,
-          "fit": "contain",
-          "bytes": 247670
-        },
-        {
-          "src": "assets/products/tshirt-02-detail-800.webp",
-          "alt": "Yellow ashtray print and fabric detail on T-shirt 02",
-          "width": 1200,
-          "height": 1600,
-          "fit": "contain",
-          "bytes": 235592
-        }
-      ]
-    },
-    {
-      "page": "index.html",
-      "viewport": "430x932",
-      "dpr": 2,
-      "overflow": false,
-      "headerHeight": 56,
-      "logoLoaded": true,
-      "headerFits": true,
-      "initialPerformance": {
-        "lcp": {
-          "tag": "IMG",
-          "url": "http://127.0.0.1:8080/assets/products/hoodie-01-front-480.webp",
-          "text": "",
-          "ms": 40
-        },
-        "cls": 0
-      },
-      "images": [
-        {
           "src": "assets/products/hoodie-01-front-480.webp",
           "alt": "Stay Wide Hoodie 01, black phone-print hoodie flat lay",
           "width": 187,
@@ -361,7 +361,7 @@
           "tag": "IMG",
           "url": "http://127.0.0.1:8080/assets/products/hoodie-01-front-800.webp",
           "text": "",
-          "ms": 40
+          "ms": 32
         },
         "cls": 0
       },
@@ -397,7 +397,7 @@
           "tag": "IMG",
           "url": "http://127.0.0.1:8080/assets/products/tshirt-01-front-800.webp",
           "text": "",
-          "ms": 48
+          "ms": 72
         },
         "cls": 0
       },
@@ -433,7 +433,7 @@
           "tag": "IMG",
           "url": "http://127.0.0.1:8080/assets/products/tshirt-02-front-800.webp",
           "text": "",
-          "ms": 60
+          "ms": 32
         },
         "cls": 0
       },
@@ -461,7 +461,7 @@
       "viewport": "1440x1000",
       "dpr": 2,
       "overflow": false,
-      "headerHeight": 56,
+      "headerHeight": 61,
       "logoLoaded": true,
       "headerFits": true,
       "initialPerformance": {
@@ -469,7 +469,7 @@
           "tag": "IMG",
           "url": "http://127.0.0.1:8080/assets/products/tshirt-01-front-1200.webp",
           "text": "",
-          "ms": 156
+          "ms": 160
         },
         "cls": 0
       },
@@ -505,7 +505,7 @@
       "viewport": "1440x1000",
       "dpr": 2,
       "overflow": false,
-      "headerHeight": 56,
+      "headerHeight": 61,
       "logoLoaded": true,
       "headerFits": true,
       "initialPerformance": {
@@ -513,7 +513,7 @@
           "tag": "IMG",
           "url": "http://127.0.0.1:8080/assets/products/hoodie-01-front-1600.webp",
           "text": "",
-          "ms": 156
+          "ms": 144
         },
         "cls": 0
       },
@@ -541,7 +541,7 @@
       "viewport": "1440x1000",
       "dpr": 2,
       "overflow": false,
-      "headerHeight": 56,
+      "headerHeight": 61,
       "logoLoaded": true,
       "headerFits": true,
       "initialPerformance": {
@@ -549,7 +549,7 @@
           "tag": "IMG",
           "url": "http://127.0.0.1:8080/assets/products/tshirt-01-front-1600.webp",
           "text": "",
-          "ms": 168
+          "ms": 196
         },
         "cls": 0
       },
@@ -577,7 +577,7 @@
       "viewport": "1440x1000",
       "dpr": 2,
       "overflow": false,
-      "headerHeight": 56,
+      "headerHeight": 61,
       "logoLoaded": true,
       "headerFits": true,
       "initialPerformance": {
@@ -585,7 +585,7 @@
           "tag": "IMG",
           "url": "http://127.0.0.1:8080/assets/products/tshirt-02-front-1600.webp",
           "text": "",
-          "ms": 220
+          "ms": 60
         },
         "cls": 0
       },
@@ -611,5 +611,5 @@
   ],
   "errors": [],
   "failed": [],
-  "derivativesVerified": 27
+  "derivativesVerified": 24
 }

@@ -116,9 +116,10 @@ function fixture(count) {
   assert(await ev(`!document.querySelector('#image-0').hidden&&document.querySelector('[data-gallery-current]').textContent==='1'&&document.querySelector('[data-gallery-error]').textContent.includes('try again')`));
   await send('Fetch.disable');intercept=null;
   await ev(`document.querySelector('[data-gallery-next]').click()`);await settled();
-  assert.equal(await ev(`document.querySelector('[data-gallery-current]').textContent`),'2');
+  const recovered=await ev(`document.querySelector('[data-gallery-current]').textContent`)==='2';
   assert.deepEqual(errors,[]);
-  fs.writeFileSync('checks/image-interactions-results.json',JSON.stringify({results,hover:'image area only; decoded before reveal',mobileCards:'one tap; no hover downloads',reducedMotion:'pass',singleImage:'pass',threeImages:'pass',failedImage:'primary retained',runtimeErrors:errors},null,2));
+  fs.writeFileSync('checks/image-interactions-results.json',JSON.stringify({results,hover:'image area only; decoded before reveal',mobileCards:'one tap; no hover downloads',reducedMotion:'pass',singleImage:'pass',threeImages:'pass',failedImage:'primary retained',failedImageRecovery:recovered?'pass':'fail',runtimeErrors:errors},null,2));
+  assert(recovered, 'Failed-image retry did not recover (existing gallery failure-marker condition)');
   console.log(`PASS: ${results.length} product/viewport cases; desktop hover/focus/reduced motion, touch one-tap/no secondary downloads, gallery buttons/swipes/keyboard/count/boundaries, 1/3-image fixtures and failed-image fallback.`);
   socket.close();
 })().catch(e=>{console.error(e);process.exit(1)});
