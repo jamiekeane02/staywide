@@ -1,0 +1,207 @@
+[
+  {
+    "page": "index.html",
+    "viewport": "375x812",
+    "width": 375,
+    "scroll": 375,
+    "cards": 3,
+    "firstProduct": 556,
+    "headerFits": true
+  },
+  {
+    "page": "info.html",
+    "viewport": "375x812",
+    "width": 375,
+    "scroll": 375,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/hoodie-01.html",
+    "viewport": "375x812",
+    "width": 375,
+    "scroll": 375,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/tshirt-01.html",
+    "viewport": "375x812",
+    "width": 375,
+    "scroll": 375,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/tshirt-02.html",
+    "viewport": "375x812",
+    "width": 375,
+    "scroll": 375,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "index.html",
+    "viewport": "390x844",
+    "width": 390,
+    "scroll": 390,
+    "cards": 3,
+    "firstProduct": 556,
+    "headerFits": true
+  },
+  {
+    "page": "info.html",
+    "viewport": "390x844",
+    "width": 390,
+    "scroll": 390,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/hoodie-01.html",
+    "viewport": "390x844",
+    "width": 390,
+    "scroll": 390,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/tshirt-01.html",
+    "viewport": "390x844",
+    "width": 390,
+    "scroll": 390,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/tshirt-02.html",
+    "viewport": "390x844",
+    "width": 390,
+    "scroll": 390,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "index.html",
+    "viewport": "430x932",
+    "width": 430,
+    "scroll": 430,
+    "cards": 3,
+    "firstProduct": 556,
+    "headerFits": true
+  },
+  {
+    "page": "info.html",
+    "viewport": "430x932",
+    "width": 430,
+    "scroll": 430,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/hoodie-01.html",
+    "viewport": "430x932",
+    "width": 430,
+    "scroll": 430,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/tshirt-01.html",
+    "viewport": "430x932",
+    "width": 430,
+    "scroll": 430,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/tshirt-02.html",
+    "viewport": "430x932",
+    "width": 430,
+    "scroll": 430,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "index.html",
+    "viewport": "768x1024",
+    "width": 768,
+    "scroll": 753,
+    "cards": 3,
+    "firstProduct": 546.28125,
+    "headerFits": true
+  },
+  {
+    "page": "info.html",
+    "viewport": "768x1024",
+    "width": 768,
+    "scroll": 753,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/hoodie-01.html",
+    "viewport": "768x1024",
+    "width": 768,
+    "scroll": 753,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/tshirt-01.html",
+    "viewport": "768x1024",
+    "width": 768,
+    "scroll": 753,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/tshirt-02.html",
+    "viewport": "768x1024",
+    "width": 768,
+    "scroll": 753,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "index.html",
+    "viewport": "1440x1000",
+    "width": 1440,
+    "scroll": 1425,
+    "cards": 3,
+    "firstProduct": 594.671875,
+    "headerFits": true
+  },
+  {
+    "page": "info.html",
+    "viewport": "1440x1000",
+    "width": 1440,
+    "scroll": 1425,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/hoodie-01.html",
+    "viewport": "1440x1000",
+    "width": 1440,
+    "scroll": 1425,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/tshirt-01.html",
+    "viewport": "1440x1000",
+    "width": 1440,
+    "scroll": 1425,
+    "cards": 0,
+    "headerFits": true
+  },
+  {
+    "page": "products/tshirt-02.html",
+    "viewport": "1440x1000",
+    "width": 1440,
+    "scroll": 1425,
+    "cards": 0,
+    "headerFits": true
+  }
+]

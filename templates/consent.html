@@ -1,0 +1,12 @@
+<section id="cookie-panel" class="cookie-panel" aria-labelledby="cookie-title" hidden>
+  <div class="cookie-heading"><h2 id="cookie-title">Your cookie choices</h2><button type="button" data-cookie-close aria-label="Close cookie settings">×</button></div>
+  <p>Essential storage keeps the site working. Optional analytics helps us understand visits; advertising measures our ads. Both are off until you choose. <a href="{{prefix}}info.html#cookies">Cookie information</a></p>
+  <div id="cookie-options" hidden>
+    <p><strong>Essential — always active</strong><br>Remembers these choices and supports necessary cart functionality.</p>
+    <label><input id="consent-analytics" type="checkbox"><span><strong>Analytics</strong><br>Allow Google Analytics to measure visits and shopping activity.</span></label>
+    <label><input id="consent-advertising" type="checkbox"><span><strong>Advertising</strong><br>Allow Meta to measure ads and shopping activity.</span></label>
+    <button type="button" class="button" data-cookie-save>Save preferences</button>
+  </div>
+  <div class="cookie-actions"><button type="button" class="button" data-cookie-accept>Accept all</button><button type="button" class="button" data-cookie-reject>Reject non-essential</button><button type="button" class="button" data-cookie-manage>Manage</button></div>
+</section>
+<p id="cookie-status" class="sr-only" role="status"></p>

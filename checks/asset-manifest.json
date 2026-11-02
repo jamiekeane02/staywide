@@ -1,0 +1,448 @@
+{
+  "sourceDirectory": "C:\\Users\\User\\Downloads\\drive-download-20261030T031745Z-1-001",
+  "inventory": [
+    {
+      "file": "GANGSHEET2.1.png",
+      "bytes": 37527011,
+      "upright": {
+        "width": 6615,
+        "height": 11812
+      },
+      "manualClockwiseRotation": false
+    },
+    {
+      "file": "IMG_1190.JPG",
+      "bytes": 18238003,
+      "upright": {
+        "width": 6048,
+        "height": 8064
+      },
+      "manualClockwiseRotation": false
+    },
+    {
+      "file": "IMG_1193.JPG",
+      "bytes": 18139347,
+      "upright": {
+        "width": 6048,
+        "height": 8064
+      },
+      "manualClockwiseRotation": true
+    },
+    {
+      "file": "IMG_1197.JPG",
+      "bytes": 17064978,
+      "upright": {
+        "width": 6048,
+        "height": 8064
+      },
+      "manualClockwiseRotation": true
+    },
+    {
+      "file": "IMG_1198.JPG",
+      "bytes": 17508526,
+      "upright": {
+        "width": 6048,
+        "height": 8064
+      },
+      "manualClockwiseRotation": true
+    },
+    {
+      "file": "IMG_1216.JPG",
+      "bytes": 16599660,
+      "upright": {
+        "width": 6048,
+        "height": 8064
+      },
+      "manualClockwiseRotation": false
+    },
+    {
+      "file": "IMG_1218.JPG",
+      "bytes": 17150625,
+      "upright": {
+        "width": 6048,
+        "height": 8064
+      },
+      "manualClockwiseRotation": false
+    },
+    {
+      "file": "IMG_1219.JPG",
+      "bytes": 16827650,
+      "upright": {
+        "width": 6048,
+        "height": 8064
+      },
+      "manualClockwiseRotation": false
+    },
+    {
+      "file": "IMG_1224.JPG",
+      "bytes": 15341937,
+      "upright": {
+        "width": 6048,
+        "height": 8064
+      },
+      "manualClockwiseRotation": false
+    },
+    {
+      "file": "IMG_1228.JPG",
+      "bytes": 15555254,
+      "upright": {
+        "width": 6048,
+        "height": 8064
+      },
+      "manualClockwiseRotation": false
+    },
+    {
+      "file": "IMG_1230.JPG",
+      "bytes": 3684445,
+      "upright": {
+        "width": 3928,
+        "height": 5236
+      },
+      "manualClockwiseRotation": false
+    },
+    {
+      "file": "IMG_1231.JPG",
+      "bytes": 4083009,
+      "upright": {
+        "width": 3928,
+        "height": 5236
+      },
+      "manualClockwiseRotation": false
+    }
+  ],
+  "outputs": [
+    {
+      "source": "IMG_1228.JPG",
+      "file": "assets/products/hoodie-01-front-480.webp",
+      "width": 480,
+      "height": 589,
+      "bytes": 76254,
+      "crop": [
+        150,
+        1050,
+        5700,
+        7000
+      ]
+    },
+    {
+      "source": "IMG_1228.JPG",
+      "file": "assets/products/hoodie-01-front-800.webp",
+      "width": 800,
+      "height": 982,
+      "bytes": 232190,
+      "crop": [
+        150,
+        1050,
+        5700,
+        7000
+      ]
+    },
+    {
+      "source": "IMG_1228.JPG",
+      "file": "assets/products/hoodie-01-front-1200.webp",
+      "width": 1200,
+      "height": 1474,
+      "bytes": 545302,
+      "crop": [
+        150,
+        1050,
+        5700,
+        7000
+      ]
+    },
+    {
+      "source": "IMG_1228.JPG",
+      "file": "assets/products/hoodie-01-front-1600.webp",
+      "width": 1600,
+      "height": 1965,
+      "bytes": 976408,
+      "crop": [
+        150,
+        1050,
+        5700,
+        7000
+      ]
+    },
+    {
+      "source": "IMG_1228.JPG",
+      "file": "assets/products/hoodie-01-front-share.jpg",
+      "width": 1200,
+      "height": 1474,
+      "bytes": 617814
+    },
+    {
+      "source": "IMG_1231.JPG",
+      "file": "assets/products/hoodie-01-detail-480.webp",
+      "width": 480,
+      "height": 640,
+      "bytes": 26030,
+      "crop": [
+        0,
+        0,
+        3928,
+        5236
+      ]
+    },
+    {
+      "source": "IMG_1231.JPG",
+      "file": "assets/products/hoodie-01-detail-800.webp",
+      "width": 800,
+      "height": 1066,
+      "bytes": 103622,
+      "crop": [
+        0,
+        0,
+        3928,
+        5236
+      ]
+    },
+    {
+      "source": "IMG_1231.JPG",
+      "file": "assets/products/hoodie-01-detail-1200.webp",
+      "width": 1200,
+      "height": 1600,
+      "bytes": 263590,
+      "crop": [
+        0,
+        0,
+        3928,
+        5236
+      ]
+    },
+    {
+      "source": "IMG_1231.JPG",
+      "file": "assets/products/hoodie-01-detail-1600.webp",
+      "width": 1600,
+      "height": 2133,
+      "bytes": 476110,
+      "crop": [
+        0,
+        0,
+        3928,
+        5236
+      ]
+    },
+    {
+      "source": "IMG_1193.JPG",
+      "file": "assets/products/tshirt-01-front-480.webp",
+      "width": 480,
+      "height": 591,
+      "bytes": 90806,
+      "crop": [
+        350,
+        1400,
+        5400,
+        6650
+      ]
+    },
+    {
+      "source": "IMG_1193.JPG",
+      "file": "assets/products/tshirt-01-front-800.webp",
+      "width": 800,
+      "height": 985,
+      "bytes": 259226,
+      "crop": [
+        350,
+        1400,
+        5400,
+        6650
+      ]
+    },
+    {
+      "source": "IMG_1193.JPG",
+      "file": "assets/products/tshirt-01-front-1200.webp",
+      "width": 1200,
+      "height": 1478,
+      "bytes": 593858,
+      "crop": [
+        350,
+        1400,
+        5400,
+        6650
+      ]
+    },
+    {
+      "source": "IMG_1193.JPG",
+      "file": "assets/products/tshirt-01-front-1600.webp",
+      "width": 1600,
+      "height": 1970,
+      "bytes": 1078964,
+      "crop": [
+        350,
+        1400,
+        5400,
+        6650
+      ]
+    },
+    {
+      "source": "IMG_1193.JPG",
+      "file": "assets/products/tshirt-01-front-share.jpg",
+      "width": 1200,
+      "height": 1478,
+      "bytes": 671725
+    },
+    {
+      "source": "IMG_1197.JPG",
+      "file": "assets/products/tshirt-01-detail-480.webp",
+      "width": 480,
+      "height": 600,
+      "bytes": 60044,
+      "crop": [
+        1800,
+        2100,
+        2600,
+        3250
+      ]
+    },
+    {
+      "source": "IMG_1197.JPG",
+      "file": "assets/products/tshirt-01-detail-800.webp",
+      "width": 800,
+      "height": 1000,
+      "bytes": 185866,
+      "crop": [
+        1800,
+        2100,
+        2600,
+        3250
+      ]
+    },
+    {
+      "source": "IMG_1197.JPG",
+      "file": "assets/products/tshirt-01-detail-1200.webp",
+      "width": 1200,
+      "height": 1500,
+      "bytes": 441518,
+      "crop": [
+        1800,
+        2100,
+        2600,
+        3250
+      ]
+    },
+    {
+      "source": "IMG_1197.JPG",
+      "file": "assets/products/tshirt-01-detail-1600.webp",
+      "width": 1600,
+      "height": 2000,
+      "bytes": 820096,
+      "crop": [
+        1800,
+        2100,
+        2600,
+        3250
+      ]
+    },
+    {
+      "source": "IMG_1219.JPG",
+      "file": "assets/products/tshirt-02-front-480.webp",
+      "width": 480,
+      "height": 583,
+      "bytes": 87604,
+      "crop": [
+        450,
+        1100,
+        5350,
+        6500
+      ]
+    },
+    {
+      "source": "IMG_1219.JPG",
+      "file": "assets/products/tshirt-02-front-800.webp",
+      "width": 800,
+      "height": 972,
+      "bytes": 247670,
+      "crop": [
+        450,
+        1100,
+        5350,
+        6500
+      ]
+    },
+    {
+      "source": "IMG_1219.JPG",
+      "file": "assets/products/tshirt-02-front-1200.webp",
+      "width": 1200,
+      "height": 1458,
+      "bytes": 560992,
+      "crop": [
+        450,
+        1100,
+        5350,
+        6500
+      ]
+    },
+    {
+      "source": "IMG_1219.JPG",
+      "file": "assets/products/tshirt-02-front-1600.webp",
+      "width": 1600,
+      "height": 1944,
+      "bytes": 995710,
+      "crop": [
+        450,
+        1100,
+        5350,
+        6500
+      ]
+    },
+    {
+      "source": "IMG_1219.JPG",
+      "file": "assets/products/tshirt-02-front-share.jpg",
+      "width": 1200,
+      "height": 1458,
+      "bytes": 636359
+    },
+    {
+      "source": "IMG_1218.JPG",
+      "file": "assets/products/tshirt-02-detail-480.webp",
+      "width": 480,
+      "height": 640,
+      "bytes": 79590,
+      "crop": [
+        0,
+        0,
+        6048,
+        8064
+      ]
+    },
+    {
+      "source": "IMG_1218.JPG",
+      "file": "assets/products/tshirt-02-detail-800.webp",
+      "width": 800,
+      "height": 1067,
+      "bytes": 235592,
+      "crop": [
+        0,
+        0,
+        6048,
+        8064
+      ]
+    },
+    {
+      "source": "IMG_1218.JPG",
+      "file": "assets/products/tshirt-02-detail-1200.webp",
+      "width": 1200,
+      "height": 1600,
+      "bytes": 595172,
+      "crop": [
+        0,
+        0,
+        6048,
+        8064
+      ]
+    },
+    {
+      "source": "IMG_1218.JPG",
+      "file": "assets/products/tshirt-02-detail-1600.webp",
+      "width": 1600,
+      "height": 2133,
+      "bytes": 1097028,
+      "crop": [
+        0,
+        0,
+        6048,
+        8064
+      ]
+    }
+  ]
+}

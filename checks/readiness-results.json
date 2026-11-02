@@ -1,0 +1,30 @@
+{
+  "results": [
+    {
+      "viewport": "375x812",
+      "consent": "pass",
+      "notFound": "pass"
+    },
+    {
+      "viewport": "390x844",
+      "consent": "pass",
+      "notFound": "pass"
+    },
+    {
+      "viewport": "430x932",
+      "consent": "pass",
+      "notFound": "pass"
+    },
+    {
+      "viewport": "1440x1000",
+      "consent": "pass",
+      "notFound": "pass"
+    }
+  ],
+  "externalRequests": [],
+  "runtimeErrors": [],
+  "requestsObserved": 278,
+  "staticHTML": "pass",
+  "storageFallback": "pass",
+  "http404": "pass"
+}

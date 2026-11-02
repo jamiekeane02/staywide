@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  {{head}}
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/catalog.js" defer></script>
+  <script src="js/site-config.js" defer></script>
+  <script src="js/consent.js" defer></script>
+  <script src="js/tracking.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="announcement"><span>STAY WIDE / DROP 001</span><span>Collection preview</span></div>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Stay Wide home">{{brand}}</a>
+    <nav aria-label="Main navigation">
+      <a href="#shop">Shop</a>
+      <a href="info.html">Info</a>
+      <button type="button" class="text-button" id="cart-open" disabled>Cart <span class="cart-count">0</span></button>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="opening section-pad" aria-labelledby="hero-title">
+      <div><p class="micro kicker">DROP 001 / A FIRST LOOK</p><h1 id="hero-title">STAY WIDE<span>.</span></h1><p class="opening-line">Independent clothing from Ireland. Drop 001 preview.</p></div>
+      <a class="button button-dark" href="#shop">Shop drop <span aria-hidden="true">↓</span></a>
+    </section>
+    <section class="campaign-media section-pad" aria-label="Campaign media">
+      <!-- Replace this single placeholder with a picture, image or controls-enabled video. -->
+      <div class="campaign-placeholder" role="img" aria-label="Stay Wide campaign photograph or film placeholder"><span class="micro">STAY WIDE / OUT INTO THE WORLD</span><span>[CAMPAIGN IMAGE / FILM]</span></div>
+    </section>
+    <section class="shop section-pad" id="shop" aria-labelledby="shop-title">
+      <div class="collection-heading"><h2 id="shop-title">Drop 001</h2><span class="micro">DROP 001</span></div>
+      <p class="preview-note">Development preview / real product photography; names, prices, sizes and stock states remain provisional.</p>
+      <!-- Product cards are generated from js/catalog.js by scripts/build.cjs. -->
+      <div class="product-grid collection-grid">{{cards}}</div>
+    </section>
+
+
+  </main>
+{{footer}}
+{{cart}}
+{{consent}}
+</body>
+</html>
+

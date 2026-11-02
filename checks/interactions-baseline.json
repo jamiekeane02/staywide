@@ -1,0 +1,130 @@
+﻿[
+    {
+        "File":  "ASSET-INTEGRATION.md",
+        "Hash":  "B889148DAD3394793282843F555D7A38750BE1F42BEB988D88E2A6DD9E497596"
+    },
+    {
+        "File":  "index.hmtl",
+        "Hash":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+        "File":  "robots.txt",
+        "Hash":  "ED0BC6556E6A35D7CCEDE4D49D491BFF2F70B99836029521824C7379B44116CA"
+    },
+    {
+        "File":  "README.md",
+        "Hash":  "269BA53D60F1650D607E163BE6EB2771E57926D38A4E9476B67035A4FA39D50B"
+    },
+    {
+        "File":  "404.html",
+        "Hash":  "A62E590E8AC3FDB397ADD7EDCE6045891D2855EC7D28489D97B0005771AF27E7"
+    },
+    {
+        "File":  "sitemap.xml",
+        "Hash":  "194256FBA40A7CA470B4932CE861F0CEB557E1A8CBA9308A92B4856D325A82FB"
+    },
+    {
+        "File":  "templates\\product.html",
+        "Hash":  "0E85078A69804B2F9C2E059A1E42DE4496FA52420991ACFA784FBE96DD80F011"
+    },
+    {
+        "File":  "templates\\info.html",
+        "Hash":  "435B02BF0B146E858386E9FF3746EB58A2075617EA938897AFA2CE2C2D567E5B"
+    },
+    {
+        "File":  "templates\\home.html",
+        "Hash":  "C6D371AD001881B9C14C83B14BCB05239A4CE4C38D5BC955426347040B7D5C48"
+    },
+    {
+        "File":  "templates\\consent.html",
+        "Hash":  "8218C5B4853B8187224F3B91366F7027660C7641A8127A057F366F38BA077691"
+    },
+    {
+        "File":  "templates\\404.html",
+        "Hash":  "8BF14D6C064CC92B0239CB2EB9283C6C96ADA5D452902EA2AD62F6D3373D0A96"
+    },
+    {
+        "File":  "js\\tracking.js",
+        "Hash":  "F076D09E9F89D1F48A5C462330EA1FC5325F78C57FA24014EFE0E7163E052825"
+    },
+    {
+        "File":  "js\\site-config.js",
+        "Hash":  "1C8FEE611D1F3A81B200E63F81DB9BA90009F7C61406DAB6C0251B9E2C862859"
+    },
+    {
+        "File":  "js\\main.js",
+        "Hash":  "4C88B3DF41243E3982F3FBAF77953ECF0FD6B61D3395078655E9BE2469D33FD2"
+    },
+    {
+        "File":  "js\\consent.js",
+        "Hash":  "68D52394F476849C76C83B2B1BDC7CB6D4B0373D489ECD0602079C42D5352027"
+    },
+    {
+        "File":  "js\\catalog.js",
+        "Hash":  "48306C49A2D23B95EC5E0730F61692956D570695EF14B386D737EC314EA90DD9"
+    },
+    {
+        "File":  "info.html",
+        "Hash":  "56692702C6FFD3FAFF273C7A7CC122FD871BB7CAAC01CB2C301187F19CB5EFE4"
+    },
+    {
+        "File":  "index.html",
+        "Hash":  "C8278C143E54ED7CC62D055B8956411EB35C39610A521CB711EFAD0250D47333"
+    },
+    {
+        "File":  "LAUNCH-READINESS.md",
+        "Hash":  "48DB35851C413F07CC4A906B0C174B85478E07A487DF6996A9414D204B232A00"
+    },
+    {
+        "File":  "css\\styles.css",
+        "Hash":  "1C42C91039BD1061D8337E894E1BE7ACCE063EC10E1F5E5574FAEC2533CBA118"
+    },
+    {
+        "File":  "scripts\\build.cjs",
+        "Hash":  "1FE36FAE8D16DC5328C4694ED89F23CF2F49EE7CF3CC883F88E6B64E29A99993"
+    },
+    {
+        "File":  "scripts\\check-assets.cjs",
+        "Hash":  "1BD4878A6BA12A542F10FF31293FCC2EF416E019BE01FD205D24311EF9D5C8F5"
+    },
+    {
+        "File":  "scripts\\check-metadata.cjs",
+        "Hash":  "38184EF636DCFA596908AF085B972EB1F4BEC458A7C6CB08542917EFDF9C8999"
+    },
+    {
+        "File":  "products\\tshirt-02.html",
+        "Hash":  "D3339A66CD1C9015EFDE4BB5361AF8591E050487B99E20C709E40D6AF7DF2AC3"
+    },
+    {
+        "File":  "products\\tshirt-01.html",
+        "Hash":  "1EE86675F5431774ABC65700E7994ED9827C7812DDE657AB0E00624D68800F9D"
+    },
+    {
+        "File":  "products\\hoodie-01.html",
+        "Hash":  "C6F94FF08C257CBDA4849C1A153C135D398D4DFE8A9762E03E47AE0FA7B73159"
+    },
+    {
+        "File":  "scripts\\check-tracking.cjs",
+        "Hash":  "C3C121D49D0B506F4C24EBD5598CB8A86D8471150B52970814E07AD5ACFB991D"
+    },
+    {
+        "File":  "scripts\\check-readiness.cjs",
+        "Hash":  "DE843197498B7A457EE3B6D0DEDC5D4522F1058E9458AB8EF60693F422758651"
+    },
+    {
+        "File":  "scripts\\check.cjs",
+        "Hash":  "70AC6FCFEA26306861CCB1BE2278F05C6D6A13C098FE972017B16F850324449E"
+    },
+    {
+        "File":  "scripts\\metadata.cjs",
+        "Hash":  "58211D5A145D31D802FCADCCD81B7892C9FD919198841BE035FBBEFB61B343B8"
+    },
+    {
+        "File":  "scripts\\preview.cjs",
+        "Hash":  "AB3FDBCAD715DD7B7A2E13DFD27BDE0EEFB95D59C3C37EC435B00CCB5025913B"
+    },
+    {
+        "File":  "scripts\\prepare-assets.cjs",
+        "Hash":  "8B1A7B61692F5E2E547E2C8963F34D354831286567FAE0CF55A972CC627F889F"
+    }
+]
