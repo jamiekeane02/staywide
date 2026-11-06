@@ -1,0 +1,23 @@
+const fs = require('node:fs');
+const assert = require('node:assert/strict');
+(async()=>{
+  const c=await require('./shopify-cdp.cjs')();
+  await c.send('Network.setCacheDisabled',{cacheDisabled:true});
+  await c.send('Network.setBlockedURLs',{urls:['*sdks.shopifycdn.com/buy-button/*']});
+  await c.visit('products/hoodie-01.html');
+  assert.equal(await c.ev('stayWideShopify.status'),'unavailable');
+  assert(await c.ev(`document.querySelector('[data-shopify-product]').hidden && document.querySelector('[data-shopify-status]').textContent==='Shopping is temporarily unavailable. Please try again.' && !document.querySelector('#purchase-form')`));
+  await c.ev(`document.querySelector('[data-gallery-next]').click()`);
+  await c.wait(`document.querySelector('[data-gallery-current]').textContent==='2'`);
+  await c.send('Network.setBlockedURLs',{urls:[]});
+  await c.visit('products/hoodie-01.html');
+  assert.equal(await c.ev('stayWideShopify.status'),'ready');
+  const before=c.requests.length;
+  await c.send('Page.navigate',{url:'http://127.0.0.1:8080/404.html'});
+  await c.wait(`location.pathname==='/404.html' && document.readyState==='complete'`);
+  assert(!await c.ev('!!window.stayWideShopify'));
+  assert(!c.requests.slice(before).some(u=>u.includes('sdks.shopifycdn.com/buy-button')));
+  assert.deepEqual(c.errors,[]);
+  fs.writeFileSync('checks/shopify/failure-results.json',JSON.stringify({blockedCDN:'pass',galleryDuringFailure:'pass',reloadRecovery:'pass',noCommerceOn404:'pass',errors:c.errors},null,2));
+  console.log('PASS: real blocked CDN, useful error, gallery survives, reload recovery, no commerce on 404.');c.close();
+})().catch(e=>{console.error(e);process.exit(1)});

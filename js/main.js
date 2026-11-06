@@ -6,28 +6,6 @@
   const productId = document.body.dataset.product;
   const product = window.stayWideCatalog.products.find(item => item.id === productId);
 
-  function initCartPreview() {
-    const dialog = document.querySelector('#cart-dialog');
-    const opener = document.querySelector('#cart-open');
-    if (!dialog || !opener) return;
-    let previousFocus;
-    opener.disabled = false;
-    opener.addEventListener('click', () => {
-      previousFocus = document.activeElement;
-      dialog.showModal();
-    });
-    dialog.querySelectorAll('.dialog-close').forEach(button => {
-      button.addEventListener('click', () => dialog.close());
-    });
-    dialog.addEventListener('click', event => {
-      if (event.target !== dialog) return;
-      const bounds = dialog.getBoundingClientRect();
-      if (event.clientX < bounds.left || event.clientX > bounds.right ||
-          event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
-    });
-    dialog.addEventListener('close', () => previousFocus?.focus({ preventScroll: true }));
-  }
-
   function initCardPreviews() {
     const pointer = matchMedia('(hover: hover) and (pointer: fine)');
     const cards = [...document.querySelectorAll('.product-card')].filter(card => card.querySelector('[data-card-secondary]'));
@@ -157,86 +135,6 @@
     updateControls();
   }
 
-  // SHOPIFY CART ADAPTER — replace only when verified products/variants are available.
-  // Do not send these temporary product slugs or size labels as Shopify variant IDs.
-  // A real adapter must resolve variants, recheck availability, create/update the Shopify
-  // cart and return authoritative cart lines / checkout URL before firing add_to_cart.
-  const commerce = {
-    async addItem() {
-      return { accepted: false, reason: 'not_connected' };
-    }
-  };
-  // Future adapter contract: addItem({ variantId, quantity }) -> authoritative cart.
-  // Map cart.lines to #cart-line-template: thumbnail, title, size, quantity, price,
-  // status and dispatch. Update #cart-item-count, .cart-count and #cart-subtotal.
-  // Wire quantity/remove to Shopify mutations, then re-render the returned cart.
-  // Enable #checkout only with a verified cart.checkoutUrl; navigate to Shopify.
-  // No local cart, pretend line items or checkout URL is generated in this preview.
-
-  function initPurchase() {
-    const form = document.querySelector('#purchase-form');
-    if (!form) return;
-    const button = form.querySelector('[type="submit"]');
-    const sizeStatus = document.querySelector('#size-status');
-    const status = document.querySelector('#purchase-status');
-    const options = [...form.querySelectorAll('[name="size"]')];
-    // Keep the future size/cart flow intact, but never enable unconfirmed commerce.
-    if (product.development || !product.commerceReady) {
-      button.disabled = true;
-      button.textContent = 'COMING SOON';
-      options.forEach(input => { input.disabled = true; });
-      form.addEventListener('submit', event => event.preventDefault());
-      return;
-    }
-    const soldOut = product.status !== 'available' || !product.variants.some(variant => variant.available);
-    button.disabled = soldOut;
-    button.textContent = soldOut ? (product.status === 'coming_soon' ? 'Coming soon' : 'Sold out') : 'Select a size';
-    function clearSizeError() {
-      sizeStatus.textContent = '';
-      options.forEach(input => input.removeAttribute('aria-invalid'));
-    }
-    form.addEventListener('change', event => {
-      if (event.target.name !== 'size') return;
-      clearSizeError();
-      status.textContent = '';
-      document.querySelector('#selected-size').textContent = event.target.value;
-      button.textContent = 'Add to cart';
-
-    });
-    form.addEventListener('submit', async event => {
-      event.preventDefault();
-      if (soldOut) return;
-      const size = form.querySelector('[name="size"]:checked');
-      if (!size || size.disabled) {
-        sizeStatus.textContent = 'Choose a size first.';
-        options.forEach(input => input.setAttribute('aria-invalid', 'true'));
-        options.find(input => !input.disabled)?.focus();
-        return;
-      }
-      clearSizeError();
-      button.disabled = true;
-      form.setAttribute('aria-busy', 'true');
-
-      try {
-        const variant = product.variants.find(variant => variant.size === size.value && variant.available);
-        if (!variant) throw new Error('Unavailable variant');
-        const result = await commerce.addItem({ variantId: variant.shopifyVariantId, quantity: 1 });
-        if (!result.accepted) {
-          status.textContent = 'Orders are not open yet. Nothing was added to your cart.';
-        }
-        // INTEGRATION TODO: render the returned Shopify cart on verified success, then
-        // call stayWideTrack('add_to_cart', { currency, value, items }). Never emit for this preview.
-      } catch {
-        status.textContent = 'That could not be added. Please try again.';
-      } finally {
-        button.disabled = false;
-        form.removeAttribute('aria-busy');
-      }
-    });
-  }
-
-  initCartPreview();
   initCardPreviews();
   initProductGallery();
-  initPurchase();
 })();

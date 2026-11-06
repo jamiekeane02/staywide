@@ -19,11 +19,11 @@ The preview returns HTTP 404 at unknown paths (try `/missing/deep/page`) and exc
 
 - `templates/home.html`, `templates/product.html`, `templates/info.html`: retained layouts and content.
 - `templates/consent.html`, `templates/404.html`: consent controls and error page.
-- `js/catalog.js`: products, states, dispatch, descriptions, images, variants and future commerce IDs. Three products use real photography; commercial data remains unconfirmed. `listed: false` withholds Hoodie 02. Development products hide prices, sizes and unconfirmed details; cards show DROP 001 and purchase actions remain disabled with COMING SOON. Future confirmed states remain `available`, `sold_out`, `coming_soon`.
+- `js/catalog.js`: products, states, dispatch, descriptions, images, variants and real Shopify product IDs. Three products use real photography and verified Buy Button mappings. `listed: false` withholds Hoodie 02. Approved prices remain visible; Shopify owns purchasable sizes and inventory. Unconfirmed editorial details and Product/Offer schema remain gated. Future confirmed states remain `available`, `sold_out`, `coming_soon`.
 - `js/site-config.js`: site name, confirmed staywide.cc production URL/ownership flag, blank tracking IDs, brand/social assets, social profiles and shipping slots. Public values only, never secrets.
 - `scripts/build.cjs` and `scripts/metadata.cjs`: static HTML, footer/cart, metadata, schema, sitemap and robots. No runtime SEO injection.
 - `css/styles.css`: original colours, typography, silhouettes and responsive design, with restrained consent styling.
-- `js/main.js`: gallery, sizes and unconnected Shopify adapter. `js/consent.js`: preferences. `js/tracking.js`: gated SDKs and lean event helper.
+- `js/main.js`: gallery and card interactions. `js/shopify-buy.js`: shared official Shopify loader, product controls, cart and checkout. `js/consent.js`: preferences. `js/tracking.js`: gated SDKs and lean event helper.
 
 Product schema is withheld for `development: true`. Do not clear that flag just to obtain schema: visible copy, imagery, price and availability must be real. Offers also require `commerceReady: true`; coming-soon products have no orderable Offer. Rebuild after catalogue/metadata changes.
 
@@ -45,11 +45,11 @@ Set `listed: false` to withhold a catalogue entry, then rebuild. The builder rem
 
 Accept/Reject/Manage have equal prominence. Withdrawal blocks helper events, disables GA/revokes Meta, removes accessible associated `_ga*`, `_fbp`, `_fbc` cookies, and reloads only if an SDK had started. Reload unloads third-party code; blank-ID changes need no reload. No pre-consent event replay.
 
-`window.stayWideTrack(name, data)` returns false when nothing can be forwarded. Names: `page_view`, `view_item`, `add_to_cart`, `begin_checkout`, `purchase`, `email_signup`. Views deduplicate separately per provider; development products do not emit view_item. Preview buttons emit no commerce events.
+`window.stayWideTrack(name, data)` returns false when nothing can be forwarded. Names: `page_view`, `view_item`, `add_to_cart`, `begin_checkout`, `purchase`, `email_signup`. Views deduplicate separately per provider; development products do not emit view_item. Commerce events are emitted only after an authoritative cart increase or actual checkout handoff.
 
 Data contract: `{ currency: 'EUR', value, items: [{ item_id, item_name, item_variant, price, quantity }], transaction_id }`. Supply only verified product/order data, never personal information. No contact fields are forwarded.
 
-Future integration: add_to_cart only after successful Shopify mutation; begin_checkout before a verified real checkout handoff; email_signup only after provider success. Purchase belongs to verified Shopify checkout/order integration, with attribution and deduplication decided there. No email form, fake signup or fake purchase exists.
+Current integration: add_to_cart only after successful Shopify mutation; begin_checkout before a verified real checkout handoff; email_signup only after provider success. Purchase belongs to verified Shopify checkout/order integration, with attribution and deduplication decided there. No email form, fake signup or fake purchase exists.
 
 ## Checks
 
@@ -71,4 +71,4 @@ Run browser scripts sequentially; they share the dedicated tab. Keep debugging l
 
 Regenerate share/favicon assets with dedicated Chrome running: `node --preserve-symlinks --preserve-symlinks-main scripts/prepare-social-assets.cjs`, then rebuild. The original prepare-assets.cjs pipeline calls this composer after photograph preparation. No image dependency is needed. Run composition and browser checks sequentially because they share the dedicated test tab.
 
-Nothing was committed, pushed, deployed or migrated. No dependency, framework, live commerce or active tracker was added.
+Nothing was committed, pushed, deployed or migrated. No dependency, framework or active GA/Meta tracker was added. Real Shopify Buy Button commerce is integrated locally; see SHOPIFY-INTEGRATION.md.

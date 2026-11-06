@@ -11,7 +11,7 @@ function fixture(count) {
   return {html:output['products/hoodie-01.html'],catalog:source};
 }
 (async()=>{
-  const tabs=await(await fetch('http://127.0.0.1:9222/json')).json();
+  const tabs=await(await fetch(`http://127.0.0.1:${process.env.CHROME_DEBUG_PORT || 9222}/json`)).json();
   const socket=new WebSocket(tabs.find(t=>t.type==='page').webSocketDebuggerUrl);
   await new Promise(r=>socket.addEventListener('open',r,{once:true}));
   let id=0,intercept=null;const pending=new Map(),errors=[],requests=[],results=[];
@@ -31,7 +31,7 @@ function fixture(count) {
   const ev=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
   const pause=ms=>new Promise(r=>setTimeout(r,ms));
   async function until(expression,label){for(let n=0;n<150;n++){if(await ev(expression))return;await pause(20);}throw Error('Timed out: '+label);}
-  async function visit(page){requests.length=0;await send('Page.navigate',{url:root+page});await until(`location.href===${JSON.stringify(root+page)}&&document.readyState==='complete'&&document.querySelector('#cart-open')?.disabled===false`,'navigation');await ev(`document.querySelector('[data-cookie-reject]').click();document.activeElement?.blur()`);}
+  async function visit(page){requests.length=0;await send('Page.navigate',{url:root+page});await until(`location.href===${JSON.stringify(root+page)}&&document.readyState==='complete'&&window.stayWideShopify?.status==='ready'`,'navigation');await ev(`document.querySelector('[data-cookie-reject]').click();document.activeElement?.blur()`);}
   async function settled(){await until(`!document.querySelector('[data-gallery]')?.hasAttribute('aria-busy')`,'decoded gallery');await pause(170);}
   async function key(key){await send('Input.dispatchKeyEvent',{type:'keyDown',key,code:key});await send('Input.dispatchKeyEvent',{type:'keyUp',key,code:key});}
   async function move(selector){const p=await ev(`(()=>{const r=document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect();return{x:r.left+r.width/2,y:r.top+r.height/2}})()`);await send('Input.dispatchMouseEvent',{type:'mouseMoved',...p});await pause(180);}
@@ -52,9 +52,11 @@ function fixture(count) {
       }else{
         await until(`document.querySelector(${JSON.stringify(card)}+' .image-secondary[data-ready]')`,'prepared hover');
         await move(card+' .product-image');
+        await until(`getComputedStyle(document.querySelector(${JSON.stringify(card)}+' .image-secondary')).opacity==='1'`,'hover transition');
         assert.equal(await ev(`getComputedStyle(document.querySelector(${JSON.stringify(card)}+' .image-secondary')).opacity`),'1');
         const rect=await ev(`document.querySelector(${JSON.stringify(card)}).getBoundingClientRect().height`);
         await move(card+' .product-caption');
+        await until(`getComputedStyle(document.querySelector(${JSON.stringify(card)}+' .image-secondary')).opacity==='0'`,'caption transition');
         assert.equal(await ev(`getComputedStyle(document.querySelector(${JSON.stringify(card)}+' .image-secondary')).opacity`),'0','Caption is not image hover');
         assert.equal(await ev(`document.querySelector(${JSON.stringify(card)}).getBoundingClientRect().height`),rect);
         const source=await ev(`document.querySelector(${JSON.stringify(card)}+' .image-secondary img').currentSrc`);
@@ -69,6 +71,7 @@ function fixture(count) {
     }else{
       await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:2,y:2});
       await key('Tab');await ev(`document.querySelector('.collection-grid .product-card').focus()`);await pause(180);
+      await until(`document.activeElement.matches(':focus-visible')&&getComputedStyle(document.activeElement.querySelector('.image-secondary')).opacity==='1'`,'keyboard preview transition');
       assert(await ev(`document.activeElement.matches(':focus-visible')&&getComputedStyle(document.activeElement.querySelector('.image-secondary')).opacity==='1'`),'Keyboard image preview');
       await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
       assert.equal(await ev(`getComputedStyle(document.querySelector('.image-secondary')).transitionDuration`),'0s');

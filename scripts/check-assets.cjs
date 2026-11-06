@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const assert = require('node:assert/strict');
 const products = require('../js/catalog.js').products.filter(p => p.listed !== false);
 (async () => {
-  const tabs = await (await fetch('http://127.0.0.1:9222/json')).json();
+  const tabs = await (await fetch(`http://127.0.0.1:${process.env.CHROME_DEBUG_PORT || 9222}/json`)).json();
   const socket = new WebSocket(tabs.find(t => t.type === 'page').webSocketDebuggerUrl);
   await new Promise(resolve => socket.addEventListener('open', resolve, { once:true }));
   let id=0;const pending=new Map(),errors=[],failed=[],results=[];

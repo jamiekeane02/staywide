@@ -5,7 +5,7 @@
     "width": 375,
     "scroll": 375,
     "cards": 3,
-    "firstProduct": 494.890625,
+    "firstProduct": 275.390625,
     "headerFits": true
   },
   {
@@ -46,7 +46,7 @@
     "width": 390,
     "scroll": 390,
     "cards": 3,
-    "firstProduct": 494.890625,
+    "firstProduct": 275.390625,
     "headerFits": true
   },
   {
@@ -87,7 +87,7 @@
     "width": 430,
     "scroll": 430,
     "cards": 3,
-    "firstProduct": 494.890625,
+    "firstProduct": 275.390625,
     "headerFits": true
   },
   {
@@ -126,9 +126,9 @@
     "page": "index.html",
     "viewport": "768x1024",
     "width": 768,
-    "scroll": 753,
+    "scroll": 768,
     "cards": 3,
-    "firstProduct": 507.625,
+    "firstProduct": 238.125,
     "headerFits": true
   },
   {
@@ -169,7 +169,7 @@
     "width": 1440,
     "scroll": 1425,
     "cards": 3,
-    "firstProduct": 556.015625,
+    "firstProduct": 286.515625,
     "headerFits": true
   },
   {

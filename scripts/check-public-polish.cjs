@@ -6,23 +6,24 @@ const products = require('../js/catalog.js').products.filter(p => p.listed !== f
 const manifest = require('../checks/social-assets-manifest.json');
 const root = 'http://127.0.0.1:8080/';
 const pages = ['index.html', 'info.html', '404.html', ...products.map(p => `products/${p.id}.html`)];
-const forbidden = /Independent clothing from Ireland|development|provisional|collection preview|preview state|€XX|TO BE CONFIRMED|real product photography/i;
+const forbidden = /Independent clothing from Ireland|development|provisional|collection preview|preview state|€XX|TO BE CONFIRMED|real product photography|Drop 001|Hoodie 01|T-shirt 0[12]|dispatch|CAMPAIGN IMAGE \/ FILM/i;
 const metadata = [];
 for (const page of pages) {
   const html = fs.readFileSync(page, 'utf8');
   const customerHTML = html.replace(/<!--[^]*?-->/g, '').replace(/<script[^>]*>[^]*?<\/script>/g, '');
   assert(!forbidden.test(customerHTML), `${page}: internal copy`);
   const bracketed = customerHTML.match(/\[[^\]\n]+\]/g) || [];
-  assert.deepEqual(bracketed, page === 'index.html' ? ['[CAMPAIGN IMAGE / FILM]'] : [], 'Only approved campaign placeholder remains');
+  assert.deepEqual(bracketed, [], 'No public placeholders remain');
   const meta = Object.fromEntries([...html.matchAll(/<meta (?:property|name)="([^"]+)" content="([^"]*)">/g)].map(m => [m[1], m[2]]));
   const p = products.find(p => page === `products/${p.id}.html`);
   if (page === 'index.html' || p) {
-    const title = p ? `${p.name} — Stay Wide` : 'Stay Wide — Drop 001';
-    const description = p ? 'Stay Wide / Drop 001.' : 'Drop 001.';
+    const title = p ? `${p.name} — Stay Wide` : 'Stay Wide';
+    const description = p ? p.metaDescription : 'Stay Wide.';
     const social = p ? p.socialImage : config.defaultSocialImage;
     assert.equal(meta['og:title'], title); assert.equal(meta['twitter:title'], title);
     assert.equal(meta['og:description'], description); assert.equal(meta['twitter:description'], description);
-    assert.equal(meta.description, p ? description : 'Stay Wide. Drop 001.');
+    assert.equal(meta.description, description);
+    assert(html.includes(`<title>${title}</title>`));
     assert.equal(meta['og:image'], config.productionUrl + '/' + social.src);
     assert.equal(meta['twitter:image'], meta['og:image']);
     assert.equal(meta['og:image:width'], '1200'); assert.equal(meta['og:image:height'], '630');
@@ -54,7 +55,7 @@ for (const output of manifest.outputs) {
   else if (output.composition) ratioCheck(output.composition);
 }
 (async () => {
-  const tabs = await (await fetch('http://127.0.0.1:9222/json')).json();
+  const tabs = await (await fetch(`http://127.0.0.1:${process.env.CHROME_DEBUG_PORT || 9222}/json`)).json();
   const socket = new WebSocket(tabs.find(t => t.type === 'page').webSocketDebuggerUrl);
   await new Promise(r => socket.addEventListener('open', r, { once: true }));
   let id = 0; const pending = new Map(), requests = [], errors = [], headers = [];
@@ -88,11 +89,30 @@ for (const output of manifest.outputs) {
         assert(layout.navHeights.every(h => h >= 44 && h < 48), 'Navigation stays on one row');
         assert(!forbidden.test(layout.text), 'No public internal copy');
         assert(!requests.some(u => /-share\.jpg/.test(u)), 'Social images must not load during browsing');
-        if (page !== '404.html') assert(await ev(`!document.querySelector('#cart-open').disabled && document.querySelector('.cart-count').textContent==='0'`));
+        if (page !== '404.html') assert(await ev(`!document.querySelector('#cart-open,#cart-dialog') && !!window.stayWideShopify`));
         if (page === 'index.html') {
-          assert(await ev(`document.querySelector('.opening .kicker').textContent==='DROP 001 / A FIRST LOOK' && document.querySelector('.opening h1').textContent==='STAY WIDE.' && document.querySelector('.opening-line').textContent==='COMING SOON' && document.querySelector('.opening a').textContent==='View drop ↓' && document.querySelector('.opening a').getAttribute('href')==='#shop'`));
+          assert(await ev(`!document.querySelector('.opening .kicker') && document.querySelector('.opening h1').textContent==='STAY WIDE.' && !document.querySelector('.opening-line') && document.querySelector('.opening a').textContent==='View collection ↓' && document.querySelector('.opening a').getAttribute('href')==='#shop'`));
+          assert(await ev(`document.querySelector('#shop-title').textContent==='Collection' && document.querySelector('.campaign-media').hidden && document.querySelector('.campaign-media').getBoundingClientRect().height===0 && document.querySelector('#shop').getBoundingClientRect().top===document.querySelector('.opening').getBoundingClientRect().bottom`), 'Campaign leaves no gap');
+          await ev(`Promise.all([...document.querySelectorAll('.collection-grid .image-primary img')].map(i=>{i.loading='eager';return i.decode()}))`);
           const shot = await send('Page.captureScreenshot', { format: 'png' });
           fs.writeFileSync(`checks/polish-home-${width}.png`, Buffer.from(shot.data, 'base64'));
+        }
+        if (page !== '404.html') {
+          assert.deepEqual(await ev(`[...document.querySelector('.announcement').children].map(e=>e.textContent)`), ['STAY WIDE', 'COMING SOON']);
+          const cards = await ev(`[...document.querySelectorAll('.product-card')].map(card=>{const n=card.querySelector('strong'),p=card.querySelector('.product-price'),nr=n.getBoundingClientRect(),pr=p.getBoundingClientRect();return {id:card.dataset.product,name:n.textContent,price:p.textContent,separate:pr.left>=nr.right || pr.top>=nr.bottom,inside:pr.right<=card.getBoundingClientRect().right+.5};})`);
+          for (const card of cards) {
+            const product = products.find(p=>p.id===card.id);
+            assert.equal(card.name, product.name); assert.equal(card.price, `€${product.price}`);
+            assert(card.separate && card.inside, 'Names and prices fit without collision');
+          }
+          assert(await ev(`!document.querySelector('.product-state') && !document.querySelector('[data-cart-dispatch]')`));
+
+        }
+        const product = products.find(p=>page===`products/${p.id}.html`);
+        if (product) {
+          assert.equal(await ev(`document.querySelector('#product-title').textContent`), product.name);
+          assert.equal(await ev(`document.querySelector('.detail-price').textContent`), `€${product.price}`);
+          assert(await ev(`!document.querySelector('[name=size]') && !!document.querySelector('[data-shopify-product]') && document.querySelector('#size-note').textContent==='Size up for a looser fit.'`), 'Shopify owns sizes; approved fit note remains adjacent');
         }
         delete layout.text;
         headers.push({ page, viewport: `${width}x${height}`, ...layout });
@@ -107,7 +127,7 @@ for (const output of manifest.outputs) {
     }
     assert.equal((await fetch(root + config.icons.ico)).status, 200);
     assert.deepEqual(errors, []);
-    fs.writeFileSync('checks/public-polish-results.json', JSON.stringify({ metadata, headers, socialAssets: 'pass', icoFrames: [16, 32, 48], internalCopy: 'absent except approved campaign placeholder', noSocialDownloads: true, runtimeErrors: errors }, null, 2) + '\n');
+    fs.writeFileSync('checks/public-polish-results.json', JSON.stringify({ metadata, headers, productNamesPricesSizesFit: 'pass', campaign: 'hidden without gap', commerce: 'one Shopify mount; no preview cart or static size form (live checks in checks/shopify/results.json)', socialAssets: 'pass', icoFrames: [16, 32, 48], internalCopy: 'absent', noSocialDownloads: true, runtimeErrors: errors }, null, 2) + '\n');
     console.log('PASS: 24 public page/viewport checks, exact OG/X/canonicals, proportional headers, social dimensions/content/ratios, ICO frames, no social downloads or internal public copy.');
   } finally { socket.close(); }
 })().catch(e => { console.error(e); process.exitCode = 1; });

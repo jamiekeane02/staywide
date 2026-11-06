@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en-IE">
 <head>
   <meta charset="utf-8">
@@ -11,26 +11,26 @@
   <script src="js/consent.js" defer></script>
   <script src="js/tracking.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/shopify-buy.js" defer></script>
 </head>
 <body data-page="info">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="announcement"><span>STAY WIDE / DROP 001</span><span>DROP 001</span></div>
+  <div class="announcement"><span>STAY WIDE</span><span>COMING SOON</span></div>
   <header class="site-header">
     <a class="wordmark" href="index.html" aria-label="Stay Wide home">{{brand}}</a>
     <nav aria-label="Main navigation">
       <a href="index.html#shop">Shop</a>
       <a href="info.html">Info</a>
-      <button type="button" class="text-button" id="cart-open" disabled>Cart <span class="cart-count">0</span></button>
+
     </nav>
   </header>
   <main id="main" class="info-page section-pad section-space">
     <p class="micro kicker">STAY WIDE / PRACTICAL THINGS</p><h1>Info</h1>
-    <p class="quiet">Drop 001 is coming soon. Orders are not open yet.</p>
+    <p class="quiet">Orders are not open yet.</p>
     <div class="product-details">
       <section id="shipping"><h2>Shipping</h2><p>Shipping destinations and rates will be available before orders open.</p></section>
-      <section id="dispatch"><h2>Dispatch / fulfilment</h2><p>Dispatch information will be available before orders open.</p></section>
       <section id="returns"><h2>Returns</h2><p>Returns information will be available before orders open.</p></section>
-      <section id="sizing"><h2>Sizing</h2><p>Size guides will be available with the drop.</p></section>
+      <section id="sizing"><h2>Sizing</h2><p>Size guides will be available before orders open.</p></section>
       <section id="contact"><h2>Contact</h2><p>Contact details will be available before orders open.</p></section>
       <section id="privacy"><h2>Privacy</h2><p>Full privacy information will be available before orders open. You can manage optional tracking below.</p></section>
       <section id="cookies"><h2>Cookies</h2><p>Your cookie preference is stored in this browser for up to 180 days. Essential storage is always active. Analytics and Advertising are optional and independently controlled.</p><p>Optional tracking is currently off.</p><button type="button" class="text-button" data-cookie-settings disabled>Cookie settings</button><noscript><p>Optional tracking is off. Enable JavaScript to change preferences.</p></noscript></section>
@@ -38,7 +38,7 @@
     </div>
   </main>
 {{footer}}
-{{cart}}
+<p class="commerce-notice section-pad" data-shopify-error role="status" hidden></p>
 {{consent}}
 </body>
 </html>

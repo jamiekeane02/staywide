@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en-IE">
 <head>
   <meta charset="utf-8">
@@ -11,56 +11,51 @@
   <script src="../js/consent.js" defer></script>
   <script src="../js/tracking.js" defer></script>
   <script src="../js/main.js" defer></script>
+  <script src="../js/shopify-buy.js" defer></script>
 </head>
 <body data-page="product" data-product="{{id}}">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="announcement"><span>STAY WIDE / DROP 001</span><span>DROP 001</span></div>
+  <div class="announcement"><span>STAY WIDE</span><span>COMING SOON</span></div>
   <header class="site-header">
     <a class="wordmark" href="../index.html" aria-label="Stay Wide home">{{brand}}</a>
     <nav aria-label="Main navigation">
       <a href="../index.html#shop">Shop</a>
       <a href="../info.html">Info</a>
-      <button type="button" class="text-button" id="cart-open" disabled>Cart <span class="cart-count">0</span></button>
+
     </nav>
   </header>
   <main id="main">
-    <div class="breadcrumb section-pad"><a href="../index.html#shop">← Back to shop</a><span class="micro">DROP 001</span></div>
+    <div class="breadcrumb section-pad"><a href="../index.html#shop">← Back to shop</a></div>
     <article class="product-layout section-pad" aria-labelledby="product-title">
       <div class="product-gallery">
 {{gallery}}
       </div>
       <div class="purchase-panel">
-        <p class="micro kicker">DROP 001 / {{kind}}</p>
+        <p class="micro kicker">STAY WIDE / {{kind}}</p>
         <div class="product-title-row"><h1 id="product-title">{{name}}</h1>{{price}}</div>
-{{state}}
-        <form id="purchase-form" novalidate>
-          <fieldset {{unconfirmed}} class="size-picker" aria-describedby="size-note size-status"><legend>Choose size <span id="selected-size"></span></legend>
-<div class="size-options">{{sizes}}</div>
-            <!-- INVENTORY TODO: use disabled on unavailable variant inputs and include "unavailable" in their accessible label. Do not invent availability. -->
-            <p class="field-hint" id="size-note">Select your size.</p>
-            <p id="size-status" class="form-status" aria-live="polite"></p>
-          </fieldset>
-          <p {{unconfirmed}} class="fit-note">{{fit}} <a href="#size-guide">Size guide</a></p>
-          <!-- SHOPIFY TODO: map selected size to a verified variant and call the cart adapter. This button currently reports the unconnected state only. -->
-          <button class="button button-dark add-to-cart" type="submit" disabled>{{action}}</button>
-          <p id="purchase-status" class="form-status" role="status"></p>
-        </form>
+        <div class="purchase-controls">
+          <p class="micro commerce-label">CHOOSE SIZE</p>
+          <p class="field-hint" id="size-note">{{fitNote}}</p>
+          <p class="form-status" data-shopify-status role="status">Loading shopping options...</p>
+          <div class="shopify-commerce" data-shopify-product hidden></div>
+          <noscript><p>Enable JavaScript to choose a size and shop securely.</p></noscript>
+        </div>
 <p {{unconfirmed}} class="description-placeholder">{{description}}</p>
         <div {{unconfirmed}} class="product-details">
           <details id="size-guide"><summary>Fit &amp; size guide</summary><p>{{fit}} {{sizeGuide}}</p></details>
           <details><summary>Materials &amp; decoration</summary><p>{{materials}}<br>{{decoration}}</p></details>
           <details><summary>Care</summary><p>{{care}}</p></details>
-          <details><summary>Shipping, dispatch &amp; returns</summary><p><a class="inline-link" href="../info.html">Shipping / dispatch / returns ↗</a></p></details>
+          <details><summary>Shipping &amp; returns</summary><p><a class="inline-link" href="../info.html">Shipping / returns ↗</a></p></details>
         </div>
       </div>
     </article>
     <section class="recommendations section-pad section-space" aria-labelledby="recommendations-title">
-      <div class="section-heading"><div><p class="micro kicker">THE REST OF THE DROP</p><h2 id="recommendations-title">You might also like</h2></div><a class="inline-link" href="../index.html#shop">All pieces ↗</a></div>
+      <div class="section-heading"><div><h2 id="recommendations-title">You might also like</h2></div><a class="inline-link" href="../index.html#shop">All pieces ↗</a></div>
 <div class="product-grid recommendation-grid">{{cards}}</div>
     </section>
   </main>
 {{footer}}
-{{cart}}
+<p class="commerce-notice section-pad" data-shopify-error role="status" hidden></p>
 {{consent}}
 </body>
 </html>

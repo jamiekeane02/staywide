@@ -2,35 +2,35 @@
   "metadata": [
     {
       "page": "index.html",
-      "title": "Stay Wide — Drop 001",
-      "description": "Drop 001.",
+      "title": "Stay Wide",
+      "description": "Stay Wide.",
       "canonical": "https://staywide.cc/",
       "image": "https://staywide.cc/assets/brand/stay-wide-share.jpg",
       "alt": "Stay Wide logo on white"
     },
     {
       "page": "products/hoodie-01.html",
-      "title": "Hoodie 01 — Stay Wide",
-      "description": "Stay Wide / Drop 001.",
+      "title": "Blower Hoodie — Stay Wide",
+      "description": "Blower Hoodie by Stay Wide.",
       "canonical": "https://staywide.cc/products/hoodie-01.html",
       "image": "https://staywide.cc/assets/products/hoodie-01-share.jpg",
-      "alt": "Stay Wide Hoodie 01, black phone-print hoodie flat lay, with Stay Wide logo"
+      "alt": "Blower Hoodie, black phone-print hoodie flat lay, with Stay Wide logo"
     },
     {
       "page": "products/tshirt-01.html",
-      "title": "T-shirt 01 — Stay Wide",
-      "description": "Stay Wide / Drop 001.",
+      "title": "Stay Wide Tee — Stay Wide",
+      "description": "Stay Wide Tee.",
       "canonical": "https://staywide.cc/products/tshirt-01.html",
       "image": "https://staywide.cc/assets/products/tshirt-01-share.jpg",
-      "alt": "Stay Wide T-shirt 01, white T-shirt with blue logo flat lay, with Stay Wide logo"
+      "alt": "Stay Wide Tee, white T-shirt with blue logo flat lay, with Stay Wide logo"
     },
     {
       "page": "products/tshirt-02.html",
-      "title": "T-shirt 02 — Stay Wide",
-      "description": "Stay Wide / Drop 001.",
+      "title": "Ashtray Tee — Stay Wide",
+      "description": "Ashtray Tee by Stay Wide.",
       "canonical": "https://staywide.cc/products/tshirt-02.html",
       "image": "https://staywide.cc/assets/products/tshirt-02-share.jpg",
-      "alt": "Stay Wide T-shirt 02, white ashtray-print T-shirt flat lay, with Stay Wide logo"
+      "alt": "Ashtray Tee, white ashtray-print T-shirt flat lay, with Stay Wide logo"
     }
   ],
   "headers": [
@@ -40,10 +40,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 79.984375,
+      "gap": 143,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -54,10 +53,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 79.984375,
+      "gap": 143,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -81,10 +79,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 79.984375,
+      "gap": 143,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -95,10 +92,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 79.984375,
+      "gap": 143,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -109,10 +105,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 79.984375,
+      "gap": 143,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -123,10 +118,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 94.984375,
+      "gap": 158,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -137,10 +131,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 94.984375,
+      "gap": 158,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -164,10 +157,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 94.984375,
+      "gap": 158,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -178,10 +170,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 94.984375,
+      "gap": 158,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -192,10 +183,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 94.984375,
+      "gap": 158,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -206,10 +196,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 134.984375,
+      "gap": 198,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -220,10 +209,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 134.984375,
+      "gap": 198,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -247,10 +235,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 134.984375,
+      "gap": 198,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -261,10 +248,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 134.984375,
+      "gap": 198,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -275,10 +261,9 @@
       "logoWidth": 96,
       "logoHeight": 53.390625,
       "headerHeight": 56.390625,
-      "gap": 134.984375,
+      "gap": 198,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -289,10 +274,9 @@
       "logoWidth": 104,
       "logoHeight": 57.84375,
       "headerHeight": 60.84375,
-      "gap": 1000.390625,
+      "gap": 1079.40625,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -303,10 +287,9 @@
       "logoWidth": 104,
       "logoHeight": 57.84375,
       "headerHeight": 60.84375,
-      "gap": 1000.390625,
+      "gap": 1079.40625,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -330,10 +313,9 @@
       "logoWidth": 104,
       "logoHeight": 57.84375,
       "headerHeight": 60.84375,
-      "gap": 1000.390625,
+      "gap": 1079.40625,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -344,10 +326,9 @@
       "logoWidth": 104,
       "logoHeight": 57.84375,
       "headerHeight": 60.84375,
-      "gap": 1000.390625,
+      "gap": 1079.40625,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
@@ -358,22 +339,24 @@
       "logoWidth": 104,
       "logoHeight": 57.84375,
       "headerHeight": 60.84375,
-      "gap": 1000.390625,
+      "gap": 1079.40625,
       "overflow": false,
       "navHeights": [
-        44,
         44,
         44
       ]
     }
   ],
+  "productNamesPricesSizesFit": "pass",
+  "campaign": "hidden without gap",
+  "commerce": "one Shopify mount; no preview cart or static size form (live checks in checks/shopify/results.json)",
   "socialAssets": "pass",
   "icoFrames": [
     16,
     32,
     48
   ],
-  "internalCopy": "absent except approved campaign placeholder",
+  "internalCopy": "absent",
   "noSocialDownloads": true,
   "runtimeErrors": []
 }

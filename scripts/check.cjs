@@ -4,7 +4,7 @@
 const fs = require('node:fs');
 const assert = require('node:assert/strict');
 (async () => {
-  const tabs = await (await fetch('http://127.0.0.1:9222/json')).json();
+  const tabs = await (await fetch(`http://127.0.0.1:${process.env.CHROME_DEBUG_PORT || 9222}/json`)).json();
   const socket = new WebSocket(tabs.find(tab => tab.type === 'page').webSocketDebuggerUrl);
   await new Promise(resolve => socket.addEventListener('open', resolve, { once: true }));
   let sequence = 0;
@@ -35,7 +35,7 @@ const assert = require('node:assert/strict');
       await send('Page.navigate', { url: root + page });
       // Wait for this document's deferred scripts, not a previous document.
       for (let retry = 0; retry < 50; retry++) {
-        if (await evaluate(`location.href === ${JSON.stringify(root + page)} && document.readyState === 'complete' && document.querySelector('#cart-open')?.disabled === false`)) break;
+        if (await evaluate(`location.href === ${JSON.stringify(root + page)} && document.readyState === 'complete' && window.stayWideShopify?.status === 'ready'`)) break;
         await new Promise(resolve => setTimeout(resolve, 50));
       }
       await evaluate(`document.querySelector('[data-cookie-reject]').click()`);
@@ -50,12 +50,6 @@ const assert = require('node:assert/strict');
         }
       }
       if (page === 'index.html') await evaluate(`document.querySelector('.collection-grid').innerHTML=window.originalGrid`);
-      await evaluate(`document.documentElement.style.scrollBehavior='auto';window.scrollTo(0,300);document.querySelector('#cart-open').focus({preventScroll:true});window.beforeCartY=scrollY;document.querySelector('#cart-open').click()`);
-      assert(await evaluate(`document.querySelector('#cart-dialog').open && document.querySelector('#checkout').disabled`));
-      await send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
-      await send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
-      await new Promise(resolve => setTimeout(resolve, 50));
-      assert(await evaluate(`!document.querySelector('#cart-dialog').open && document.activeElement.id==='cart-open' && scrollY===window.beforeCartY`), 'Cart close/focus/scroll');
       if (page.startsWith('products/')) {
         assert.equal(await evaluate(`document.querySelector('[name=size]:checked')===null`), true);
         await evaluate(`document.querySelector('[data-gallery-next]').click()`);
@@ -70,19 +64,12 @@ const assert = require('node:assert/strict');
           await evaluate(`(async()=>{while(document.querySelector('[data-gallery]').hasAttribute('aria-busy'))await new Promise(r=>setTimeout(r,10));})()`);
         assert(await evaluate(`!document.querySelector('#image-1').hidden`), 'Swipe gallery');
         }
-        assert(await evaluate(`document.querySelector('.add-to-cart').disabled && document.querySelector('.add-to-cart').textContent==='COMING SOON' && document.querySelector('.size-picker').hidden && !document.querySelector('[name=size]')`), 'Unconfirmed commerce stays disabled');
-        assert(await evaluate(`!document.querySelector('.detail-price') && !document.querySelector('.dispatch') && document.querySelector('.product-details').hidden`), 'Unconfirmed commercial details withheld');
-        await evaluate(`document.querySelector('#purchase-form').requestSubmit()`);
-        assert(await evaluate(`document.querySelector('.cart-count').textContent==='0' && !document.querySelector('#purchase-status').textContent`), 'Submit cannot fabricate a cart');
+        assert(await evaluate(`!document.querySelector('#purchase-form') && !document.querySelector('[data-shopify-product]').hidden && document.querySelector('.detail-price').textContent.startsWith('€') && document.querySelector('.product-details').hidden`), 'Shopify controls; approved price; withheld editorial details');
       }
       results.push({ page, viewport: `${width}x${height}`, ...layout });
     }
   }
   assert.deepEqual(errors, []);
-  // Inspect a cart line in isolation without simulating a customer cart or checkout.
-  await evaluate(`document.querySelector('#cart-lines').append(document.querySelector('#cart-line-template').content.cloneNode(true));document.querySelector('[data-cart-title]').textContent='[TEST PRODUCT]';document.querySelector('[data-cart-size]').textContent='Size: XXL';document.querySelector('[data-cart-dispatch]').textContent='Expected dispatch: [DATE RANGE TO BE CONFIRMED]';document.querySelector('#cart-open').click()`);
-  assert(await evaluate(`document.querySelector('#cart-dialog').scrollWidth<=document.querySelector('#cart-dialog').clientWidth`), 'Cart line fits');
-  await evaluate(`document.querySelector('#cart-dialog').close()`);
   await send('Emulation.setScriptExecutionDisabled', {value:true});
   await send('Page.navigate', {url:root+'index.html'});
   await new Promise(resolve=>setTimeout(resolve,150));
@@ -97,6 +84,6 @@ const assert = require('node:assert/strict');
     const shot=await send('Page.captureScreenshot',{format:'png'});
     fs.writeFileSync(`checks/${name}.png`,Buffer.from(shot.data,'base64'));
   }
-  console.log(`PASS: ${results.length} page/viewport checks, 2/3/4-card layouts, coming-soon controls, withheld unconfirmed details, gallery buttons, cart Escape/focus/scroll and disabled checkout. No JS exceptions.`);
+  console.log(`PASS: ${results.length} page/viewport checks, 2/3/4-card layouts, Shopify mounts, withheld unconfirmed details and gallery buttons (live commerce: check-shopify.cjs). No JS exceptions.`);
   socket.close();
 })().catch(error => { console.error(error); process.exit(1); });

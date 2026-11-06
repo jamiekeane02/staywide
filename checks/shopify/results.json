@@ -1,0 +1,314 @@
+{
+  "products": [
+    {
+      "id": "hoodie-01",
+      "states": [
+        {
+          "size": "S",
+          "disabled": false,
+          "label": "ADD TO BAG"
+        },
+        {
+          "size": "M",
+          "disabled": false,
+          "label": "ADD TO BAG"
+        },
+        {
+          "size": "L",
+          "disabled": false,
+          "label": "ADD TO BAG"
+        },
+        {
+          "size": "XL",
+          "disabled": false,
+          "label": "ADD TO BAG"
+        }
+      ]
+    },
+    {
+      "id": "tshirt-01",
+      "states": [
+        {
+          "size": "XL",
+          "disabled": false,
+          "label": "ADD TO BAG"
+        },
+        {
+          "size": "L",
+          "disabled": false,
+          "label": "ADD TO BAG"
+        },
+        {
+          "size": "M",
+          "disabled": false,
+          "label": "ADD TO BAG"
+        },
+        {
+          "size": "S",
+          "disabled": false,
+          "label": "ADD TO BAG"
+        }
+      ]
+    },
+    {
+      "id": "tshirt-02",
+      "states": [
+        {
+          "size": "XL",
+          "disabled": false,
+          "label": "ADD TO BAG"
+        },
+        {
+          "size": "M",
+          "disabled": false,
+          "label": "ADD TO BAG"
+        },
+        {
+          "size": "L",
+          "disabled": false,
+          "label": "ADD TO BAG"
+        },
+        {
+          "size": "S",
+          "disabled": false,
+          "label": "ADD TO BAG"
+        }
+      ]
+    }
+  ],
+  "viewports": [
+    {
+      "route": "index.html",
+      "width": 375,
+      "height": 812,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/hoodie-01.html",
+      "width": 375,
+      "height": 812,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/tshirt-01.html",
+      "width": 375,
+      "height": 812,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/tshirt-02.html",
+      "width": 375,
+      "height": 812,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "info.html",
+      "width": 375,
+      "height": 812,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "index.html",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/hoodie-01.html",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/tshirt-01.html",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/tshirt-02.html",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "info.html",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "index.html",
+      "width": 430,
+      "height": 932,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/hoodie-01.html",
+      "width": 430,
+      "height": 932,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/tshirt-01.html",
+      "width": 430,
+      "height": 932,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/tshirt-02.html",
+      "width": 430,
+      "height": 932,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "info.html",
+      "width": 430,
+      "height": 932,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "index.html",
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/hoodie-01.html",
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/tshirt-01.html",
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/tshirt-02.html",
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "info.html",
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/hoodie-01.html",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/tshirt-01.html",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "products/tshirt-02.html",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    },
+    {
+      "route": "info.html",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "oldControls": false,
+      "cartCount": 1,
+      "cdn": 1
+    }
+  ],
+  "errors": [],
+  "crossPageCart": "Hoodie → collection → Ashtray: one cart, two lines, EUR 85",
+  "quantityAndRemoval": "pass",
+  "checkout": {
+    "host": "zw8sj5-yw.myshopify.com",
+    "sameTab": true,
+    "event": "begin_checkout"
+  }
+}

@@ -1,8 +1,14 @@
 # Stay Wide — technical launch readiness
 
-Updated 2 November 2026. The website is public at **https://staywide.cc** and remains **not ready to accept orders or enable tracking**. This polish pass changed local source/templates and rebuilt the public files; it did not deploy, migrate, commit or push. The existing configuration confirms staywide.cc. Git is present; publication remains separate.
+Updated 6 November 2026. Local Shopify Buy Button integration is implemented and verified; no deployment, commit or push was performed. See [SHOPIFY-INTEGRATION.md](SHOPIFY-INTEGRATION.md) for current commerce behavior and test evidence. Payments, shipping, policies and production checks remain separate launch gates. The dated copy/asset history below describes earlier work.
 
-Public presentation now uses concise drop/coming-soon copy, hiding unconfirmed prices, sizes, dispatch and specifications. Internal catalogue fields and commerce gates remain. Faithful square icons and four 1200x630 social cards are complete. See [PUBLIC-POLISH.md](PUBLIC-POLISH.md) for exact metadata, metrics, file lists and QA. The campaign placeholder remains intact.
+Copy baseline, 3 November 2026. The website is public at **https://staywide.cc** and remains **not ready to accept orders or enable tracking**. This copy pass changed local source/templates and rebuilt the public files; it did not deploy, migrate, commit or push. The existing configuration confirms staywide.cc. Git is present; publication remains separate.
+
+Current public names and working prices are **Blower Hoodie — €60**, **Stay Wide Tee — €25**, and **Ashtray Tee — €25**, sourced as numeric EUR values in `js/catalog.js`. Product IDs, URLs and photography remain unchanged. Hoodie 02 remains unnamed beyond its development name and unlisted. Shopify now owns sizes, availability, cart and checkout. **Size up for a looser fit.** remains beside the isolated commerce mount. Legacy catalogue size/status fields no longer control purchase. Specifications and other unconfirmed facts remain hidden.
+
+Drop 001 terminology is removed from all customer-facing copy and metadata. Homepage opening: **STAY WIDE.**, **View collection ↓**; collection heading: **Collection**; announcement: **STAY WIDE / COMING SOON**. Homepage title is **Stay Wide**, description **Stay Wide.**, also used for OG/X. Product titles use the current name followed by **— Stay Wide**; descriptions are **Blower Hoodie by Stay Wide.**, **Stay Wide Tee.**, and **Ashtray Tee by Stay Wide.** Existing social images and favicons are retained.
+
+Dispatch timing is intentionally not shown on PDPs, Info or cart templates. The optional catalogue `dispatch` field remains internally as null, without a public renderer. Campaign markup is hidden and its visible placeholder removed; add one real editorial photograph or film to `templates/home.html`, remove `hidden`, then rebuild to reactivate it. No replacement imagery was created. [PUBLIC-POLISH.md](PUBLIC-POLISH.md) records the earlier pass; this update supersedes its names, prices, metadata and campaign state.
 
 Asset update, 30 October 2026: three real photographed products now appear; Hoodie 02 is withheld with a genuine local 404. Header/footer use a faithful temporary logo extraction. Product and default social images are configured. All launch gates below remain in place. See [ASSET-INTEGRATION.md](ASSET-INTEGRATION.md) for the complete inventory, image metrics and new QA evidence; the earlier QA record below describes the pre-photography iteration.
 
@@ -10,17 +16,17 @@ Image interaction follow-up: fine-pointer image-area hover and keyboard focus pr
 
 ## COMPLETE
 
-- Preserved static generation, three photographed products, withheld Hoodie 02, identity, gallery, underlying sizes/details and unconnected cart. Unconfirmed information is hidden publicly. No dependency added.
+- Preserved static generation, three photographed products, withheld Hoodie 02, identity, gallery, editorial details and a shared real Shopify cart. Unconfirmed information is hidden publicly. No dependency added.
 - Central js/site-config.js; build-time titles, concise descriptions, canonicals, OG and X in initial HTML. Query/size states share the product canonical. Only 404 is noindexed.
 - Homepage WebSite/Organization JSON-LD uses the faithful logo extraction and staywide.cc. Social profiles remain empty. Product/Offer schema stays withheld for development products; no fabricated rich results.
-- Development cards/PDP status use DROP 001. Purchase actions use COMING SOON and stay disabled. Underlying status/dispatch fields remain for future confirmation; no preorder default/schema.
+- Cards show product names and prices without status badges; PDP kickers use STAY WIDE / HOODIE or STAY WIDE / TEE. Purchase actions use Shopify ADD TO BAG / SOLD OUT / UNAVAILABLE. Underlying development status/dispatch fields remain internal; no preorder default/schema.
 - Sitemap includes home, Info and three product URLs. Robots allows storefront/assets, excludes source/check directories, and declares https://staywide.cc/sitemap.xml. Robots exclusions are not access control; publish public files only.
 - Script-free branded 404; local server returns actual HTTP 404 for unknown nested paths. Production must configure equivalent handling.
 - Equal-weight Accept all / Reject non-essential / Manage. Analytics and Advertising independent, off by default; Essential always active. Footer/Info Cookie settings, non-modal banner, safe-area spacing and keyboard support.
 - Versioned 180-day local preferences with invalid/expired/blocked-storage fallback and cross-tab changes. Optional SDKs require both their consent and a valid configured ID. Both IDs are blank.
 - Withdrawal stops helper forwarding, disables GA/revokes Meta, removes accessible associated first-party cookies and queued events, and reloads if an SDK had started. No pre-consent event replay. Previously transmitted requests cannot be retracted; provider-owned third-party cookies cannot be cleared here.
 - Only lean GA events and corresponding Meta events prepared. No generic click/size/gallery/scroll tracking or fake commerce/signup success. GA payloads omit URL queries and referrers.
-- Compact Info sections retain Shipping, Dispatch, Sizing, Contact, Returns, Privacy, Cookies and Terms. Unconfirmed information uses brief public notices; these are not completed policies. Cookie facts and preference controls remain.
+- Compact Info sections retain Shipping, Sizing, Contact, Returns, Privacy, Cookies and Terms. Dispatch is intentionally omitted. Unconfirmed information uses brief public notices; these are not completed policies. Cookie facts and preference controls remain.
 - System fonts and existing responsive styling retained. Product dimensions/aspect ratios reserved; primary gallery and first-row collection images eager, secondary/recommendation images lazy. Real photography replaces rendered silhouettes; unused silhouette CSS remains available in the retained styles.
 
 ## FOUNDER REQUIRED
@@ -31,10 +37,11 @@ All unchecked items remain unresolved. Do not replace them with guesses.
 - [x] Faithful favicon.ico (16/32/48px), PNG 48px and Apple touch 180px, with root-relative references on every generated page. No invented mark or fake vector.
 - [ ] Original designer vector/high-resolution logo package and dedicated designer favicon for stronger tiny-size legibility.
 - [x] Approved white homepage/logo share and three primary-photo shares are 1200x630 with matching OG/X metadata and alt.
-- [ ] Real campaign photography/film; retain the placeholder until supplied. Campaign artwork is not required to complete this polish pass.
+- [ ] Real campaign photography/film; keep the campaign section hidden until supplied.
 - [ ] Hoodie 02 photography and approved product information before listing it.
-- [ ] Final collection count, names, descriptions/meta descriptions, EUR prices, actual availability, sizes/fit/measurements/model sizing, photographs/alt, material/colour/SKU, decoration and care. No invented identifiers/reviews.
-- [ ] Honest estimated dispatch/processing date range. Longer fulfilment is separate from order availability; do not assume preorder.
+- [x] Current public names, working EUR prices, concise metadata and the size-up note supplied for the three listed products.
+- [ ] Final collection count, launch prices, product descriptions, actual availability, sizes/measurements/model sizing, material/colour/SKU, decoration and care. Existing sizes remain development data. No invented identifiers/reviews.
+- [ ] Confirm internal fulfilment operations before launch. Dispatch timing is intentionally not displayed publicly; any later public timing needs separate approval.
 - [ ] Shipping regions and rates. Ireland/UK likely, EU possible, all unconfirmed; no worldwide claim. Fill shipping configuration and authoritative Shopify rules together.
 - [ ] Returns policy and practical operational process — launch blocker.
 - [ ] Public support email and business/data-controller/seller details.
@@ -48,7 +55,7 @@ All unchecked items remain unresolved. Do not replace them with guesses.
 
 1. Validate production DNS/HTTPS, redirects and custom HTTP 404 responses for staywide.cc when publishing. The public domain/configuration are supplied; this local pass does not verify hosting behavior.
 2. Verify a Google Search Console **Domain property via DNS**, submit final sitemap, inspect homepage and every launch product URL, then monitor indexing. No verification tag added.
-3. Connect Shopify authoritative products/variants, prices, inventory, cart mutations and hosted checkout. Configure shipping, taxes and payments. Keep checkout disabled until ordering and policies are verified. No legacy Buy Buttons.
+3. Official Shopify Buy Button integration is complete locally. Before publication, verify test-mode orders, payments, shipping, taxes and policies. The local integration can hand off to live Shopify checkout; no deployment was made.
 4. Create/configure GA4 property; disable enhanced measurement/unwanted automatic events, retain Google signals/ads personalisation off, check duplicate pageviews and consent gates with a real test property. No GTM container required.
 5. Configure Meta business/dataset/pixel/domain settings. Disable automatic events and advanced matching. Test configured requests only after Advertising consent. Coordinate later Shopify purchase attribution/deduplication.
 6. Final privacy review and provider/cookie inventory before enabling IDs. Revisit retention and bump `consentVersion` to require fresh choice when purposes/providers change.
@@ -87,19 +94,21 @@ No AYW URL inventory, export, legacy routes or hosting config exists locally. Cu
 | Old product URLs — exact paths unknown | Matching retained product only if equivalent | Inventory old slugs; retired items may need an archive or genuine 404/410 |
 | Old collection/shop paths — unknown | `/index.html#shop` or final shop route | Confirm each path and content match |
 | Old shipping/sizing/contact/policy paths — unknown | Relevant `/info.html` section | Inventory paths and final replacement content |
-| Local `/info.html#preorders` bookmark | `/info.html#dispatch` | Development anchor only; servers cannot inspect URL fragments |
+| Local `/info.html#preorders` bookmark | No dispatch target currently rendered | Historical development anchor only; servers cannot inspect URL fragments |
 
 Never send all old URLs blindly to home. No JavaScript redirects or production rules installed. Real production 301/404 support remains a hosting requirement.
 
 ## Commerce handoff
 
-`commerce.addItem` in `js/main.js` returns `accepted: false`; Shopify IDs are null. Connect successful authoritative cart responses before rendering lines/counts/subtotal or firing add_to_cart. Quantity/removal must use successful mutations; availability must come from Shopify. Carry visible status/dispatch into cart lines. Enable checkout only with a verified Shopify checkout URL; emit begin_checkout immediately before real handoff.
+The shared js/shopify-buy.js module loads the supplied official CDN once, initializes one client/UI/cart, and selects the mapped product. The preview cart and static purchase form are removed. Public config is in js/site-config.js. Shopify controls inventory; all variant prices must match the approved local EUR price before the PDP controls become visible. The native toggle owns the count; checkout opens in the same tab.
 
-Purchase requires verified checkout/order integration, transaction IDs and one measurement owner to avoid frontend/Shopify/Meta duplication. No purchase hook is attached to preview actions. Email signup awaits provider success. Verify adapter failures and error messages at integration time.
+commerceReady records the three verified mappings. development remains true as an independent editorial/schema gate: it does not block real Shopify commerce. Set shopify.enabled=false to stop initialization. No static InStock claim was enabled.
+
+Successful cart model changes confirm add_to_cart; openCheckout emits begin_checkout through the unchanged consent-gated helper. Purchase needs verified Shopify checkout/order completion and deduplication; it is not inferred by this site. See SHOPIFY-INTEGRATION.md for manual founder tests.
 
 ## Performance and QA evidence
 
-Current polish QA: 25 layout cases, 24 public-polish cases, 16 DPR-2 asset cases, all 24 responsive WebP dimensions, four social dimensions and all favicon frames passed. Consent, tracking, static metadata/schema and 404 passed. At 375x812, 390x844, 430x932, 768x1024 and 1440x1000, normal hover/focus and gallery arrows/swipe/keyboard/boundaries passed.
+Current copy QA (3 November): 25 layout cases and 24 public-copy/page viewport cases passed, including names/prices, size selection with disabled commerce, fit-note placement, hidden campaign with no gap, exact metadata, four social dimensions and favicon frames. Consent, tracking, static metadata/schema and 404 passed. At 375x812, 390x844, 430x932, 768x1024 and 1440x1000, normal hover/focus and gallery arrows/swipe/keyboard/boundaries passed. The interaction check now waits for completed CSS transitions instead of asserting after a fixed delay. Earlier asset-specific checks remain historical evidence; no image assets changed in this pass. See [PRODUCT-COPY-UPDATE.md](PRODUCT-COPY-UPDATE.md) for the full change report.
 
 The final failed-image retry assertion in the existing interaction suite fails: dataset.failed is set to an empty string, but the unchanged gallery tests it for truthiness. Initial failure correctly retains the primary. The gallery implementation is byte-identical to HEAD; this unrelated defect remains for a separately scoped fix. See PUBLIC-POLISH.md and checks/image-interactions-results.json.
 
@@ -120,4 +129,4 @@ Google's [consent setup](https://developers.google.com/tag-platform/security/gui
 
 ## Recommended next task
 
-Populate and validate the approved launch catalogue with final product information, photography and honest dispatch timing. This supplies the visible source of truth for product schema and subsequent Shopify integration. Do not begin automatically.
+Complete the founder payment, inventory, shipping, policy and production checklist in SHOPIFY-INTEGRATION.md. Keep dispatch timing off public pages unless separately requested. Do not begin automatically.

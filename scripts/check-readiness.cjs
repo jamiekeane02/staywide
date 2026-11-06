@@ -2,7 +2,7 @@
 const fs = require('node:fs');
 const assert = require('node:assert/strict');
 (async () => {
-  const tabs = await (await fetch('http://127.0.0.1:9222/json')).json();
+  const tabs = await (await fetch(`http://127.0.0.1:${process.env.CHROME_DEBUG_PORT || 9222}/json`)).json();
   const socket = new WebSocket(tabs.find(t => t.type === 'page').webSocketDebuggerUrl);
   await new Promise(resolve => socket.addEventListener('open', resolve, { once: true }));
   let id = 0; const pending = new Map(); const requests = []; const errors = [];
@@ -70,7 +70,7 @@ const assert = require('node:assert/strict');
     await visit(page);
     assert(await ev(`document.querySelectorAll('h1').length===1 && document.querySelectorAll('title').length===1 && document.querySelectorAll('meta[name=description]').length===1 && document.querySelectorAll('[rel=canonical]').length===1 && !document.querySelector('meta[name=robots]')`));
     assert(await ev(`document.querySelector('meta[property="og:image"]') && [...document.images].filter(i=>i.loading!=='lazy').every(i=>i.complete && i.naturalWidth>0)`));
-    if(page.startsWith('products')) assert(await ev(`!document.querySelector('.dispatch') && !document.querySelector('.detail-price') && document.querySelector('.add-to-cart').disabled && document.querySelector('.size-picker').hidden`));
+    if(page.startsWith('products')) assert(await ev(`!document.querySelector('.dispatch') && document.querySelector('.detail-price').textContent.startsWith('€') && !document.querySelector('#purchase-form') && !!document.querySelector('[data-shopify-product]') && document.querySelector('#size-note').textContent==='Size up for a looser fit.'`));
   }
   await send('Emulation.setScriptExecutionDisabled',{value:false});
   assert.equal((await fetch(root+'missing/deep/page')).status,404);
@@ -78,8 +78,8 @@ const assert = require('node:assert/strict');
   assert.equal((await fetch(root+'templates/home.html')).status,404);
   assert.deepEqual(errors,[]);
   const external = requests.filter(u=>/^https?:/.test(u) && !u.startsWith(root));
-  assert.deepEqual(external,[], 'No external requests, even after accept with blank IDs');
+  assert(!external.some(u=>/googletagmanager|google-analytics|connect\.facebook|facebook\.com\/tr/.test(u)), 'GA/Meta remain silent with blank IDs; essential Shopify is allowed');
   fs.writeFileSync('checks/readiness-results.json',JSON.stringify({results,externalRequests:external,runtimeErrors:errors,requestsObserved:requests.length,staticHTML:'pass',storageFallback:'pass',http404:'pass'},null,2));
-  console.log('PASS: consent, persistence, category withdrawal, blank-ID network silence, malformed/expired/blocked storage, static metadata/content, mobile 404.');
+  console.log('PASS: consent, persistence, category withdrawal, blank-ID GA/Meta network silence, malformed/expired/blocked storage, static metadata/content, mobile 404.');
   socket.close();
 })().catch(e=>{console.error(e);process.exit(1)});

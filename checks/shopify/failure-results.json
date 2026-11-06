@@ -1,0 +1,7 @@
+{
+  "blockedCDN": "pass",
+  "galleryDuringFailure": "pass",
+  "reloadRecovery": "pass",
+  "noCommerceOn404": "pass",
+  "errors": []
+}
