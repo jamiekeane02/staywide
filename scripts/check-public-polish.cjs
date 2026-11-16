@@ -98,7 +98,7 @@ for (const output of manifest.outputs) {
           fs.writeFileSync(`checks/polish-home-${width}.png`, Buffer.from(shot.data, 'base64'));
         }
         if (page !== '404.html') {
-          assert.deepEqual(await ev(`[...document.querySelector('.announcement').children].map(e=>e.textContent)`), ['STAY WIDE', 'COMING SOON']);
+          assert.deepEqual(await ev(`[...document.querySelector('.announcement').children].map(e=>e.textContent)`), ['STAY WIDE']);
           const cards = await ev(`[...document.querySelectorAll('.product-card')].map(card=>{const n=card.querySelector('strong'),p=card.querySelector('.product-price'),nr=n.getBoundingClientRect(),pr=p.getBoundingClientRect();return {id:card.dataset.product,name:n.textContent,price:p.textContent,separate:pr.left>=nr.right || pr.top>=nr.bottom,inside:pr.right<=card.getBoundingClientRect().right+.5};})`);
           for (const card of cards) {
             const product = products.find(p=>p.id===card.id);
@@ -128,6 +128,6 @@ for (const output of manifest.outputs) {
     assert.equal((await fetch(root + config.icons.ico)).status, 200);
     assert.deepEqual(errors, []);
     fs.writeFileSync('checks/public-polish-results.json', JSON.stringify({ metadata, headers, productNamesPricesSizesFit: 'pass', campaign: 'hidden without gap', commerce: 'one Shopify mount; no preview cart or static size form (live checks in checks/shopify/results.json)', socialAssets: 'pass', icoFrames: [16, 32, 48], internalCopy: 'absent', noSocialDownloads: true, runtimeErrors: errors }, null, 2) + '\n');
-    console.log('PASS: 24 public page/viewport checks, exact OG/X/canonicals, proportional headers, social dimensions/content/ratios, ICO frames, no social downloads or internal public copy.');
+    console.log('PASS: 28 public page/viewport checks, exact OG/X/canonicals, proportional headers, social dimensions/content/ratios, ICO frames, no social downloads or internal public copy.');
   } finally { socket.close(); }
 })().catch(e => { console.error(e); process.exitCode = 1; });

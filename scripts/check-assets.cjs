@@ -35,11 +35,11 @@ const products = require('../js/catalog.js').products.filter(p => p.listed !== f
       assert(!layout.overflow && layout.logoLoaded && layout.headerFits && layout.headerHeight<62,`${page}: header/layout at ${width}`);
       if(page==='index.html') {
         const cards=await ev(`[...document.querySelectorAll('.collection-grid .product-card')].map(c=>{const r=c.getBoundingClientRect();return {id:c.dataset.product,href:c.getAttribute('href'),left:r.left,top:r.top,width:r.width};})`);
-        assert.deepEqual(cards.map(c=>c.id),['hoodie-01','tshirt-01','tshirt-02']);
+        assert.deepEqual(cards.map(c=>c.id),['hoodie-01','hoodie-02','tshirt-01','tshirt-02']);
         assert(cards.every(c=>c.href===`products/${c.id}.html`));
-        if(width>=700)assert(cards.every(c=>Math.abs(c.top-cards[0].top)<1),'Three desktop columns');
-        else {assert(Math.abs(cards[2].left+cards[2].width/2-width/2)<1,'Centred third card');assert(Math.abs(cards[2].width-cards[0].width)<1,'Equal mobile image sizes');}
-        assert(await ev(`!document.querySelector('a[href*="hoodie-02"]')&&!document.querySelector('.garment')`));
+        if(width>=1240)assert(cards.every(c=>Math.abs(c.top-cards[0].top)<1),'Four desktop columns');
+        else {assert(Math.abs(cards[2].left-cards[0].left)<1,'Two by two collection');assert(Math.abs(cards[2].width-cards[0].width)<1,'Equal card sizes');}
+        assert(await ev(`!!document.querySelector('a[href*="hoodie-02"]')&&!document.querySelector('.garment')`));
         await ev(`document.querySelector('.collection-grid').scrollIntoView({behavior:'instant'});Promise.all([...document.querySelectorAll('.collection-grid img')].map(i=>i.decode()))`);
       } else {
         assert(await ev(`document.querySelector('#image-0 img').loading==='eager'&&document.querySelector('#image-0 img').fetchPriority==='high'&&document.querySelector('#image-1 img').loading==='lazy'`));
@@ -73,6 +73,6 @@ const products = require('../js/catalog.js').products.filter(p => p.listed !== f
   }
   assert.deepEqual(errors,[]);assert.deepEqual(failed,[]);
   fs.writeFileSync('checks/asset-results.json',JSON.stringify({results,errors,failed,derivativesVerified:manifest.outputs.length},null,2));
-  console.log(`PASS: ${results.length} high-density page/viewport checks; logo, three-card layout, product routes, real imagery, gallery loading, ${manifest.outputs.length} derivative dimensions; no failed assets or runtime errors.`);
+  console.log(`PASS: ${results.length} high-density page/viewport checks; logo, four-card layout, product routes, real imagery, gallery loading, ${manifest.outputs.length} derivative dimensions; no failed assets or runtime errors.`);
   socket.close();
 })().catch(e=>{console.error(e);process.exit(1)});

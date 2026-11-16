@@ -66,7 +66,7 @@ const assert = require('node:assert/strict');
   assert(await ev(`document.querySelector('#cookie-status').textContent.includes('could not save') && !stayWideConsent.get().analytics`));
   // All metadata and product text must survive with JavaScript disabled.
   await send('Emulation.setScriptExecutionDisabled',{value:true});
-  for(const page of ['index.html','info.html','products/hoodie-01.html','products/tshirt-01.html','products/tshirt-02.html']) {
+  for(const page of ['index.html','info.html','products/hoodie-01.html','products/hoodie-02.html','products/tshirt-01.html','products/tshirt-02.html']) {
     await visit(page);
     assert(await ev(`document.querySelectorAll('h1').length===1 && document.querySelectorAll('title').length===1 && document.querySelectorAll('meta[name=description]').length===1 && document.querySelectorAll('[rel=canonical]').length===1 && !document.querySelector('meta[name=robots]')`));
     assert(await ev(`document.querySelector('meta[property="og:image"]') && [...document.images].filter(i=>i.loading!=='lazy').every(i=>i.complete && i.naturalWidth>0)`));
@@ -74,7 +74,7 @@ const assert = require('node:assert/strict');
   }
   await send('Emulation.setScriptExecutionDisabled',{value:false});
   assert.equal((await fetch(root+'missing/deep/page')).status,404);
-  assert.equal((await fetch(root+'products/hoodie-02.html')).status,404);
+  assert.equal((await fetch(root+'products/hoodie-02.html')).status,200);
   assert.equal((await fetch(root+'templates/home.html')).status,404);
   assert.deepEqual(errors,[]);
   const external = requests.filter(u=>/^https?:/.test(u) && !u.startsWith(root));

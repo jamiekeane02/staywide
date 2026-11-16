@@ -1,6 +1,6 @@
 ﻿# Stay Wide local launch foundation
 
-Existing static storefront for the public pre-launch website at **https://staywide.cc**. This iteration is local only; do not deploy automatically. Commerce, GA4 and Meta are inactive. See [PUBLIC-POLISH.md](PUBLIC-POLISH.md) for current assets and QA, and [LAUNCH-READINESS.md](LAUNCH-READINESS.md) for ordering/tracking blockers.
+Existing static storefront for **https://staywide.cc**. This iteration is local only; do not deploy automatically. Shared Shopify commerce is active; GA4 and Meta IDs remain blank. See [CLADDAGH-UPDATE.md](CLADDAGH-UPDATE.md) for the four-product catalogue, mobile polish, assets and current QA. Earlier reports describe their original iterations.
 
 ## Preview
 
@@ -19,9 +19,9 @@ The preview returns HTTP 404 at unknown paths (try `/missing/deep/page`) and exc
 
 - `templates/home.html`, `templates/product.html`, `templates/info.html`: retained layouts and content.
 - `templates/consent.html`, `templates/404.html`: consent controls and error page.
-- `js/catalog.js`: products, states, dispatch, descriptions, images, variants and real Shopify product IDs. Three products use real photography and verified Buy Button mappings. `listed: false` withholds Hoodie 02. Approved prices remain visible; Shopify owns purchasable sizes and inventory. Unconfirmed editorial details and Product/Offer schema remain gated. Future confirmed states remain `available`, `sold_out`, `coming_soon`.
+- `js/catalog.js`: products, states, dispatch, descriptions, images, variants and real Shopify product IDs. Four products use real photography and verified Buy Button mappings, including Claddagh Hoodie (`hoodie-02`). `listed: false` can withhold a product. Approved prices remain visible; Shopify owns purchasable sizes and inventory. Unconfirmed editorial details and Product/Offer schema remain gated. Future confirmed states remain `available`, `sold_out`, `coming_soon`.
 - `js/site-config.js`: site name, confirmed staywide.cc production URL/ownership flag, blank tracking IDs, brand/social assets, social profiles and shipping slots. Public values only, never secrets.
-- `scripts/build.cjs` and `scripts/metadata.cjs`: static HTML, footer/cart, metadata, schema, sitemap and robots. No runtime SEO injection.
+- `scripts/build.cjs` and `scripts/metadata.cjs`: static HTML, footer, metadata, schema, sitemap and robots. The build adds one content-derived version to all shared CSS/JS URLs. No runtime SEO injection.
 - `css/styles.css`: original colours, typography, silhouettes and responsive design, with restrained consent styling.
 - `js/main.js`: gallery and card interactions. `js/shopify-buy.js`: shared official Shopify loader, product controls, cart and checkout. `js/consent.js`: preferences. `js/tracking.js`: gated SDKs and lean event helper.
 
@@ -31,13 +31,13 @@ Product schema is withheld for `development: true`. Do not clear that flag just 
 
 ## Assets and collection
 
-Real supplied photographs cover Hoodie 01, T-shirt 01 and T-shirt 02. Each has a primary full-garment view and a print detail. The approved logo extraction supplies the header/footer, square ICO/PNG/Apple icons and a 1200x630 homepage share. Each product has its own 1200x630 JPEG share. Original source selections remain documented in ASSET-INTEGRATION.md; current exports and metrics are in PUBLIC-POLISH.md.
+Real supplied photographs cover Blower Hoodie, Claddagh Hoodie, Stay Wide Tee and Ashtray Tee. Each has a primary full-garment view and a print detail. The approved logo extraction supplies the header/footer, square ICO/PNG/Apple icons and a 1200x630 homepage share. Each product has its own 1200x630 JPEG share. Original source selections remain documented in ASSET-INTEGRATION.md; current exports and metrics are in PUBLIC-POLISH.md.
 
 Image interactions: hover over a product's image on a fine-pointer device to see the selected print detail; move out to return to the full garment. Keyboard focus also previews it. Touch cards remain one-tap links and do not preload hover images. PDP galleries have 44px previous/next buttons, a live image counter, left/right keyboard keys and horizontal swipe; they do not loop or autoplay. See [IMAGE-INTERACTIONS.md](IMAGE-INTERACTIONS.md) for implementation and QA. A one-image product automatically omits both hover and gallery controls. Gallery failures retain the current photograph; an existing retry defect is documented in PUBLIC-POLISH.md.
 
 Image records support `src`, `alt`, `width`, `height`, `srcset`. Supply true dimensions; the reserved frame is 4:5 with contain fitting. WebP widths are 480, 800, 1200 and 1600. Use root-relative srcset URLs over HTTP. Primary gallery and first two homepage card images load eagerly; secondary/recommendation imagery can lazy load. The future campaign LCP image must be eager with explicit dimensions. `scripts/prepare-assets.cjs` reproduces deterministic orientation/crop/encoding with the dedicated Chrome session; it reads originals without modifying them and requires no installed image package.
 
-Set `listed: false` to withhold a catalogue entry, then rebuild. The builder removes that explicitly withheld product's generated HTML and excludes it from cards, recommendations and sitemap. Hoodie 02's URL currently returns HTTP 404. To add it, supply real image records, confirm details and set `listed: true`; the builder rejects listed products without real image files. Three desktop products use one row; four naturally return to a two-by-two grid.
+Set `listed: false` to withhold a catalogue entry, then rebuild. The builder removes that explicitly withheld product's generated HTML and excludes it from cards, recommendations and sitemap. Claddagh Hoodie is now listed at `/products/hoodie-02.html`. The builder rejects listed products without real image files. Four products use a two-by-two grid below 1240px and one four-column row above it.
 
 ## Consent and events
 

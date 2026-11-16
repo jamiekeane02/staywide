@@ -1,0 +1,108 @@
+{
+  "outputs": [
+    {
+      "file": "assets/products/hoodie-02-front-480.webp",
+      "source": "IMG_1464.jpeg",
+      "width": 480,
+      "height": 640,
+      "sourceDimensions": {
+        "width": 6048,
+        "height": 8064
+      },
+      "crop": "none; browser EXIF orientation",
+      "bytes": 63694
+    },
+    {
+      "file": "assets/products/hoodie-02-front-800.webp",
+      "source": "IMG_1464.jpeg",
+      "width": 800,
+      "height": 1067,
+      "sourceDimensions": {
+        "width": 6048,
+        "height": 8064
+      },
+      "crop": "none; browser EXIF orientation",
+      "bytes": 191758
+    },
+    {
+      "file": "assets/products/hoodie-02-front-1200.webp",
+      "source": "IMG_1464.jpeg",
+      "width": 1200,
+      "height": 1600,
+      "sourceDimensions": {
+        "width": 6048,
+        "height": 8064
+      },
+      "crop": "none; browser EXIF orientation",
+      "bytes": 366728
+    },
+    {
+      "file": "assets/products/hoodie-02-front-1600.webp",
+      "source": "IMG_1464.jpeg",
+      "width": 1600,
+      "height": 2133,
+      "sourceDimensions": {
+        "width": 6048,
+        "height": 8064
+      },
+      "crop": "none; browser EXIF orientation",
+      "bytes": 758542
+    },
+    {
+      "file": "assets/products/hoodie-02-detail-480.webp",
+      "source": "IMG_1457.jpeg",
+      "width": 480,
+      "height": 640,
+      "sourceDimensions": {
+        "width": 6048,
+        "height": 8064
+      },
+      "crop": "none; browser EXIF orientation",
+      "bytes": 36510
+    },
+    {
+      "file": "assets/products/hoodie-02-detail-800.webp",
+      "source": "IMG_1457.jpeg",
+      "width": 800,
+      "height": 1067,
+      "sourceDimensions": {
+        "width": 6048,
+        "height": 8064
+      },
+      "crop": "none; browser EXIF orientation",
+      "bytes": 147138
+    },
+    {
+      "file": "assets/products/hoodie-02-detail-1200.webp",
+      "source": "IMG_1457.jpeg",
+      "width": 1200,
+      "height": 1600,
+      "sourceDimensions": {
+        "width": 6048,
+        "height": 8064
+      },
+      "crop": "none; browser EXIF orientation",
+      "bytes": 281088
+    },
+    {
+      "file": "assets/products/hoodie-02-detail-1600.webp",
+      "source": "IMG_1457.jpeg",
+      "width": 1600,
+      "height": 2133,
+      "sourceDimensions": {
+        "width": 6048,
+        "height": 8064
+      },
+      "crop": "none; browser EXIF orientation",
+      "bytes": 650240
+    },
+    {
+      "file": "assets/products/hoodie-02-share.jpg",
+      "source": "IMG_1464.jpeg",
+      "width": 1200,
+      "height": 630,
+      "composition": "Full primary photograph contained on white; existing restrained logo treatment",
+      "bytes": 106069
+    }
+  ]
+}

@@ -70,7 +70,7 @@
       if (target === active) { frame.removeAttribute('aria-busy'); return; }
       frame.setAttribute('aria-busy', 'true');
       let image = panels[target].querySelector('img');
-      if (image.dataset.failed) {
+      if (image.hasAttribute('data-failed')) {
         const retry = image.cloneNode();
         delete retry.dataset.failed;
         retry.dataset.retries = Number(image.dataset.retries || 0) + 1;

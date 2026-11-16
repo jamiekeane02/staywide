@@ -10,6 +10,15 @@
       "layout": "stable"
     },
     {
+      "product": "hoodie-02",
+      "viewport": "375x812",
+      "dpr": 2,
+      "arrows": "pass",
+      "keyboard": "pass",
+      "swipe": "pass",
+      "layout": "stable"
+    },
+    {
       "product": "tshirt-01",
       "viewport": "375x812",
       "dpr": 2,
@@ -37,6 +46,15 @@
       "layout": "stable"
     },
     {
+      "product": "hoodie-02",
+      "viewport": "390x844",
+      "dpr": 2,
+      "arrows": "pass",
+      "keyboard": "pass",
+      "swipe": "pass",
+      "layout": "stable"
+    },
+    {
       "product": "tshirt-01",
       "viewport": "390x844",
       "dpr": 2,
@@ -64,6 +82,15 @@
       "layout": "stable"
     },
     {
+      "product": "hoodie-02",
+      "viewport": "430x932",
+      "dpr": 2,
+      "arrows": "pass",
+      "keyboard": "pass",
+      "swipe": "pass",
+      "layout": "stable"
+    },
+    {
       "product": "tshirt-01",
       "viewport": "430x932",
       "dpr": 2,
@@ -91,6 +118,15 @@
       "layout": "stable"
     },
     {
+      "product": "hoodie-02",
+      "viewport": "768x1024",
+      "dpr": 2,
+      "arrows": "pass",
+      "keyboard": "pass",
+      "swipe": "not applicable",
+      "layout": "stable"
+    },
+    {
       "product": "tshirt-01",
       "viewport": "768x1024",
       "dpr": 2,
@@ -110,6 +146,15 @@
     },
     {
       "product": "hoodie-01",
+      "viewport": "1440x1000",
+      "dpr": 2,
+      "arrows": "pass",
+      "keyboard": "pass",
+      "swipe": "not applicable",
+      "layout": "stable"
+    },
+    {
+      "product": "hoodie-02",
       "viewport": "1440x1000",
       "dpr": 2,
       "arrows": "pass",
@@ -142,6 +187,6 @@
   "singleImage": "pass",
   "threeImages": "pass",
   "failedImage": "primary retained",
-  "failedImageRecovery": "fail",
+  "failedImageRecovery": "pass",
   "runtimeErrors": []
 }

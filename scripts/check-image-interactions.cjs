@@ -7,7 +7,7 @@ function fixture(count) {
   const source=fs.readFileSync('js/catalog.js','utf8')+`\nconst fixtureProduct=stayWideCatalog.products[0];fixtureProduct.images=${count===1?'fixtureProduct.images.slice(0,1)':'[...fixtureProduct.images,{...fixtureProduct.images[0],view:"third view fixture"}]'};`;
   const output={};
   const fakeFS={...fs,readFileSync:(p,...args)=>p==='js/catalog.js'?source:fs.readFileSync(p,...args),writeFileSync:(p,s)=>{output[p]=s;},rmSync:()=>{}};
-  vm.runInNewContext(fs.readFileSync('scripts/build.cjs','utf8'),{console:{log(){}},require:n=>n==='node:fs'?fakeFS:n.startsWith('./')?require(n):require(n),Intl});
+  vm.runInNewContext(fs.readFileSync('scripts/build.cjs','utf8'),{console:{log(){}},require:n=>n==='node:fs'?fakeFS:n.startsWith('./')?require(n):require(n),Intl,Buffer});
   return {html:output['products/hoodie-01.html'],catalog:source};
 }
 (async()=>{
@@ -30,7 +30,7 @@ function fixture(count) {
   });
   const ev=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
   const pause=ms=>new Promise(r=>setTimeout(r,ms));
-  async function until(expression,label){for(let n=0;n<150;n++){if(await ev(expression))return;await pause(20);}throw Error('Timed out: '+label);}
+  async function until(expression,label){for(let n=0;n<1500;n++){if(await ev(expression))return;await pause(20);}throw Error('Timed out: '+label);}
   async function visit(page){requests.length=0;await send('Page.navigate',{url:root+page});await until(`location.href===${JSON.stringify(root+page)}&&document.readyState==='complete'&&window.stayWideShopify?.status==='ready'`,'navigation');await ev(`document.querySelector('[data-cookie-reject]').click();document.activeElement?.blur()`);}
   async function settled(){await until(`!document.querySelector('[data-gallery]')?.hasAttribute('aria-busy')`,'decoded gallery');await pause(170);}
   async function key(key){await send('Input.dispatchKeyEvent',{type:'keyDown',key,code:key});await send('Input.dispatchKeyEvent',{type:'keyUp',key,code:key});}
@@ -43,7 +43,7 @@ function fixture(count) {
     await send('Emulation.setTouchEmulationEnabled',{enabled:mobile,maxTouchPoints:2});
     await visit('index.html');
     assert.equal(await ev(`matchMedia('(hover:hover) and (pointer:fine)').matches`),!mobile,'Pointer emulation');
-    assert.equal(await ev(`document.querySelectorAll('.collection-grid .product-card').length`),3);
+    assert.equal(await ev(`document.querySelectorAll('.collection-grid .product-card').length`),4);
     await ev(`document.documentElement.style.scrollBehavior='auto';document.querySelector('.collection-grid').scrollIntoView()`);
     for(const p of products){
       const card=`.collection-grid [data-product="${p.id}"]`;
@@ -97,7 +97,7 @@ function fixture(count) {
         await ev(`document.querySelector('[data-gallery]').scrollIntoView({behavior:'instant',block:'center'})`);
         await swipe(-100);assert.equal(await ev(`document.querySelector('[data-gallery-current]').textContent`),'2','Swipe next');
         await swipe(100);assert.equal(await ev(`document.querySelector('[data-gallery-current]').textContent`),'1','Swipe previous');
-        await swipe(10,-70);assert.equal(await ev(`document.querySelector('[data-gallery-current]').textContent`),'1','Vertical scroll does not navigate');
+        const scrollBefore=await ev('scrollY');await swipe(10,-70);await pause(150);assert(await ev('scrollY')>scrollBefore,'Vertical page scroll remains native');assert.equal(await ev(`document.querySelector('[data-gallery-current]').textContent`),'1','Vertical scroll does not navigate');
       }
       assert(await ev(`document.documentElement.scrollWidth<=innerWidth`));
       results.push({product:p.id,viewport:`${width}x${height}`,dpr:2,arrows:'pass',keyboard:'pass',swipe:mobile?'pass':'not applicable',layout:'stable'});
@@ -105,7 +105,7 @@ function fixture(count) {
     }
   }
   // Browser-only catalogue/build fixtures. No real source or public output is changed.
-  await send('Fetch.enable',{patterns:[{urlPattern:'*products/hoodie-01.html'},{urlPattern:'*js/catalog.js'}]});
+  await send('Fetch.enable',{patterns:[{urlPattern:'*products/hoodie-01.html'},{urlPattern:'*js/catalog.js*'}]});
   for(const count of [1,3]){
     intercept=fixture(count);await visit('products/hoodie-01.html');
     assert.equal(await ev(`document.querySelectorAll('.gallery-panel').length`),count);

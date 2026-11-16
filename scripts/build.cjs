@@ -10,6 +10,12 @@ for (const product of catalogProducts) {
   if (product.listed === false) fs.rmSync(`products/${product.id}.html`, { force: true });
   else if (!product.images.length || product.images.some(image => !image.src || !fs.existsSync(image.src))) throw new Error(`Real product photographs required: ${product.id}`);
 }
+const { createHash } = require('node:crypto');
+// One deterministic release version for all shared CSS/JS; changes invalidate stale clients.
+const assetFiles = ['css/styles.css', ...fs.readdirSync('js').filter(name => name.endsWith('.js')).sort().map(name => 'js/' + name)];
+const assetVersion = createHash('sha256').update(Buffer.concat(assetFiles.map(file => Buffer.from(fs.readFileSync(file))))).digest('hex').slice(0, 12);
+const versionAssets = html => html.replace(/((?:src|href)="(?:\.\.\/|\/)?(?:js|css)\/[^"?]+\.(?:js|css))"/g, '$1?v=' + assetVersion + '"');
+const writePage = (file, html) => fs.writeFileSync(file, versionAssets(html));
 const config = require('../js/site-config.js');
 const { head, url } = require('./metadata.cjs');
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
@@ -25,7 +31,9 @@ function media(product, image, prefix, lazy = true, sizes = '(min-width: 1800px)
   return `<span class="garment garment-${product.kind}${image.view === 'back' ? ' garment-back' : ''}" aria-hidden="true"><span class="garment-mark">${image.view === 'back' ? 'BACK' : product.mark}</span></span><span class="placeholder-tag">${escape(image.view)} image placeholder</span>`;
 }
 function card(product, prefix, lazy = true, columns = 3) {
-  const sizes = `(min-width: 1800px) ${Math.ceil(1640 / columns)}px, (min-width: 700px) ${Math.ceil(91 / columns)}vw, calc((100vw - 56px) / 2)`;
+  const sizes = columns === 4
+    ? '(min-width: 1800px) 389px, (min-width: 1240px) calc((91vw - 84px) / 4), (min-width: 700px) calc((91vw - 28px) / 2), calc((100vw - 56px) / 2)'
+    : `(min-width: 1800px) ${Math.ceil((1640 - 28 * (columns - 1)) / columns)}px, (min-width: 700px) calc((91vw - ${28 * (columns - 1)}px) / ${columns}), calc((100vw - 56px) / 2)`;
   const secondary = product.images[1];
   let preview = '';
   if (secondary?.src && secondary.src !== product.images[0].src) {
@@ -43,16 +51,16 @@ function gallery(product) {
 }
 const brand = prefix => `<img class="brand-logo" src="${prefix}assets/brand/stay-wide-logo-320.png" srcset="${prefix}assets/brand/stay-wide-logo-320.png 320w, ${prefix}assets/brand/stay-wide-logo.png 920w" sizes="108px" width="920" height="512" alt="Stay Wide" decoding="async">`;
 function footer(prefix) {
-  return `<footer class="site-footer section-pad"><a class="wordmark" href="${prefix}index.html">${brand(prefix)}</a><div class="footer-links"><a href="${prefix}info.html#shipping">Shipping / Returns</a><a href="${prefix}info.html#contact">Contact</a><a href="${prefix}info.html#privacy">Privacy</a><a href="${prefix}info.html#terms">Terms</a><button type="button" class="text-button" data-cookie-settings disabled>Cookie settings</button><noscript><span class="micro">Optional tracking off</span></noscript><!-- Add verified Instagram and TikTok links here. --></div><span class="micro">© <span id="year">2026</span> STAY WIDE / IRELAND</span></footer>`;
+  return `<footer class="site-footer section-pad"><a class="wordmark" href="${prefix}index.html">${brand(prefix)}</a><div class="footer-links"><a href="${prefix}info.html#shipping">Shipping / Returns</a><a href="${prefix}info.html#contact">Contact</a><button type="button" class="text-button" data-cookie-settings disabled>Cookie settings</button><noscript><span class="micro">Optional tracking off</span></noscript><!-- Add verified Instagram and TikTok links here. --></div><span class="micro">© <span id="year">2026</span> STAY WIDE / IRELAND</span></footer>`;
 }
 const consent = prefix => fill(fs.readFileSync('templates/consent.html', 'utf8'), { prefix });
 for (const page of ['home', 'info']) {
   const template = fs.readFileSync(`templates/${page}.html`, 'utf8');
-  fs.writeFileSync(page === 'home' ? 'index.html' : 'info.html', fill(template, { head: head(page === 'home' ? { title: 'Stay Wide', description: 'Stay Wide.', route: '/', home: true } : { title: 'Shipping, Sizing & Info \u2014 Stay Wide', description: 'Shipping, sizing and information for Stay Wide.', route: 'info.html' }), brand: brand(''), footer: footer(''), consent: consent(''), cards: products.map((p, i) => card(p, '', i > 1, products.length === 3 ? 3 : 2)).join('\n') }));
+  writePage(page === 'home' ? 'index.html' : 'info.html', fill(template, { head: head(page === 'home' ? { title: 'Stay Wide', description: 'Stay Wide.', route: '/', home: true } : { title: 'Shipping, Sizing & Info \u2014 Stay Wide', description: 'Shipping, sizing and information for Stay Wide.', route: 'info.html' }), brand: brand(''), footer: footer(''), consent: consent(''), cards: products.map((p, i) => card(p, '', i > 1, 4)).join('\n') }));
 }
 const template = fs.readFileSync('templates/product.html', 'utf8');
 for (const product of products) {
-  fs.writeFileSync(`products/${product.id}.html`, fill(template, {
+  writePage(`products/${product.id}.html`, fill(template, {
     ...Object.fromEntries(Object.entries(product).map(([key, value]) => [key, escape(value)])),
     head: head({ title: product.name + ' \u2014 Stay Wide', description: product.metaDescription || (product.development ? product.name + ' by Stay Wide.' : product.description), route: 'products/' + product.id + '.html', product }), brand: brand('../'), footer: footer('../'), consent: consent('../'), gallery: gallery(product), price: price(product) ? `<span class="detail-price">${price(product)}</span>` : '',
     unconfirmed: product.development ? 'hidden' : '',
@@ -62,7 +70,7 @@ for (const product of products) {
 }
 
 
-fs.writeFileSync('404.html', fill(fs.readFileSync('templates/404.html', 'utf8'), { brand: brand('/'), head: head({ title: 'Page not found \u2014 Stay Wide', description: 'Find your way back to Stay Wide.', route: '404.html', noindex: true }) }));
+writePage('404.html', fill(fs.readFileSync('templates/404.html', 'utf8'), { brand: brand('/'), head: head({ title: 'Page not found \u2014 Stay Wide', description: 'Find your way back to Stay Wide.', route: '404.html', noindex: true }) }));
 const routes = ['/', 'info.html', ...products.map(p => 'products/' + p.id + '.html')];
 fs.writeFileSync('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + routes.map(route => '  <url><loc>' + escape(url(route)) + '</loc></url>').join('\n') + '\n</urlset>\n');
 fs.writeFileSync('robots.txt', '# Public storefront assets and pages can be crawled.\nUser-agent: *\nAllow: /\nDisallow: /templates/\nDisallow: /scripts/\nDisallow: /checks/\n' + (config.domainConfirmed ? '\nSitemap: ' + url('sitemap.xml') + '\n' : '\n# Sitemap declaration withheld until final domain ownership is confirmed.\n'));

@@ -13,7 +13,10 @@ const stayWideCatalog = {
       productPhoto('hoodie-01-front', 'front', 'Blower Hoodie, black phone-print hoodie flat lay', 1474),
       productPhoto('hoodie-01-detail', 'print detail', 'Phone print and Stay Wide logo on Blower Hoodie', 1600)
     ] },
-    { id: 'hoodie-02', listed: false, name: 'Hoodie 02', kind: 'hoodie', tone: '02', mark: '02', status: 'available', sizes: ['S', 'M', 'L', 'XL'] },
+    { id: 'hoodie-02', listed: true, shopifyProductId: '16718244217223', name: 'Claddagh Hoodie', price: 60, metaDescription: 'Claddagh Hoodie by Stay Wide.', kind: 'hoodie', tone: '02', mark: '02', images: [
+      productPhoto('hoodie-02-front', 'front', 'Stay Wide Claddagh Hoodie flat lay', 1600),
+      productPhoto('hoodie-02-detail', 'print detail', 'Claddagh graphic and Stay Wide logo on black hoodie', 1600)
+    ] },
     { id: 'tshirt-01', shopifyProductId: '16690535891335', name: 'Stay Wide Tee', price: 25, metaDescription: 'Stay Wide Tee.', kind: 'tee', tone: '03', mark: '01', status: 'available', sizes: ['S', 'M', 'L', 'XL'], images: [
       productPhoto('tshirt-01-front', 'front', 'Stay Wide Tee, white T-shirt with blue logo flat lay', 1478),
       productPhoto('tshirt-01-detail', 'print detail', 'Blue Stay Wide logo and fabric detail on Stay Wide Tee', 1500)
@@ -25,7 +28,7 @@ const stayWideCatalog = {
   ].map(product => ({
     ...product,
     development: true, // Editorial/specification and static SEO gate, independent of live commerce.
-    commerceReady: Boolean(product.shopifyProductId) && product.listed !== false, // Live mapping/add/cart verified 6 November 2026.
+    commerceReady: Boolean(product.shopifyProductId) && product.listed !== false, // Mapping eligibility only; live validation gates every purchase control.
     metaDescription: product.metaDescription || null,
     socialImage: product.images ? { src: `assets/products/${product.id}-share.jpg`, width: 1200, height: 630, alt: product.images[0].alt + ", with Stay Wide logo" } : null,
     sku: null,
@@ -41,8 +44,8 @@ const stayWideCatalog = {
     decoration: '[PRINT / DECORATION TO BE CONFIRMED]',
     care: '[CARE INSTRUCTIONS TO BE CONFIRMED]',
     sizeGuide: '[GARMENT MEASUREMENTS AND MODEL SIZING TO BE CONFIRMED]',
-    images: product.images || [], // Supply real images before enabling Hoodie 02.
-    variants: product.sizes.map(size => ({ size, shopifyVariantId: null, available: product.status === 'available' }))
+    images: product.images || [],
+    variants: (product.sizes || []).map(size => ({ size, shopifyVariantId: null, available: product.status === 'available' }))
   }))
 };
 if (typeof module !== 'undefined') module.exports = stayWideCatalog;

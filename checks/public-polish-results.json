@@ -17,6 +17,14 @@
       "alt": "Blower Hoodie, black phone-print hoodie flat lay, with Stay Wide logo"
     },
     {
+      "page": "products/hoodie-02.html",
+      "title": "Claddagh Hoodie — Stay Wide",
+      "description": "Claddagh Hoodie by Stay Wide.",
+      "canonical": "https://staywide.cc/products/hoodie-02.html",
+      "image": "https://staywide.cc/assets/products/hoodie-02-share.jpg",
+      "alt": "Stay Wide Claddagh Hoodie flat lay, with Stay Wide logo"
+    },
+    {
       "page": "products/tshirt-01.html",
       "title": "Stay Wide Tee — Stay Wide",
       "description": "Stay Wide Tee.",
@@ -87,6 +95,19 @@
       ]
     },
     {
+      "page": "products/hoodie-02.html",
+      "viewport": "375x812",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 143,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44
+      ]
+    },
+    {
       "page": "products/tshirt-01.html",
       "viewport": "375x812",
       "logoWidth": 96,
@@ -165,6 +186,19 @@
       ]
     },
     {
+      "page": "products/hoodie-02.html",
+      "viewport": "390x844",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 158,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44
+      ]
+    },
+    {
       "page": "products/tshirt-01.html",
       "viewport": "390x844",
       "logoWidth": 96,
@@ -231,6 +265,19 @@
     },
     {
       "page": "products/hoodie-01.html",
+      "viewport": "430x932",
+      "logoWidth": 96,
+      "logoHeight": 53.390625,
+      "headerHeight": 56.390625,
+      "gap": 198,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/hoodie-02.html",
       "viewport": "430x932",
       "logoWidth": 96,
       "logoHeight": 53.390625,
@@ -274,7 +321,7 @@
       "logoWidth": 104,
       "logoHeight": 57.84375,
       "headerHeight": 60.84375,
-      "gap": 1079.40625,
+      "gap": 1094.40625,
       "overflow": false,
       "navHeights": [
         44,
@@ -309,6 +356,19 @@
     },
     {
       "page": "products/hoodie-01.html",
+      "viewport": "1440x1000",
+      "logoWidth": 104,
+      "logoHeight": 57.84375,
+      "headerHeight": 60.84375,
+      "gap": 1079.40625,
+      "overflow": false,
+      "navHeights": [
+        44,
+        44
+      ]
+    },
+    {
+      "page": "products/hoodie-02.html",
       "viewport": "1440x1000",
       "logoWidth": 104,
       "logoHeight": 57.84375,

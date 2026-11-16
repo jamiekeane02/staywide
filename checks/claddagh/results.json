@@ -1,0 +1,663 @@
+{
+  "viewports": [
+    {
+      "width": 375,
+      "height": 812,
+      "route": "index.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1,
+      "cards": [
+        {
+          "id": "hoodie-01",
+          "width": 159.5,
+          "top": 275.390625,
+          "left": 20,
+          "href": "products/hoodie-01.html"
+        },
+        {
+          "id": "hoodie-02",
+          "width": 159.5,
+          "top": 275.390625,
+          "left": 195.5,
+          "href": "products/hoodie-02.html"
+        },
+        {
+          "id": "tshirt-01",
+          "width": 159.5,
+          "top": 531.265625,
+          "left": 20,
+          "href": "products/tshirt-01.html"
+        },
+        {
+          "id": "tshirt-02",
+          "width": 159.5,
+          "top": 531.265625,
+          "left": 195.5,
+          "href": "products/tshirt-02.html"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "route": "products/hoodie-02.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1,
+      "purchase": {
+        "titleTop": 601.40625,
+        "galleryHeight": 373.515625,
+        "buttonBottom": 816.90625,
+        "buttonHeight": 52,
+        "selectHeight": 48,
+        "buttonRadius": "0px",
+        "selectCount": 1,
+        "fit": "Size up for a looser fit.",
+        "images": [
+          {
+            "loading": "eager",
+            "priority": "high",
+            "src": "http://127.0.0.1:8080/assets/products/hoodie-02-front-800.webp",
+            "fit": "contain",
+            "height": 373.515625
+          },
+          {
+            "loading": "lazy",
+            "priority": "auto",
+            "src": "",
+            "fit": "contain",
+            "height": 0
+          }
+        ]
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "route": "info.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "route": "index.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1,
+      "cards": [
+        {
+          "id": "hoodie-01",
+          "width": 167,
+          "top": 275.390625,
+          "left": 20,
+          "href": "products/hoodie-01.html"
+        },
+        {
+          "id": "hoodie-02",
+          "width": 167,
+          "top": 275.390625,
+          "left": 203,
+          "href": "products/hoodie-02.html"
+        },
+        {
+          "id": "tshirt-01",
+          "width": 167,
+          "top": 540.640625,
+          "left": 20,
+          "href": "products/tshirt-01.html"
+        },
+        {
+          "id": "tshirt-02",
+          "width": 167,
+          "top": 540.640625,
+          "left": 203,
+          "href": "products/tshirt-02.html"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "route": "products/hoodie-02.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1,
+      "purchase": {
+        "titleTop": 616.125,
+        "galleryHeight": 388.234375,
+        "buttonBottom": 831.625,
+        "buttonHeight": 52,
+        "selectHeight": 48,
+        "buttonRadius": "0px",
+        "selectCount": 1,
+        "fit": "Size up for a looser fit.",
+        "images": [
+          {
+            "loading": "eager",
+            "priority": "high",
+            "src": "http://127.0.0.1:8080/assets/products/hoodie-02-front-800.webp",
+            "fit": "contain",
+            "height": 388.234375
+          },
+          {
+            "loading": "lazy",
+            "priority": "auto",
+            "src": "",
+            "fit": "contain",
+            "height": 0
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "route": "info.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "route": "index.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1,
+      "cards": [
+        {
+          "id": "hoodie-01",
+          "width": 187,
+          "top": 275.390625,
+          "left": 20,
+          "href": "products/hoodie-01.html"
+        },
+        {
+          "id": "hoodie-02",
+          "width": 187,
+          "top": 275.390625,
+          "left": 223,
+          "href": "products/hoodie-02.html"
+        },
+        {
+          "id": "tshirt-01",
+          "width": 187,
+          "top": 565.640625,
+          "left": 20,
+          "href": "products/tshirt-01.html"
+        },
+        {
+          "id": "tshirt-02",
+          "width": 187,
+          "top": 565.640625,
+          "left": 223,
+          "href": "products/tshirt-02.html"
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "route": "products/hoodie-02.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1,
+      "purchase": {
+        "titleTop": 656.609375,
+        "galleryHeight": 428.71875,
+        "buttonBottom": 872.109375,
+        "buttonHeight": 52,
+        "selectHeight": 48,
+        "buttonRadius": "0px",
+        "selectCount": 1,
+        "fit": "Size up for a looser fit.",
+        "images": [
+          {
+            "loading": "eager",
+            "priority": "high",
+            "src": "http://127.0.0.1:8080/assets/products/hoodie-02-front-800.webp",
+            "fit": "contain",
+            "height": 428.71875
+          },
+          {
+            "loading": "lazy",
+            "priority": "auto",
+            "src": "",
+            "fit": "contain",
+            "height": 0
+          }
+        ]
+      }
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "route": "info.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "route": "index.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1,
+      "cards": [
+        {
+          "id": "hoodie-01",
+          "width": 327.953125,
+          "top": 238.125,
+          "left": 34.546875,
+          "href": "products/hoodie-01.html"
+        },
+        {
+          "id": "hoodie-02",
+          "width": 327.953125,
+          "top": 238.125,
+          "left": 390.5,
+          "href": "products/hoodie-02.html"
+        },
+        {
+          "id": "tshirt-01",
+          "width": 327.953125,
+          "top": 710.5625,
+          "left": 34.546875,
+          "href": "products/tshirt-01.html"
+        },
+        {
+          "id": "tshirt-02",
+          "width": 327.953125,
+          "top": 710.5625,
+          "left": 390.5,
+          "href": "products/tshirt-02.html"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "route": "products/hoodie-02.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1,
+      "purchase": {
+        "titleTop": 172.34375,
+        "galleryHeight": 424.21875,
+        "buttonBottom": 387.84375,
+        "buttonHeight": 52,
+        "selectHeight": 48,
+        "buttonRadius": "0px",
+        "selectCount": 1,
+        "fit": "Size up for a looser fit.",
+        "images": [
+          {
+            "loading": "eager",
+            "priority": "high",
+            "src": "http://127.0.0.1:8080/assets/products/hoodie-02-front-800.webp",
+            "fit": "contain",
+            "height": 424.21875
+          },
+          {
+            "loading": "lazy",
+            "priority": "auto",
+            "src": "",
+            "fit": "contain",
+            "height": 0
+          }
+        ]
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "route": "info.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "route": "index.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1,
+      "cards": [
+        {
+          "id": "hoodie-01",
+          "width": 306.59375,
+          "top": 286.515625,
+          "left": 64.796875,
+          "href": "products/hoodie-01.html"
+        },
+        {
+          "id": "hoodie-02",
+          "width": 306.609375,
+          "top": 286.515625,
+          "left": 399.390625,
+          "href": "products/hoodie-02.html"
+        },
+        {
+          "id": "tshirt-01",
+          "width": 306.59375,
+          "top": 286.515625,
+          "left": 734,
+          "href": "products/tshirt-01.html"
+        },
+        {
+          "id": "tshirt-02",
+          "width": 306.609375,
+          "top": 286.515625,
+          "left": 1068.59375,
+          "href": "products/tshirt-02.html"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "route": "products/hoodie-02.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1,
+      "purchase": {
+        "titleTop": 172.34375,
+        "galleryHeight": 805.484375,
+        "buttonBottom": 408.84375,
+        "buttonHeight": 52,
+        "selectHeight": 48,
+        "buttonRadius": "0px",
+        "selectCount": 1,
+        "fit": "Size up for a looser fit.",
+        "images": [
+          {
+            "loading": "eager",
+            "priority": "high",
+            "src": "http://127.0.0.1:8080/assets/products/hoodie-02-front-1600.webp",
+            "fit": "contain",
+            "height": 805.484375
+          },
+          {
+            "loading": "lazy",
+            "priority": "auto",
+            "src": "",
+            "fit": "contain",
+            "height": 0
+          }
+        ]
+      }
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "route": "info.html",
+      "overflow": false,
+      "announcement": "STAY WIDE",
+      "footer": [
+        "Shipping / Returns",
+        "Contact"
+      ],
+      "cookieSettings": true,
+      "scripts": 1,
+      "carts": 1
+    }
+  ],
+  "inventory": [
+    {
+      "id": "hoodie-01",
+      "source": "Live Shopify selector",
+      "states": [
+        {
+          "size": "S",
+          "label": "ADD TO BAG",
+          "disabled": false
+        },
+        {
+          "size": "M",
+          "label": "ADD TO BAG",
+          "disabled": false
+        },
+        {
+          "size": "L",
+          "label": "ADD TO BAG",
+          "disabled": false
+        },
+        {
+          "size": "XL",
+          "label": "ADD TO BAG",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "id": "hoodie-02",
+      "source": "Live Shopify selector",
+      "states": [
+        {
+          "size": "L",
+          "label": "ADD TO BAG",
+          "disabled": false
+        },
+        {
+          "size": "M",
+          "label": "ADD TO BAG",
+          "disabled": false
+        },
+        {
+          "size": "S",
+          "label": "ADD TO BAG",
+          "disabled": false
+        },
+        {
+          "size": "XL",
+          "label": "ADD TO BAG",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "id": "tshirt-01",
+      "source": "Live Shopify selector",
+      "states": [
+        {
+          "size": "XL",
+          "label": "ADD TO BAG",
+          "disabled": false
+        },
+        {
+          "size": "L",
+          "label": "ADD TO BAG",
+          "disabled": false
+        },
+        {
+          "size": "M",
+          "label": "ADD TO BAG",
+          "disabled": false
+        },
+        {
+          "size": "S",
+          "label": "ADD TO BAG",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "id": "tshirt-02",
+      "source": "Live Shopify selector",
+      "states": [
+        {
+          "size": "XL",
+          "label": "ADD TO BAG",
+          "disabled": false
+        },
+        {
+          "size": "M",
+          "label": "ADD TO BAG",
+          "disabled": false
+        },
+        {
+          "size": "L",
+          "label": "ADD TO BAG",
+          "disabled": false
+        },
+        {
+          "size": "S",
+          "label": "ADD TO BAG",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/products/hoodie-02-front-480.webp",
+      "width": 480,
+      "height": 640
+    },
+    {
+      "file": "assets/products/hoodie-02-front-800.webp",
+      "width": 800,
+      "height": 1067
+    },
+    {
+      "file": "assets/products/hoodie-02-front-1200.webp",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "file": "assets/products/hoodie-02-front-1600.webp",
+      "width": 1600,
+      "height": 2133
+    },
+    {
+      "file": "assets/products/hoodie-02-detail-480.webp",
+      "width": 480,
+      "height": 640
+    },
+    {
+      "file": "assets/products/hoodie-02-detail-800.webp",
+      "width": 800,
+      "height": 1067
+    },
+    {
+      "file": "assets/products/hoodie-02-detail-1200.webp",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "file": "assets/products/hoodie-02-detail-1600.webp",
+      "width": 1600,
+      "height": 2133
+    },
+    {
+      "file": "assets/products/hoodie-02-share.jpg",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "errors": [],
+  "mixedCart": {
+    "products": [
+      "Claddagh Hoodie",
+      "Blower Hoodie"
+    ],
+    "lines": 2,
+    "carts": 1,
+    "subtotal": "EUR 120",
+    "persistedAcrossPages": true
+  },
+  "checkout": {
+    "host": "zw8sj5-yw.myshopify.com",
+    "sameTab": true,
+    "orderSubmitted": false
+  }
+}
