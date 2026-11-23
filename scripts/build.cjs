@@ -25,17 +25,17 @@ const fill = (template, values) => template.replace(/{{(\w+)}}/g, (_, key) => {
   return values[key];
 });
 const confirmed = (product, value) => !product.development && value != null && !String(value).includes('[');
-function sizeGuideTable(guide) {
-  return `<table><caption>${guide.units}</caption><thead><tr>${guide.headers.map(label => `<th scope="col">${escape(label)}</th>`).join('')}</tr></thead><tbody>${guide.rows.map(row => `<tr><th scope="row">${escape(row[0])}</th>${row.slice(1).map(value => `<td>${escape(value)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+function sizeGuideTable(guide, rows = guide.rows) {
+  return `<table><caption>${guide.units}</caption><thead><tr>${guide.headers.map(label => `<th scope="col">${escape(label)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${escape(row[0])}</th>${row.slice(1).map(value => `<td>${escape(value)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
 }
 function infoSizeGuide(kind, title) {
   const guide = sizeGuides[kind];
-  if (!guide || !fs.existsSync('assets/size-guides/' + guide.image)) throw new Error('Missing size guide: ' + kind);
+  if (!guide) throw new Error('Missing size guide: ' + kind);
+  const rows = guide.rows.filter(row => ['S', 'M', 'L', 'XL'].includes(row[0]));
   return `<div class="info-size-guide info-size-guide-${kind}" aria-labelledby="sizing-${kind}">
         <h3 id="sizing-${kind}">${title}</h3>
         <p class="size-scroll-hint" id="sizing-${kind}-hint">Swipe / scroll to view all sizes.</p>
-        <div class="size-chart-scroll" tabindex="0" role="region" aria-label="${title} size chart" aria-describedby="sizing-${kind}-hint"><img src="assets/size-guides/${guide.image}" width="${guide.width}" height="${guide.height}" alt="${kind === 'hoodie' ? 'Hoodie' : 'T-shirt'} size chart in ${kind === 'hoodie' ? 'centimetres' : 'inches'}; all measurements are also in the table below." loading="lazy" decoding="async"></div>
-        <div class="size-table-scroll" tabindex="0" role="region" aria-label="${title} measurements">${sizeGuideTable(guide)}</div>${guide.notes.map(note => `\n        <p>${escape(note)}</p>`).join('')}
+        <div class="size-table-scroll" tabindex="0" role="region" aria-label="${title} measurements" aria-describedby="sizing-${kind}-hint">${sizeGuideTable(guide, rows)}</div>${guide.notes.map(note => `\n        <p>${escape(note)}</p>`).join('')}
       </div>`;
 }
 function sizeGuideDialog(kind) {

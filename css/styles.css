@@ -200,9 +200,7 @@ nav a:hover,.inline-link:hover { text-decoration:underline; text-underline-offse
 .info-page section p { font-size:14px; margin-top:10px; overflow-wrap:anywhere; }
 .info-size-guide { min-width:0; margin-top:32px; }
 .info-size-guide h3 { font-size:18px; margin-bottom:16px; }
-.size-chart-scroll,.size-table-scroll { max-width:100%; overflow-x:auto; overscroll-behavior-x:contain; }
-.size-chart-scroll img { display:block; width:100%; height:auto; }
-.info-size-guide-tee .size-chart-scroll { max-width:640px; }
+.size-table-scroll { max-width:100%; overflow-x:auto; overscroll-behavior-x:contain; }
 .info-size-guide table { width:100%; border-collapse:collapse; font-size:16px; margin-block:20px 4px; }
 .info-size-guide-hoodie table { min-width:480px; }
 .info-size-guide caption { text-align:left; font-weight:700; margin-bottom:12px; }
@@ -211,7 +209,6 @@ nav a:hover,.inline-link:hover { text-decoration:underline; text-underline-offse
 .info-page .info-size-guide p { font-size:16px; line-height:1.5; }
 .info-page .size-scroll-hint { display:none; font-size:14px; color:var(--muted); margin-bottom:10px; }
 @media (max-width:699px) {
-  .info-size-guide-hoodie .size-chart-scroll img { min-width:1100px; }
   .info-size-guide-hoodie .size-scroll-hint { display:block; }
 }
 /* Restrained non-modal preferences; all choices have equal visual weight. */

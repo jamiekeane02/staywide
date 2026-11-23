@@ -19,7 +19,7 @@ const output = 'checks/info-commerce';
     await ev('localStorage.clear();sessionStorage.clear()');
     await visit('info.html');
     await ev("document.querySelector('[data-cookie-reject]').click()");
-    const referenceTables = await ev("[...document.querySelectorAll('.info-size-guide table')].map(t=>t.outerHTML)");
+    const referenceRows = await ev("[...document.querySelectorAll('.info-size-guide table')].map(t=>[...t.tBodies[0].rows].map(r=>[...r.cells].map(c=>c.textContent)))");
     for (const p of products) {
       await visit('products/'+p.id+'.html');
       const live = await ev('({status:stayWideShopify.status,...stayWideShopify.validation})');
@@ -28,18 +28,20 @@ const output = 'checks/info-commerce';
       assert.equal(live.status,'ready'); assert(live.passed);
       assert.equal(live.productId,'gid://shopify/Product/'+p.shopifyProductId);
       assert(live.variants.every(v=>v.currency===p.currency && Number(v.price)===p.price));
-      assert.equal(await ev("document.querySelector('.size-guide-content table').outerHTML"),referenceTables[p.kind==='hoodie'?0:1]);
+      const pdpRows = await ev("[...document.querySelector('.size-guide-content table').tBodies[0].rows].map(r=>[...r.cells].map(c=>c.textContent))");
+      assert.deepEqual(pdpRows,guides[p.kind].rows);
+      assert.deepEqual(pdpRows.filter(row=>['S','M','L','XL'].includes(row[0])),referenceRows[p.kind==='hoodie'?0:1]);
     }
     for (const [width,height] of [[375,812],[390,844],[430,932],[1440,1000]]) {
       await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<700});
       await visit('info.html');
-      await ev("document.documentElement.style.scrollBehavior='auto';Promise.all([...document.querySelectorAll('.info-size-guide img')].map(i=>i.decode()))");
+      await ev("document.documentElement.style.scrollBehavior='auto'");
       const layout = await ev(`(()=>{
         const sections=[...document.querySelectorAll('.info-page section')];
         const email=document.querySelector('#contact a');
         const charts=[...document.querySelectorAll('.info-size-guide')].map(g=>{
-          const image=g.querySelector('img'),table=g.querySelector('table'),scrollers=[...g.querySelectorAll('[role=region]')];
-          return {title:g.querySelector('h3').textContent,image:[image.naturalWidth,image.naturalHeight],
+          const table=g.querySelector('table'),scrollers=[...g.querySelectorAll('[role=region]')];
+          return {title:g.querySelector('h3').textContent,imageCount:g.querySelectorAll('img').length,
             rows:[...table.tBodies[0].rows].map(r=>[...r.cells].map(c=>c.textContent)),
             headers:[...table.tHead.rows[0].cells].map(c=>({text:c.textContent,scope:c.scope})),
             rowHeaders:[...table.tBodies[0].rows].every(r=>r.cells[0].scope==='row'),
@@ -55,9 +57,9 @@ const output = 'checks/info-commerce';
       assert.equal(layout.email.text,'areyawide@gmail.com'); assert.equal(layout.email.href,'mailto:areyawide@gmail.com');
       for(const [i,kind] of ['hoodie','tee'].entries()) {
         const chart=layout.charts[i],guide=guides[kind];
-        assert.deepEqual(chart.rows,guide.rows); assert.deepEqual(chart.headers.map(h=>h.text),guide.headers);
+        assert.deepEqual(chart.rows,guide.rows.filter(row=>['S','M','L','XL'].includes(row[0]))); assert.deepEqual(chart.headers.map(h=>h.text),guide.headers);
         assert(chart.headers.every(h=>h.scope==='col') && chart.rowHeaders);
-        assert.deepEqual(chart.image,[guide.width,guide.height]); assert.equal(chart.tableFont,'16px');
+        assert.equal(chart.imageCount,0); assert.equal(chart.tableFont,'16px');
         assert(chart.scrollers.every(s=>s.client<=width && s.focusable));
         if(width<700 && kind==='hoodie') assert(chart.scrollers.every(s=>s.moved),'Wide chart/table scroll within their own region');
       }
@@ -67,7 +69,7 @@ const output = 'checks/info-commerce';
         await ev("document.querySelector('[data-cookie-reject]').click()");
         assert(await ev("document.querySelector('#cookie-panel').hidden"));
       }
-      await ev("document.querySelectorAll('.size-chart-scroll,.size-table-scroll').forEach(s=>s.scrollLeft=0);window.scrollTo(0,0)");
+      await ev("document.querySelectorAll('.size-table-scroll').forEach(s=>s.scrollLeft=0);window.scrollTo(0,0)");
       const pageHeight=await ev('document.documentElement.scrollHeight');
       fs.writeFileSync(`${output}/info-${width}.png`,Buffer.from((await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true,clip:{x:0,y:0,width,height:pageHeight,scale:1}})).data,'base64'));
       results.viewports.push({width,height,...layout,cookieSettings:'pass'});
