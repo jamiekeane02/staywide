@@ -25,13 +25,26 @@ const fill = (template, values) => template.replace(/{{(\w+)}}/g, (_, key) => {
   return values[key];
 });
 const confirmed = (product, value) => !product.development && value != null && !String(value).includes('[');
+function sizeGuideTable(guide) {
+  return `<table><caption>${guide.units}</caption><thead><tr>${guide.headers.map(label => `<th scope="col">${escape(label)}</th>`).join('')}</tr></thead><tbody>${guide.rows.map(row => `<tr><th scope="row">${escape(row[0])}</th>${row.slice(1).map(value => `<td>${escape(value)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+}
+function infoSizeGuide(kind, title) {
+  const guide = sizeGuides[kind];
+  if (!guide || !fs.existsSync('assets/size-guides/' + guide.image)) throw new Error('Missing size guide: ' + kind);
+  return `<div class="info-size-guide info-size-guide-${kind}" aria-labelledby="sizing-${kind}">
+        <h3 id="sizing-${kind}">${title}</h3>
+        <p class="size-scroll-hint" id="sizing-${kind}-hint">Swipe / scroll to view all sizes.</p>
+        <div class="size-chart-scroll" tabindex="0" role="region" aria-label="${title} size chart" aria-describedby="sizing-${kind}-hint"><img src="assets/size-guides/${guide.image}" width="${guide.width}" height="${guide.height}" alt="${kind === 'hoodie' ? 'Hoodie' : 'T-shirt'} size chart in ${kind === 'hoodie' ? 'centimetres' : 'inches'}; all measurements are also in the table below." loading="lazy" decoding="async"></div>
+        <div class="size-table-scroll" tabindex="0" role="region" aria-label="${title} measurements">${sizeGuideTable(guide)}</div>${guide.notes.map(note => `\n        <p>${escape(note)}</p>`).join('')}
+      </div>`;
+}
 function sizeGuideDialog(kind) {
   const guide = sizeGuides[kind];
   if (!guide || !fs.existsSync('assets/size-guides/' + guide.image)) throw new Error('Missing size guide: ' + kind);
   return `<dialog class="size-guide-dialog" id="size-guide-dialog" data-size-guide-dialog aria-labelledby="size-guide-title" aria-describedby="size-guide-category">
     <header class="size-guide-header"><div><h2 id="size-guide-title">SIZE GUIDE</h2><p id="size-guide-category">${guide.category}</p></div><button type="button" class="size-guide-close" data-size-guide-close autofocus>CLOSE</button></header>
     <div class="size-guide-content" tabindex="0" role="region" aria-label="Size chart and measurements"><img src="../assets/size-guides/${guide.image}" width="${guide.width}" height="${guide.height}" alt="${guide.category === 'HOODIES' ? 'Hoodie' : 'T-shirt'} size chart in ${kind === 'hoodie' ? 'centimetres' : 'inches'}; all measurements are also in the table below." loading="lazy" decoding="async">
-    <table><caption>${guide.units}</caption><thead><tr>${guide.headers.map(label => `<th scope="col">${escape(label)}</th>`).join('')}</tr></thead><tbody>${guide.rows.map(row => `<tr><th scope="row">${escape(row[0])}</th>${row.slice(1).map(value => `<td>${escape(value)}</td>`).join('')}</tr>`).join('')}</tbody></table>
+    ${sizeGuideTable(guide)}
     ${guide.notes.map(note => `<p>${escape(note)}</p>`).join('')}</div>
   </dialog>`;
 }
@@ -62,12 +75,13 @@ function gallery(product) {
 }
 const brand = prefix => `<img class="brand-logo" src="${prefix}assets/brand/stay-wide-logo-320.png" srcset="${prefix}assets/brand/stay-wide-logo-320.png 320w, ${prefix}assets/brand/stay-wide-logo.png 920w" sizes="108px" width="920" height="512" alt="Stay Wide" decoding="async">`;
 function footer(prefix) {
-  return `<footer class="site-footer section-pad"><a class="wordmark" href="${prefix}index.html">${brand(prefix)}</a><div class="footer-links"><a href="${prefix}info.html#shipping">Shipping / Returns</a><a href="${prefix}info.html#contact">Contact</a><button type="button" class="text-button" data-cookie-settings disabled>Cookie settings</button><noscript><span class="micro">Optional tracking off</span></noscript><!-- Add verified Instagram and TikTok links here. --></div><span class="micro">© <span id="year">2026</span> STAY WIDE / IRELAND</span></footer>`;
+  return `<footer class="site-footer section-pad"><a class="wordmark" href="${prefix}index.html">${brand(prefix)}</a><div class="footer-links"><a href="${prefix}info.html#shipping">Shipping</a><a href="${prefix}info.html#contact">Contact</a><button type="button" class="text-button" data-cookie-settings disabled>Cookie settings</button><noscript><span class="micro">Optional tracking off</span></noscript><!-- Add verified Instagram and TikTok links here. --></div><span class="micro">© <span id="year">2026</span> STAY WIDE / IRELAND</span></footer>`;
 }
 const consent = prefix => fill(fs.readFileSync('templates/consent.html', 'utf8'), { prefix });
 for (const page of ['home', 'info']) {
   const template = fs.readFileSync(`templates/${page}.html`, 'utf8');
-  writePage(page === 'home' ? 'index.html' : 'info.html', fill(template, { head: head(page === 'home' ? { title: 'Stay Wide', description: 'Stay Wide.', route: '/', home: true } : { title: 'Shipping, Sizing & Info \u2014 Stay Wide', description: 'Shipping, sizing and information for Stay Wide.', route: 'info.html' }), brand: brand(''), footer: footer(''), consent: consent(''), cards: products.map((p, i) => card(p, '', i > 1, 4)).join('\n') }));
+  const infoSizeGuides = page === 'info' ? infoSizeGuide('hoodie', 'HOODIES') + '\n      ' + infoSizeGuide('tee', 'T-SHIRTS') : '';
+  writePage(page === 'home' ? 'index.html' : 'info.html', fill(template, { infoSizeGuides, head: head(page === 'home' ? { title: 'Stay Wide', description: 'Stay Wide.', route: '/', home: true } : { title: 'Shipping, Sizing & Info \u2014 Stay Wide', description: 'Shipping, sizing and information for Stay Wide.', route: 'info.html' }), brand: brand(''), footer: footer(''), consent: consent(''), cards: products.map((p, i) => card(p, '', i > 1, 4)).join('\n') }));
 }
 const template = fs.readFileSync('templates/product.html', 'utf8');
 for (const product of products) {

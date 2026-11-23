@@ -84,12 +84,22 @@
     // Fail closed for every variant, including unexpected size-specific pricing.
     // Keep approved editorial prices; never present a misleading cheaper price.
     const model = component.model;
-    productValid = Boolean(model?.id?.endsWith('/' + product.shopifyProductId) && model.variants?.length && model.variants.every(variant =>
-      variant.price.currencyCode === product.currency && Number(variant.price.amount) === product.price));
+    const variants = model?.variants || [];
+    const issues = [];
+    const expectedId = 'gid://shopify/Product/' + product.shopifyProductId;
+    if (model?.id !== expectedId) issues.push({ type: 'product_id_mismatch', expected: expectedId, actual: model?.id ?? null });
+    if (!variants.length) issues.push({ type: 'no_variants' });
+    variants.forEach(variant => {
+      if (variant.price?.currencyCode !== product.currency) issues.push({ type: 'currency_mismatch', variantId: variant.id, expected: product.currency, actual: variant.price?.currencyCode ?? null });
+      if (variant.price?.amount == null || Number(variant.price.amount) !== product.price) issues.push({ type: 'variant_price_mismatch', variantId: variant.id, expected: product.price, actual: variant.price?.amount ?? null });
+    });
+    productValid = issues.length === 0;
+    state.validation = { localId: product.id, productId: model?.id ?? null, variantCount: variants.length, passed: productValid, issues,
+      variants: variants.map(variant => ({ id: variant.id, size: variant.title, currency: variant.price?.currencyCode ?? null, price: variant.price?.amount ?? null, available: variant.available })) };
     if (!productValid) {
       report(unavailable, true);
-      state.reason = 'Product mapping or price mismatch: ' + product.id;
-      console.warn('[Stay Wide] ' + state.reason);
+      state.reason = product.id + ': ' + [...new Set(issues.map(issue => issue.type))].join(', ');
+      console.warn('[Stay Wide] ' + state.reason, state.validation);
     }
   }
   const font = 'Arial, Helvetica, sans-serif';

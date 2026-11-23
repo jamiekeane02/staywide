@@ -1,12 +1,14 @@
 # Stay Wide — technical launch readiness
 
-Updated 6 November 2026. Local Shopify Buy Button integration is implemented and verified; no deployment, commit or push was performed. See [SHOPIFY-INTEGRATION.md](SHOPIFY-INTEGRATION.md) for current commerce behavior and test evidence. Payments, shipping, policies and production checks remain separate launch gates. The dated copy/asset history below describes earlier work.
+Updated 23 November 2026. The local storefront has four products, shared PDP/Info sizing, and live Shopify commerce. No deployment, commit or push was performed. Current QA is in `checks/info-commerce/` and `checks/info-commerce-pdp/`; [README.md](README.md) describes the current implementation. Payments, shipping, policies and production checks remain separate launch gates. Dated copy/asset history below describes earlier work.
 
 Copy baseline, 3 November 2026. The website is public at **https://staywide.cc** and remains **not ready to accept orders or enable tracking**. This copy pass changed local source/templates and rebuilt the public files; it did not deploy, migrate, commit or push. The existing configuration confirms staywide.cc. Git is present; publication remains separate.
 
-Current public names and working prices are **Blower Hoodie — €60**, **Stay Wide Tee — €25**, and **Ashtray Tee — €25**, sourced as numeric EUR values in `js/catalog.js`. Product IDs, URLs and photography remain unchanged. Hoodie 02 remains unnamed beyond its development name and unlisted. Shopify now owns sizes, availability, cart and checkout. **Size up for a looser fit.** remains beside the isolated commerce mount. Legacy catalogue size/status fields no longer control purchase. Specifications and other unconfirmed facts remain hidden.
+Current public names and prices are **Blower Hoodie — €55**, **Claddagh Hoodie — €55**, **Stay Wide Tee — €25**, and **Ashtray Tee — €25**, sourced as numeric EUR values in `js/catalog.js`. All four existing Shopify IDs remain unchanged. Shopify owns sizes, availability, cart and checkout. Every returned variant must match the catalogue price and currency before purchase controls appear. **Size up for a looser fit.** remains between the live selector and Add to Bag. Exact supplied charts and semantic tables on Info and in PDP dialogs share `scripts/size-guides.cjs`. Legacy catalogue size/status fields do not control purchasing. Unconfirmed specifications remain hidden.
 
-Drop 001 terminology is removed from all customer-facing copy and metadata. Homepage opening: **STAY WIDE.**, **View collection ↓**; collection heading: **Collection**; announcement: **STAY WIDE / COMING SOON**. Homepage title is **Stay Wide**, description **Stay Wide.**, also used for OG/X. Product titles use the current name followed by **— Stay Wide**; descriptions are **Blower Hoodie by Stay Wide.**, **Stay Wide Tee.**, and **Ashtray Tee by Stay Wide.** Existing social images and favicons are retained.
+Historical copy/asset notes (30 October–6 November 2026; superseded by the current state above):
+
+Drop 001 terminology was removed from customer-facing copy and metadata. At that stage the homepage announcement was **STAY WIDE / COMING SOON**, with three listed products. Existing social images and favicons were retained.
 
 Dispatch timing is intentionally not shown on PDPs, Info or cart templates. The optional catalogue `dispatch` field remains internally as null, without a public renderer. Campaign markup is hidden and its visible placeholder removed; add one real editorial photograph or film to `templates/home.html`, remove `hidden`, then rebuild to reactivate it. No replacement imagery was created. [PUBLIC-POLISH.md](PUBLIC-POLISH.md) records the earlier pass; this update supersedes its names, prices, metadata and campaign state.
 
@@ -16,17 +18,17 @@ Image interaction follow-up: fine-pointer image-area hover and keyboard focus pr
 
 ## COMPLETE
 
-- Preserved static generation, three photographed products, withheld Hoodie 02, identity, gallery, editorial details and a shared real Shopify cart. Unconfirmed information is hidden publicly. No dependency added.
+- Preserved static generation, four photographed products, identity, gallery, editorial details and a shared real Shopify cart. Unconfirmed information is hidden publicly. No dependency added.
 - Central js/site-config.js; build-time titles, concise descriptions, canonicals, OG and X in initial HTML. Query/size states share the product canonical. Only 404 is noindexed.
 - Homepage WebSite/Organization JSON-LD uses the faithful logo extraction and staywide.cc. Social profiles remain empty. Product/Offer schema stays withheld for development products; no fabricated rich results.
 - Cards show product names and prices without status badges; PDP kickers use STAY WIDE / HOODIE or STAY WIDE / TEE. Purchase actions use Shopify ADD TO BAG / SOLD OUT / UNAVAILABLE. Underlying development status/dispatch fields remain internal; no preorder default/schema.
-- Sitemap includes home, Info and three product URLs. Robots allows storefront/assets, excludes source/check directories, and declares https://staywide.cc/sitemap.xml. Robots exclusions are not access control; publish public files only.
+- Sitemap includes home, Info and four product URLs. Robots allows storefront/assets, excludes source/check directories, and declares https://staywide.cc/sitemap.xml. Robots exclusions are not access control; publish public files only.
 - Script-free branded 404; local server returns actual HTTP 404 for unknown nested paths. Production must configure equivalent handling.
 - Equal-weight Accept all / Reject non-essential / Manage. Analytics and Advertising independent, off by default; Essential always active. Footer/Info Cookie settings, non-modal banner, safe-area spacing and keyboard support.
 - Versioned 180-day local preferences with invalid/expired/blocked-storage fallback and cross-tab changes. Optional SDKs require both their consent and a valid configured ID. Both IDs are blank.
 - Withdrawal stops helper forwarding, disables GA/revokes Meta, removes accessible associated first-party cookies and queued events, and reloads if an SDK had started. No pre-consent event replay. Previously transmitted requests cannot be retracted; provider-owned third-party cookies cannot be cleared here.
 - Only lean GA events and corresponding Meta events prepared. No generic click/size/gallery/scroll tracking or fake commerce/signup success. GA payloads omit URL queries and referrers.
-- Compact Info sections retain Shipping, Sizing, Contact, Returns, Privacy, Cookies and Terms. Dispatch is intentionally omitted. Unconfirmed information uses brief public notices; these are not completed policies. Cookie facts and preference controls remain.
+- Info sections are Shipping, Sizing, Contact and Cookies. Sizing contains the supplied hoodie and T-shirt charts and generated semantic tables. Contact is `areyawide@gmail.com` with a mailto link. The custom Returns placeholder/anchor and combined Shipping / Returns labels are removed; Shopify policies and checkout policy links are unchanged. Cookie facts and preference controls remain.
 - System fonts and existing responsive styling retained. Product dimensions/aspect ratios reserved; primary gallery and first-row collection images eager, secondary/recommendation images lazy. Real photography replaces rendered silhouettes; unused silhouette CSS remains available in the retained styles.
 
 ## FOUNDER REQUIRED
@@ -37,14 +39,16 @@ All unchecked items remain unresolved. Do not replace them with guesses.
 - [x] Faithful favicon.ico (16/32/48px), PNG 48px and Apple touch 180px, with root-relative references on every generated page. No invented mark or fake vector.
 - [ ] Original designer vector/high-resolution logo package and dedicated designer favicon for stronger tiny-size legibility.
 - [x] Approved white homepage/logo share and three primary-photo shares are 1200x630 with matching OG/X metadata and alt.
-- [ ] Real campaign photography/film; keep the campaign section hidden until supplied.
-- [ ] Hoodie 02 photography and approved product information before listing it.
-- [x] Current public names, working EUR prices, concise metadata and the size-up note supplied for the three listed products.
-- [ ] Final collection count, launch prices, product descriptions, actual availability, sizes/measurements/model sizing, material/colour/SKU, decoration and care. Existing sizes remain development data. No invented identifiers/reviews.
+- [x] Existing campaign assets and styling preserved. The current local homepage template contains no campaign section; none was restored from older work.
+- [x] Claddagh Hoodie photography, name, price and existing Shopify mapping supplied; product listed.
+- [x] Current public names, EUR prices, concise metadata and the size-up note supplied for all four products.
+- [x] Exact supplied hoodie/T-shirt measurements published from one shared source. Live sizes/availability come from Shopify.
+- [ ] Final product descriptions, model sizing, material/colour/SKU, decoration and care. No invented identifiers/reviews.
 - [ ] Confirm internal fulfilment operations before launch. Dispatch timing is intentionally not displayed publicly; any later public timing needs separate approval.
 - [ ] Shipping regions and rates. Ireland/UK likely, EU possible, all unconfirmed; no worldwide claim. Fill shipping configuration and authoritative Shopify rules together.
 - [ ] Returns policy and practical operational process — launch blocker.
-- [ ] Public support email and business/data-controller/seller details.
+- [x] Public support email: `areyawide@gmail.com`.
+- [ ] Business/data-controller/seller details.
 - [ ] Final privacy/cookies/terms: purposes, providers, retention, transfers, rights/contact, final cookie inventory and durations. Current Info is not a final policy. Review before activation; this work is not legal sign-off.
 - [ ] Final Instagram and TikTok URLs/handles.
 - [ ] Real GA4 Measurement ID and Meta Pixel/Dataset ID; no secrets in public configuration.

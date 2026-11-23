@@ -1,0 +1,759 @@
+{
+  "prices": [
+    {
+      "localId": "hoodie-01",
+      "localPrice": 55,
+      "productId": "gid://shopify/Product/16690527011207",
+      "variantCount": 4,
+      "passed": true,
+      "issues": [],
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67886272151943",
+          "size": "S",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886272184711",
+          "size": "M",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886272217479",
+          "size": "L",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886272250247",
+          "size": "XL",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        }
+      ]
+    },
+    {
+      "localId": "hoodie-02",
+      "localPrice": 55,
+      "productId": "gid://shopify/Product/16718244217223",
+      "variantCount": 4,
+      "passed": true,
+      "issues": [],
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/68247770005895",
+          "size": "L",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/68247770038663",
+          "size": "M",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/68247770071431",
+          "size": "S",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/68247770104199",
+          "size": "XL",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        }
+      ]
+    },
+    {
+      "localId": "tshirt-01",
+      "localPrice": 25,
+      "productId": "gid://shopify/Product/16690535891335",
+      "variantCount": 4,
+      "passed": true,
+      "issues": [],
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67886283030919",
+          "size": "XL",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886283063687",
+          "size": "L",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886283096455",
+          "size": "M",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886283129223",
+          "size": "S",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        }
+      ]
+    },
+    {
+      "localId": "tshirt-02",
+      "localPrice": 25,
+      "productId": "gid://shopify/Product/16690540020103",
+      "variantCount": 4,
+      "passed": true,
+      "issues": [],
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67886288634247",
+          "size": "XL",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886288667015",
+          "size": "M",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886288699783",
+          "size": "L",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886288732551",
+          "size": "S",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        }
+      ]
+    }
+  ],
+  "viewports": [
+    {
+      "product": "hoodie-01",
+      "width": 375,
+      "height": 812,
+      "selectedSize": "XL",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Blower Hoodie",
+        "price": "€55",
+        "galleryHeight": 373.515625,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 853.40625,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "HOODIES",
+        "image": "../assets/size-guides/hoodie-size-chart.jpeg",
+        "imageWidth": 1560,
+        "imageHeight": 260,
+        "width": 352.5,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 10
+      }
+    },
+    {
+      "product": "hoodie-02",
+      "width": 375,
+      "height": 812,
+      "selectedSize": "XL",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Claddagh Hoodie",
+        "price": "€55",
+        "galleryHeight": 373.515625,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 853.40625,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "HOODIES",
+        "image": "../assets/size-guides/hoodie-size-chart.jpeg",
+        "imageWidth": 1560,
+        "imageHeight": 260,
+        "width": 352.5,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 10
+      }
+    },
+    {
+      "product": "tshirt-01",
+      "width": 375,
+      "height": 812,
+      "selectedSize": "S",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Stay Wide Tee",
+        "price": "€25",
+        "galleryHeight": 373.515625,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 853.40625,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "TEES",
+        "image": "../assets/size-guides/tee-size-chart.jpeg",
+        "imageWidth": 1065,
+        "imageHeight": 736,
+        "width": 352.5,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 9
+      }
+    },
+    {
+      "product": "tshirt-02",
+      "width": 375,
+      "height": 812,
+      "selectedSize": "S",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Ashtray Tee",
+        "price": "€25",
+        "galleryHeight": 373.515625,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 853.40625,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "TEES",
+        "image": "../assets/size-guides/tee-size-chart.jpeg",
+        "imageWidth": 1065,
+        "imageHeight": 736,
+        "width": 352.5,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 9
+      }
+    },
+    {
+      "product": "hoodie-01",
+      "width": 390,
+      "height": 844,
+      "selectedSize": "XL",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Blower Hoodie",
+        "price": "€55",
+        "galleryHeight": 388.234375,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 868.125,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "HOODIES",
+        "image": "../assets/size-guides/hoodie-size-chart.jpeg",
+        "imageWidth": 1560,
+        "imageHeight": 260,
+        "width": 366.59375,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 10
+      }
+    },
+    {
+      "product": "hoodie-02",
+      "width": 390,
+      "height": 844,
+      "selectedSize": "XL",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Claddagh Hoodie",
+        "price": "€55",
+        "galleryHeight": 388.234375,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 868.125,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "HOODIES",
+        "image": "../assets/size-guides/hoodie-size-chart.jpeg",
+        "imageWidth": 1560,
+        "imageHeight": 260,
+        "width": 366.59375,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 10
+      }
+    },
+    {
+      "product": "tshirt-01",
+      "width": 390,
+      "height": 844,
+      "selectedSize": "S",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Stay Wide Tee",
+        "price": "€25",
+        "galleryHeight": 388.234375,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 868.125,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "TEES",
+        "image": "../assets/size-guides/tee-size-chart.jpeg",
+        "imageWidth": 1065,
+        "imageHeight": 736,
+        "width": 366.59375,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 9
+      }
+    },
+    {
+      "product": "tshirt-02",
+      "width": 390,
+      "height": 844,
+      "selectedSize": "S",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Ashtray Tee",
+        "price": "€25",
+        "galleryHeight": 388.234375,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 868.125,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "TEES",
+        "image": "../assets/size-guides/tee-size-chart.jpeg",
+        "imageWidth": 1065,
+        "imageHeight": 736,
+        "width": 366.59375,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 9
+      }
+    },
+    {
+      "product": "hoodie-01",
+      "width": 430,
+      "height": 932,
+      "selectedSize": "XL",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Blower Hoodie",
+        "price": "€55",
+        "galleryHeight": 428.71875,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 908.609375,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "HOODIES",
+        "image": "../assets/size-guides/hoodie-size-chart.jpeg",
+        "imageWidth": 1560,
+        "imageHeight": 260,
+        "width": 404.1875,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 10
+      }
+    },
+    {
+      "product": "hoodie-02",
+      "width": 430,
+      "height": 932,
+      "selectedSize": "XL",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Claddagh Hoodie",
+        "price": "€55",
+        "galleryHeight": 428.71875,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 908.609375,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "HOODIES",
+        "image": "../assets/size-guides/hoodie-size-chart.jpeg",
+        "imageWidth": 1560,
+        "imageHeight": 260,
+        "width": 404.1875,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 10
+      }
+    },
+    {
+      "product": "tshirt-01",
+      "width": 430,
+      "height": 932,
+      "selectedSize": "S",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Stay Wide Tee",
+        "price": "€25",
+        "galleryHeight": 428.71875,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 908.609375,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "TEES",
+        "image": "../assets/size-guides/tee-size-chart.jpeg",
+        "imageWidth": 1065,
+        "imageHeight": 736,
+        "width": 404.1875,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 9
+      }
+    },
+    {
+      "product": "tshirt-02",
+      "width": 430,
+      "height": 932,
+      "selectedSize": "S",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Ashtray Tee",
+        "price": "€25",
+        "galleryHeight": 428.71875,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 908.609375,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "TEES",
+        "image": "../assets/size-guides/tee-size-chart.jpeg",
+        "imageWidth": 1065,
+        "imageHeight": 736,
+        "width": 404.1875,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 9
+      }
+    },
+    {
+      "product": "hoodie-01",
+      "width": 1440,
+      "height": 1000,
+      "selectedSize": "XL",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Blower Hoodie",
+        "price": "€55",
+        "galleryHeight": 805.484375,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 445.34375,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "HOODIES",
+        "image": "../assets/size-guides/hoodie-size-chart.jpeg",
+        "imageWidth": 1560,
+        "imageHeight": 260,
+        "width": 760,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 10
+      }
+    },
+    {
+      "product": "hoodie-02",
+      "width": 1440,
+      "height": 1000,
+      "selectedSize": "XL",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Claddagh Hoodie",
+        "price": "€55",
+        "galleryHeight": 805.484375,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 445.34375,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "HOODIES",
+        "image": "../assets/size-guides/hoodie-size-chart.jpeg",
+        "imageWidth": 1560,
+        "imageHeight": 260,
+        "width": 760,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 10
+      }
+    },
+    {
+      "product": "tshirt-01",
+      "width": 1440,
+      "height": 1000,
+      "selectedSize": "S",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Stay Wide Tee",
+        "price": "€25",
+        "galleryHeight": 805.484375,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 445.34375,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "TEES",
+        "image": "../assets/size-guides/tee-size-chart.jpeg",
+        "imageWidth": 1065,
+        "imageHeight": 736,
+        "width": 760,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 9
+      }
+    },
+    {
+      "product": "tshirt-02",
+      "width": 1440,
+      "height": 1000,
+      "selectedSize": "S",
+      "selectionPreserved": true,
+      "escapeAndClose": true,
+      "focusRestored": true,
+      "layout": {
+        "overflow": false,
+        "title": "Ashtray Tee",
+        "price": "€25",
+        "galleryHeight": 805.484375,
+        "triggerHeight": 44,
+        "triggerOnRow": true,
+        "fit": true,
+        "fitBetween": true,
+        "buttonBottom": 445.34375,
+        "buttonHeight": 52,
+        "selectorHeight": 48
+      },
+      "guide": {
+        "category": "TEES",
+        "image": "../assets/size-guides/tee-size-chart.jpeg",
+        "imageWidth": 1065,
+        "imageHeight": 736,
+        "width": 760,
+        "inside": true,
+        "closeVisible": true,
+        "contentOverflow": false,
+        "fontSize": "14px",
+        "focusedClose": true,
+        "rowCount": 9
+      }
+    }
+  ],
+  "campaign": [
+    {
+      "width": 375,
+      "height": 812,
+      "present": false,
+      "localTemplatePreserved": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "present": false,
+      "localTemplatePreserved": true
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "present": false,
+      "localTemplatePreserved": true
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "present": false,
+      "localTemplatePreserved": true
+    }
+  ],
+  "checkout": {
+    "separateWindow": true,
+    "host": "zw8sj5-yw.myshopify.com",
+    "storefrontStayedOpen": true,
+    "beginCheckoutEvents": 1,
+    "continueShoppingClosesCart": true,
+    "orderSubmitted": false
+  },
+  "mixedCart": {
+    "text": "YOUR BAG\nCONTINUE SHOPPING\nAshtray Tee\nS\n€25,00\nReduce item quantity by one\nIncrease item quantity by one\nStay Wide Tee\nS\n€25,00\nReduce item quantity by one\nIncrease item quantity by one\nCladdagh Hoodie\nXL\n€55,00\nReduce item quantity by one\nIncrease item quantity by one\nBlower Hoodie\nXL\n€55,00\nReduce item quantity by one\nIncrease item quantity by one\n\nSUBTOTAL\n\n€160,00\n\nShipping and discount codes are added at checkout.\n\nCHECKOUT",
+    "lines": 4,
+    "count": "Cart\n4",
+    "carts": 1
+  },
+  "runtimeErrors": []
+}

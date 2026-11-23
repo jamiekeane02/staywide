@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const assert = require('node:assert/strict');
 const products = require('../js/catalog.js').products.filter(p => p.listed !== false);
 const output = process.env.STAYWIDE_QA_OUTPUT || 'checks/size-campaign';
+const hasCampaign = /class="campaign-media\b/.test(fs.readFileSync('templates/home.html','utf8'));
 const pd = `document.querySelector('[data-shopify-product] iframe').contentDocument`;
 const cd = `document.querySelector('iframe[title="YOUR BAG"]').contentDocument`;
 (async () => {
@@ -22,7 +23,10 @@ const cd = `document.querySelector('iframe[title="YOUR BAG"]').contentDocument`;
     await visit('index.html');
     await ev("document.querySelector('[data-cookie-reject]').click()");
     for (const p of products) {
-      const live = await ev(`(async()=>{const config=stayWideConfig.shopify;const client=ShopifyBuy.buildClient({domain:config.domain,storefrontAccessToken:config.storefrontAccessToken});const p=await client.product.fetch('gid://shopify/Product/${p.shopifyProductId}');return {id:p.id,title:p.title,variants:p.variants.map(v=>({size:v.title,available:v.available,price:v.price.amount,currency:v.price.currencyCode}))};})()`);
+      await visit(`products/${p.id}.html`);
+      const live = await ev('stayWideShopify.validation');
+      assert(live?.passed, `${p.id}: live validation must pass`);
+      assert.equal(live.productId, 'gid://shopify/Product/' + p.shopifyProductId);
       assert(live.variants.every(v => Number(v.price) === p.price && v.currency === 'EUR'), `${p.id}: Shopify price must match catalogue`);
       results.prices.push({ localId: p.id, localPrice: p.price, ...live });
     }
@@ -88,10 +92,18 @@ const cd = `document.querySelector('iframe[title="YOUR BAG"]').contentDocument`;
       }
       await visit('index.html');
       await ev("document.documentElement.style.scrollBehavior='auto'");
+      assert.equal(await ev("!!document.querySelector('.campaign-media')"),hasCampaign,'Preserve current local campaign presence');
+      assert.deepEqual(await ev("[...document.querySelectorAll('.collection-grid .product-price')].map(e=>e.textContent)"),products.map(p=>`€${p.price}`));
+      assert(!await ev('document.documentElement.scrollWidth>innerWidth'));
+      if (hasCampaign) {
       const campaign=await ev(`(async()=>{const i=document.querySelector('.campaign-media img');i.scrollIntoView({block:'center'});await i.decode();const r=i.getBoundingClientRect();return {loading:i.loading,priority:i.fetchPriority,source:i.currentSrc,width:r.width,height:r.height,ratio:r.width/r.height,overflow:document.documentElement.scrollWidth>innerWidth,beforeCollection:!!(i.compareDocumentPosition(document.querySelector('#shop'))&Node.DOCUMENT_POSITION_FOLLOWING),prices:[...document.querySelectorAll('.collection-grid .product-price')].map(e=>e.textContent),recommendationsNotApplicable:true};})()`);
       assert(!campaign.overflow);assert(campaign.beforeCollection);assert.equal(campaign.loading,'eager');assert.equal(campaign.priority,'high');assert(Math.abs(campaign.ratio-(width<700?7/5:4961/2827))<.01);
       assert.deepEqual(campaign.prices,['€55','€55','€25','€25']);
       results.campaign.push({width,height,...campaign});await shot(`campaign-${width}`);
+      } else {
+        results.campaign.push({width,height,present:false,localTemplatePreserved:true});
+        await shot(`home-${width}`);
+      }
     }
     await send('Emulation.setDeviceMetricsOverride',{width:375,height:812,deviceScaleFactor:2,mobile:true});
     await visit('index.html');
@@ -121,6 +133,6 @@ const cd = `document.querySelector('iframe[title="YOUR BAG"]').contentDocument`;
     assert.deepEqual(c.errors,[]);
     results.runtimeErrors=c.errors;
     fs.writeFileSync(`${output}/results.json`,JSON.stringify(results,null,2)+'\n');
-    console.log('PASS: four live Shopify prices, 16 PDP viewport checks, exact category mapping, dialog/selection/focus, all four adds, cart count/persistence, popup checkout, one begin_checkout event, campaign at all widths.');
+    console.log('PASS: four live Shopify prices, 16 PDP viewport checks, exact category mapping, dialog/selection/focus, all four adds, cart count/persistence, popup checkout, one begin_checkout event, current homepage at all widths.');
   } finally { c.close(); }
 })().catch(error=>{console.error(error);process.exitCode=1});

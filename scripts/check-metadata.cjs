@@ -10,7 +10,7 @@ for(const page of ['index.html','info.html',...products.map(p=>'products/'+p.id+
   assert(!/preorder|PreOrder|AggregateRating|gtin|mpn/i.test(html));
   for(const match of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
     const ref=match[1].replaceAll('&amp;','&');
-    if(/^(?:https?:|data:|#)/.test(ref)) continue;
+    if(/^(?:https?:|mailto:|data:|#)/.test(ref)) continue;
     const file=ref.split('#')[0].split('?')[0];
     const target=ref.startsWith('/')?'.'+file:path.join(path.dirname(page),file);
     assert(fs.existsSync(target),`${page}: missing ${ref}`);

@@ -4,13 +4,14 @@ const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const source = fs.readFileSync('js/shopify-buy.js','utf8');
 const flush = async () => { for(let i=0;i<20;i++) await Promise.resolve(); };
-async function fixture({ mismatch=false, missing=false, cdn=false }={}) {
+async function fixture({ mismatch=false, missing=false, cdn=false, model, localProduct }={}) {
   const nodes = { mount:{hidden:true},status:{textContent:''},notice:{hidden:true},body:{dataset:{page:'product',product:'hoodie-01'},appendChild:n=>n} };
   const events=[],components={},timers=new Map();let timerId=0,clients=0;
   const variant={id:'gid://shopify/ProductVariant/1',available:true,price:{amount:'55.0',currencyCode:'EUR'},product:{id:'gid://shopify/Product/16690527011207'}};
-  const product={id:'hoodie-01',name:'Blower Hoodie',price:55,currency:'EUR',shopifyProductId:'16690527011207',listed:true};
+  const product=localProduct || {id:'hoodie-01',name:'Blower Hoodie',price:55,currency:'EUR',shopifyProductId:'16690527011207',listed:true};
+  nodes.body.dataset.product=product.id;
   const ui={createComponent(type,config){
-    components[type]={config,model:type==='cart'?null:{id:'gid://shopify/Product/16690527011207',variants:[{...variant,price:{amount:mismatch?'60':'55',currencyCode:'EUR'}}]},selectedVariant:variant,selectedQuantity:1};
+    components[type]={config,model:type==='cart'?null:(model || {id:'gid://shopify/Product/'+product.shopifyProductId,variants:[{...variant,price:{amount:mismatch?'60':'55',currencyCode:'EUR'}}]}),selectedVariant:variant,selectedQuantity:1};
     if(type==='product'&&missing)return;
     config.options[type].events.beforeRender?.(components[type]);
     config.options[type].events.afterInit(components[type]);
@@ -36,7 +37,24 @@ async function fixture({ mismatch=false, missing=false, cdn=false }={}) {
   pe.addVariantToCart(p);ce.updateItemQuantity(c);c.model={...c.model,lineItems:[{...c.model.lineItems[0],quantity:2}]};ce.afterRender(c);assert.equal(f.events.length,1,'quantity edit cannot confirm failed add');
   assert.equal(c.config.options.cart.popup,true);ce.openCheckout(c);assert.equal(f.events[1].name,'begin_checkout');assert.equal(f.events.filter(e=>e.name==='begin_checkout').length,1);assert(!f.events.some(e=>e.name==='purchase'));
   const mismatch=await fixture({mismatch:true});assert.equal(mismatch.nodes.mount.hidden,true);assert.equal(mismatch.window.stayWideShopify.status,'unavailable');
+  for(const localProduct of require('../js/catalog.js').products.filter(p=>p.kind==='hoodie')) {
+    const model={id:'gid://shopify/Product/'+localProduct.shopifyProductId,variants:[{...f.variant},{...f.variant,id:'gid://shopify/ProductVariant/2'}]};
+    const valid=await fixture({localProduct,model});assert.equal(valid.window.stayWideShopify.status,'ready');assert(valid.window.stayWideShopify.validation.passed);
+    for(const [type,changed] of [
+      ['product_id_mismatch',{...model,id:'gid://shopify/Product/999'}],
+      ['no_variants',{...model,variants:[]}],
+      ['currency_mismatch',{...model,variants:[model.variants[0],{...model.variants[1],price:{amount:'55',currencyCode:'USD'}}]}],
+      ['variant_price_mismatch',{...model,variants:[model.variants[0],{...model.variants[1],price:{amount:'60',currencyCode:'EUR'}}]}]
+    ]) {
+      const bad=await fixture({localProduct,model:changed});assert.equal(bad.window.stayWideShopify.status,'unavailable');assert(bad.nodes.mount.hidden);
+      assert.equal(bad.nodes.status.textContent,'Shopping is temporarily unavailable. Please try again.');
+      assert.equal(bad.window.stayWideShopify.validation.issues[0].type,type);
+      assert(bad.window.stayWideShopify.reason.includes(type));
+    }
+    const soldOut=await fixture({localProduct,model:{...model,variants:model.variants.map(v=>({...v,available:false}))}});
+    assert.equal(soldOut.window.stayWideShopify.status,'ready','Sold out is a legitimate Shopify state');
+  }
   const missing=await fixture({missing:true});for(const fn of [...missing.timers.values()])fn();await flush();assert.equal(missing.window.stayWideShopify.status,'unavailable');assert(missing.window.stayWideShopify.reason.includes('hoodie-01'));
   const cdn=await fixture({cdn:true});cdn.script.listeners.error();await flush();assert.equal(cdn.window.stayWideShopify.status,'unavailable');assert(cdn.nodes.mount.hidden);assert(!cdn.nodes.notice.hidden);
-  console.log('PASS: single initialization; success-only/deduplicated add events; quantity cancellation; checkout event; no purchase; price mismatch; missing product; CDN failure.');
+  console.log('PASS: single initialization; success-only/deduplicated add events; quantity cancellation; popup checkout; both hoodies validate every variant, all four diagnostic reasons, and sold-out state; missing product; CDN failure.');
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -1,6 +1,6 @@
 # Stay Wide — Shopify Buy Button integration
 
-6 November 2026. Implemented in the current local checkout, preserving the existing uncommitted copy, photography and gallery work. No deployment, commit, push, payment or order submission.
+Original integration: 6 November 2026. Mapping table updated 23 November 2026. Both hoodies now use EUR 55 and both tees EUR 25. All four products pass live validation. Current behavior and QA commands are in [README.md](README.md), with evidence in `checks/info-commerce/` and `checks/info-commerce-pdp/`. Sections 3 onward preserve the original integration record, including historical same-tab checkout and older cart totals; current checkout opens separately with `cart.popup: true`. No deployment, commit, push, payment or order submission.
 
 ## 1. Extracted configuration
 
@@ -14,11 +14,12 @@
 
 | Local product | Shopify product | Shopify ID | Approved price |
 | --- | --- | --- | --- |
-| `hoodie-01` | Blower Hoodie | `16690527011207` | €60 |
+| `hoodie-01` | Blower Hoodie | `16690527011207` | €55 |
+| `hoodie-02` | Claddagh Hoodie | `16718244217223` | €55 |
 | `tshirt-01` | Stay Wide Tee | `16690535891335` | €25 |
 | `tshirt-02` | Ashtray Tee | `16690540020103` | €25 |
 
-Mappings came respectively from `blower buy button.txt`, `LOGO TEE BUY BUTON.txt`, and `ASHTRAY BUY BUTTON.txt`. Hoodie 02 remains unlisted, unmapped and not commerce-ready; its route returns 404. All three mapped products loaded, selected variants and added successfully, so their `commerceReady` verification flags are true. `development` remains true for unapproved editorial details and static schema; it no longer controls Shopify purchasing.
+Original mappings came from the supplied Buy Button snippets; the later Claddagh mapping is preserved from the current catalogue. All four mapped products are listed. `commerceReady` indicates mapping eligibility; live ID, every variant's currency and every variant's price must pass validation before purchasing. `development` remains true for unapproved editorial details and static schema; it does not control Shopify purchasing. No new snippets, clients, tokens or carts were introduced for the price changes.
 
 ## 3. Product pages
 

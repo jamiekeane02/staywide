@@ -1,0 +1,154 @@
+[
+  {
+    "status": "ready",
+    "localId": "hoodie-01",
+    "productId": "gid://shopify/Product/16690527011207",
+    "variantCount": 4,
+    "passed": true,
+    "issues": [],
+    "variants": [
+      {
+        "id": "gid://shopify/ProductVariant/67886272151943",
+        "size": "S",
+        "currency": "EUR",
+        "price": "55.0",
+        "available": true
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67886272184711",
+        "size": "M",
+        "currency": "EUR",
+        "price": "55.0",
+        "available": true
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67886272217479",
+        "size": "L",
+        "currency": "EUR",
+        "price": "55.0",
+        "available": true
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67886272250247",
+        "size": "XL",
+        "currency": "EUR",
+        "price": "55.0",
+        "available": true
+      }
+    ]
+  },
+  {
+    "status": "ready",
+    "localId": "hoodie-02",
+    "productId": "gid://shopify/Product/16718244217223",
+    "variantCount": 4,
+    "passed": true,
+    "issues": [],
+    "variants": [
+      {
+        "id": "gid://shopify/ProductVariant/68247770005895",
+        "size": "L",
+        "currency": "EUR",
+        "price": "55.0",
+        "available": true
+      },
+      {
+        "id": "gid://shopify/ProductVariant/68247770038663",
+        "size": "M",
+        "currency": "EUR",
+        "price": "55.0",
+        "available": true
+      },
+      {
+        "id": "gid://shopify/ProductVariant/68247770071431",
+        "size": "S",
+        "currency": "EUR",
+        "price": "55.0",
+        "available": true
+      },
+      {
+        "id": "gid://shopify/ProductVariant/68247770104199",
+        "size": "XL",
+        "currency": "EUR",
+        "price": "55.0",
+        "available": true
+      }
+    ]
+  },
+  {
+    "status": "ready",
+    "localId": "tshirt-01",
+    "productId": "gid://shopify/Product/16690535891335",
+    "variantCount": 4,
+    "passed": true,
+    "issues": [],
+    "variants": [
+      {
+        "id": "gid://shopify/ProductVariant/67886283030919",
+        "size": "XL",
+        "currency": "EUR",
+        "price": "25.0",
+        "available": true
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67886283063687",
+        "size": "L",
+        "currency": "EUR",
+        "price": "25.0",
+        "available": true
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67886283096455",
+        "size": "M",
+        "currency": "EUR",
+        "price": "25.0",
+        "available": true
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67886283129223",
+        "size": "S",
+        "currency": "EUR",
+        "price": "25.0",
+        "available": true
+      }
+    ]
+  },
+  {
+    "status": "ready",
+    "localId": "tshirt-02",
+    "productId": "gid://shopify/Product/16690540020103",
+    "variantCount": 4,
+    "passed": true,
+    "issues": [],
+    "variants": [
+      {
+        "id": "gid://shopify/ProductVariant/67886288634247",
+        "size": "XL",
+        "currency": "EUR",
+        "price": "25.0",
+        "available": true
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67886288667015",
+        "size": "M",
+        "currency": "EUR",
+        "price": "25.0",
+        "available": true
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67886288699783",
+        "size": "L",
+        "currency": "EUR",
+        "price": "25.0",
+        "available": true
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67886288732551",
+        "size": "S",
+        "currency": "EUR",
+        "price": "25.0",
+        "available": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,1002 @@
+{
+  "products": [
+    {
+      "status": "ready",
+      "localId": "hoodie-01",
+      "productId": "gid://shopify/Product/16690527011207",
+      "variantCount": 4,
+      "passed": true,
+      "issues": [],
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67886272151943",
+          "size": "S",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886272184711",
+          "size": "M",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886272217479",
+          "size": "L",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886272250247",
+          "size": "XL",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        }
+      ]
+    },
+    {
+      "status": "ready",
+      "localId": "hoodie-02",
+      "productId": "gid://shopify/Product/16718244217223",
+      "variantCount": 4,
+      "passed": true,
+      "issues": [],
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/68247770005895",
+          "size": "L",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/68247770038663",
+          "size": "M",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/68247770071431",
+          "size": "S",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/68247770104199",
+          "size": "XL",
+          "currency": "EUR",
+          "price": "55.0",
+          "available": true
+        }
+      ]
+    },
+    {
+      "status": "ready",
+      "localId": "tshirt-01",
+      "productId": "gid://shopify/Product/16690535891335",
+      "variantCount": 4,
+      "passed": true,
+      "issues": [],
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67886283030919",
+          "size": "XL",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886283063687",
+          "size": "L",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886283096455",
+          "size": "M",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886283129223",
+          "size": "S",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        }
+      ]
+    },
+    {
+      "status": "ready",
+      "localId": "tshirt-02",
+      "productId": "gid://shopify/Product/16690540020103",
+      "variantCount": 4,
+      "passed": true,
+      "issues": [],
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67886288634247",
+          "size": "XL",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886288667015",
+          "size": "M",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886288699783",
+          "size": "L",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67886288732551",
+          "size": "S",
+          "currency": "EUR",
+          "price": "25.0",
+          "available": true
+        }
+      ]
+    }
+  ],
+  "viewports": [
+    {
+      "width": 375,
+      "height": 812,
+      "overflow": false,
+      "sections": [
+        "shipping",
+        "sizing",
+        "contact",
+        "cookies"
+      ],
+      "charts": [
+        {
+          "title": "HOODIES",
+          "image": [
+            1560,
+            260
+          ],
+          "rows": [
+            [
+              "XS",
+              "48.5cm",
+              "66cm",
+              "60.5cm"
+            ],
+            [
+              "S",
+              "53.5cm",
+              "68cm",
+              "63cm"
+            ],
+            [
+              "M",
+              "58.5cm",
+              "70cm",
+              "65.5cm"
+            ],
+            [
+              "L",
+              "63.5cm",
+              "72cm",
+              "68cm"
+            ],
+            [
+              "XL",
+              "67cm",
+              "74cm",
+              "69cm"
+            ],
+            [
+              "XXL",
+              "70.5cm",
+              "76cm",
+              "70cm"
+            ],
+            [
+              "3XL",
+              "74cm",
+              "78cm",
+              "71cm"
+            ],
+            [
+              "4XL",
+              "79cm",
+              "83cm",
+              "72cm"
+            ],
+            [
+              "5XL",
+              "84cm",
+              "88cm",
+              "73cm"
+            ],
+            [
+              "Tol +/-",
+              "2cm",
+              "2cm",
+              "2cm"
+            ]
+          ],
+          "headers": [
+            {
+              "text": "SIZE",
+              "scope": "col"
+            },
+            {
+              "text": "CHEST",
+              "scope": "col"
+            },
+            {
+              "text": "BODY LENGTH -HPS",
+              "scope": "col"
+            },
+            {
+              "text": "SLEEVE LENGTH",
+              "scope": "col"
+            }
+          ],
+          "rowHeaders": true,
+          "tableFont": "16px",
+          "scrollers": [
+            {
+              "client": 335,
+              "scroll": 1100,
+              "moved": true,
+              "focusable": true
+            },
+            {
+              "client": 335,
+              "scroll": 480,
+              "moved": true,
+              "focusable": true
+            }
+          ]
+        },
+        {
+          "title": "T-SHIRTS",
+          "image": [
+            1065,
+            736
+          ],
+          "rows": [
+            [
+              "S",
+              "18",
+              "27"
+            ],
+            [
+              "M",
+              "20",
+              "29"
+            ],
+            [
+              "L",
+              "22",
+              "31"
+            ],
+            [
+              "XL",
+              "24",
+              "32"
+            ],
+            [
+              "2XL",
+              "26",
+              "33"
+            ],
+            [
+              "3XL",
+              "28",
+              "34"
+            ],
+            [
+              "4XL",
+              "30",
+              "35.5"
+            ],
+            [
+              "5XL",
+              "32",
+              "36.5"
+            ],
+            [
+              "7XL",
+              "36",
+              "38"
+            ]
+          ],
+          "headers": [
+            {
+              "text": "SIZE",
+              "scope": "col"
+            },
+            {
+              "text": "CHEST",
+              "scope": "col"
+            },
+            {
+              "text": "LENGTH",
+              "scope": "col"
+            }
+          ],
+          "rowHeaders": true,
+          "tableFont": "16px",
+          "scrollers": [
+            {
+              "client": 335,
+              "scroll": 335,
+              "moved": false,
+              "focusable": true
+            },
+            {
+              "client": 335,
+              "scroll": 335,
+              "moved": false,
+              "focusable": true
+            }
+          ]
+        }
+      ],
+      "headingsFit": true,
+      "email": {
+        "text": "areyawide@gmail.com",
+        "href": "mailto:areyawide@gmail.com",
+        "fits": true
+      },
+      "cookieSettings": "pass"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "sections": [
+        "shipping",
+        "sizing",
+        "contact",
+        "cookies"
+      ],
+      "charts": [
+        {
+          "title": "HOODIES",
+          "image": [
+            1560,
+            260
+          ],
+          "rows": [
+            [
+              "XS",
+              "48.5cm",
+              "66cm",
+              "60.5cm"
+            ],
+            [
+              "S",
+              "53.5cm",
+              "68cm",
+              "63cm"
+            ],
+            [
+              "M",
+              "58.5cm",
+              "70cm",
+              "65.5cm"
+            ],
+            [
+              "L",
+              "63.5cm",
+              "72cm",
+              "68cm"
+            ],
+            [
+              "XL",
+              "67cm",
+              "74cm",
+              "69cm"
+            ],
+            [
+              "XXL",
+              "70.5cm",
+              "76cm",
+              "70cm"
+            ],
+            [
+              "3XL",
+              "74cm",
+              "78cm",
+              "71cm"
+            ],
+            [
+              "4XL",
+              "79cm",
+              "83cm",
+              "72cm"
+            ],
+            [
+              "5XL",
+              "84cm",
+              "88cm",
+              "73cm"
+            ],
+            [
+              "Tol +/-",
+              "2cm",
+              "2cm",
+              "2cm"
+            ]
+          ],
+          "headers": [
+            {
+              "text": "SIZE",
+              "scope": "col"
+            },
+            {
+              "text": "CHEST",
+              "scope": "col"
+            },
+            {
+              "text": "BODY LENGTH -HPS",
+              "scope": "col"
+            },
+            {
+              "text": "SLEEVE LENGTH",
+              "scope": "col"
+            }
+          ],
+          "rowHeaders": true,
+          "tableFont": "16px",
+          "scrollers": [
+            {
+              "client": 350,
+              "scroll": 1100,
+              "moved": true,
+              "focusable": true
+            },
+            {
+              "client": 350,
+              "scroll": 480,
+              "moved": true,
+              "focusable": true
+            }
+          ]
+        },
+        {
+          "title": "T-SHIRTS",
+          "image": [
+            1065,
+            736
+          ],
+          "rows": [
+            [
+              "S",
+              "18",
+              "27"
+            ],
+            [
+              "M",
+              "20",
+              "29"
+            ],
+            [
+              "L",
+              "22",
+              "31"
+            ],
+            [
+              "XL",
+              "24",
+              "32"
+            ],
+            [
+              "2XL",
+              "26",
+              "33"
+            ],
+            [
+              "3XL",
+              "28",
+              "34"
+            ],
+            [
+              "4XL",
+              "30",
+              "35.5"
+            ],
+            [
+              "5XL",
+              "32",
+              "36.5"
+            ],
+            [
+              "7XL",
+              "36",
+              "38"
+            ]
+          ],
+          "headers": [
+            {
+              "text": "SIZE",
+              "scope": "col"
+            },
+            {
+              "text": "CHEST",
+              "scope": "col"
+            },
+            {
+              "text": "LENGTH",
+              "scope": "col"
+            }
+          ],
+          "rowHeaders": true,
+          "tableFont": "16px",
+          "scrollers": [
+            {
+              "client": 350,
+              "scroll": 350,
+              "moved": false,
+              "focusable": true
+            },
+            {
+              "client": 350,
+              "scroll": 350,
+              "moved": false,
+              "focusable": true
+            }
+          ]
+        }
+      ],
+      "headingsFit": true,
+      "email": {
+        "text": "areyawide@gmail.com",
+        "href": "mailto:areyawide@gmail.com",
+        "fits": true
+      },
+      "cookieSettings": "pass"
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "overflow": false,
+      "sections": [
+        "shipping",
+        "sizing",
+        "contact",
+        "cookies"
+      ],
+      "charts": [
+        {
+          "title": "HOODIES",
+          "image": [
+            1560,
+            260
+          ],
+          "rows": [
+            [
+              "XS",
+              "48.5cm",
+              "66cm",
+              "60.5cm"
+            ],
+            [
+              "S",
+              "53.5cm",
+              "68cm",
+              "63cm"
+            ],
+            [
+              "M",
+              "58.5cm",
+              "70cm",
+              "65.5cm"
+            ],
+            [
+              "L",
+              "63.5cm",
+              "72cm",
+              "68cm"
+            ],
+            [
+              "XL",
+              "67cm",
+              "74cm",
+              "69cm"
+            ],
+            [
+              "XXL",
+              "70.5cm",
+              "76cm",
+              "70cm"
+            ],
+            [
+              "3XL",
+              "74cm",
+              "78cm",
+              "71cm"
+            ],
+            [
+              "4XL",
+              "79cm",
+              "83cm",
+              "72cm"
+            ],
+            [
+              "5XL",
+              "84cm",
+              "88cm",
+              "73cm"
+            ],
+            [
+              "Tol +/-",
+              "2cm",
+              "2cm",
+              "2cm"
+            ]
+          ],
+          "headers": [
+            {
+              "text": "SIZE",
+              "scope": "col"
+            },
+            {
+              "text": "CHEST",
+              "scope": "col"
+            },
+            {
+              "text": "BODY LENGTH -HPS",
+              "scope": "col"
+            },
+            {
+              "text": "SLEEVE LENGTH",
+              "scope": "col"
+            }
+          ],
+          "rowHeaders": true,
+          "tableFont": "16px",
+          "scrollers": [
+            {
+              "client": 390,
+              "scroll": 1100,
+              "moved": true,
+              "focusable": true
+            },
+            {
+              "client": 390,
+              "scroll": 480,
+              "moved": true,
+              "focusable": true
+            }
+          ]
+        },
+        {
+          "title": "T-SHIRTS",
+          "image": [
+            1065,
+            736
+          ],
+          "rows": [
+            [
+              "S",
+              "18",
+              "27"
+            ],
+            [
+              "M",
+              "20",
+              "29"
+            ],
+            [
+              "L",
+              "22",
+              "31"
+            ],
+            [
+              "XL",
+              "24",
+              "32"
+            ],
+            [
+              "2XL",
+              "26",
+              "33"
+            ],
+            [
+              "3XL",
+              "28",
+              "34"
+            ],
+            [
+              "4XL",
+              "30",
+              "35.5"
+            ],
+            [
+              "5XL",
+              "32",
+              "36.5"
+            ],
+            [
+              "7XL",
+              "36",
+              "38"
+            ]
+          ],
+          "headers": [
+            {
+              "text": "SIZE",
+              "scope": "col"
+            },
+            {
+              "text": "CHEST",
+              "scope": "col"
+            },
+            {
+              "text": "LENGTH",
+              "scope": "col"
+            }
+          ],
+          "rowHeaders": true,
+          "tableFont": "16px",
+          "scrollers": [
+            {
+              "client": 390,
+              "scroll": 390,
+              "moved": false,
+              "focusable": true
+            },
+            {
+              "client": 390,
+              "scroll": 390,
+              "moved": false,
+              "focusable": true
+            }
+          ]
+        }
+      ],
+      "headingsFit": true,
+      "email": {
+        "text": "areyawide@gmail.com",
+        "href": "mailto:areyawide@gmail.com",
+        "fits": true
+      },
+      "cookieSettings": "pass"
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "sections": [
+        "shipping",
+        "sizing",
+        "contact",
+        "cookies"
+      ],
+      "charts": [
+        {
+          "title": "HOODIES",
+          "image": [
+            1560,
+            260
+          ],
+          "rows": [
+            [
+              "XS",
+              "48.5cm",
+              "66cm",
+              "60.5cm"
+            ],
+            [
+              "S",
+              "53.5cm",
+              "68cm",
+              "63cm"
+            ],
+            [
+              "M",
+              "58.5cm",
+              "70cm",
+              "65.5cm"
+            ],
+            [
+              "L",
+              "63.5cm",
+              "72cm",
+              "68cm"
+            ],
+            [
+              "XL",
+              "67cm",
+              "74cm",
+              "69cm"
+            ],
+            [
+              "XXL",
+              "70.5cm",
+              "76cm",
+              "70cm"
+            ],
+            [
+              "3XL",
+              "74cm",
+              "78cm",
+              "71cm"
+            ],
+            [
+              "4XL",
+              "79cm",
+              "83cm",
+              "72cm"
+            ],
+            [
+              "5XL",
+              "84cm",
+              "88cm",
+              "73cm"
+            ],
+            [
+              "Tol +/-",
+              "2cm",
+              "2cm",
+              "2cm"
+            ]
+          ],
+          "headers": [
+            {
+              "text": "SIZE",
+              "scope": "col"
+            },
+            {
+              "text": "CHEST",
+              "scope": "col"
+            },
+            {
+              "text": "BODY LENGTH -HPS",
+              "scope": "col"
+            },
+            {
+              "text": "SLEEVE LENGTH",
+              "scope": "col"
+            }
+          ],
+          "rowHeaders": true,
+          "tableFont": "16px",
+          "scrollers": [
+            {
+              "client": 770,
+              "scroll": 770,
+              "moved": false,
+              "focusable": true
+            },
+            {
+              "client": 770,
+              "scroll": 770,
+              "moved": false,
+              "focusable": true
+            }
+          ]
+        },
+        {
+          "title": "T-SHIRTS",
+          "image": [
+            1065,
+            736
+          ],
+          "rows": [
+            [
+              "S",
+              "18",
+              "27"
+            ],
+            [
+              "M",
+              "20",
+              "29"
+            ],
+            [
+              "L",
+              "22",
+              "31"
+            ],
+            [
+              "XL",
+              "24",
+              "32"
+            ],
+            [
+              "2XL",
+              "26",
+              "33"
+            ],
+            [
+              "3XL",
+              "28",
+              "34"
+            ],
+            [
+              "4XL",
+              "30",
+              "35.5"
+            ],
+            [
+              "5XL",
+              "32",
+              "36.5"
+            ],
+            [
+              "7XL",
+              "36",
+              "38"
+            ]
+          ],
+          "headers": [
+            {
+              "text": "SIZE",
+              "scope": "col"
+            },
+            {
+              "text": "CHEST",
+              "scope": "col"
+            },
+            {
+              "text": "LENGTH",
+              "scope": "col"
+            }
+          ],
+          "rowHeaders": true,
+          "tableFont": "16px",
+          "scrollers": [
+            {
+              "client": 640,
+              "scroll": 640,
+              "moved": false,
+              "focusable": true
+            },
+            {
+              "client": 770,
+              "scroll": 770,
+              "moved": false,
+              "focusable": true
+            }
+          ]
+        }
+      ],
+      "headingsFit": true,
+      "email": {
+        "text": "areyawide@gmail.com",
+        "href": "mailto:areyawide@gmail.com",
+        "fits": true
+      },
+      "cookieSettings": "pass"
+    }
+  ],
+  "mixedCart": {
+    "carts": 1,
+    "text": "YOUR BAGCONTINUE SHOPPING\n                \n                Ashtray TeeM\n                        €25,00\n                      \n              \n                Reduce item quantity by one\n              \n              \n              \n                Increase item quantity by one\n              \n            Claddagh HoodieM\n                        €55,00\n                      \n              \n                Reduce item quantity by one\n              \n              \n              \n                Increase item quantity by one\n              \n            \n              \n            \n              SUBTOTAL\n              €80,00\n              Shipping and discount codes are added at checkout.\n              CHECKOUT\n            \n           ",
+    "sizes": [
+      "M",
+      "M"
+    ],
+    "lines": 2,
+    "selectedSizes": [
+      "M",
+      "M"
+    ],
+    "subtotalEUR": 80,
+    "persistedAcrossNavigation": true
+  },
+  "runtimeErrors": []
+}
