@@ -165,9 +165,23 @@ nav a:hover,.inline-link:hover { text-decoration:underline; text-underline-offse
 }
 
 /* Launch foundation: retain the existing visual system and keep commerce direct. */
-.campaign-media { padding-bottom:24px; }
+/* Intro supplies the upper gap; campaign supplies only the gap to collection. */
+.campaign-media { padding-block:0 28px; }
 .campaign-placeholder { min-height:130px; padding:20px; background:var(--paper); display:flex; flex-direction:column; justify-content:space-between; gap:24px; color:var(--muted); font-size:13px; }
-.campaign-media img,.campaign-media video { display:block; width:100%; height:clamp(130px,22vw,320px); object-fit:cover; }
+.campaign-media img { display:block; width:100%; max-width:420px; height:auto; aspect-ratio:7/5; margin-inline:auto; object-fit:cover; object-position:55% 50%; }
+@media (min-width:700px) {
+  .campaign-media { padding-bottom:32px; }
+  .campaign-media img { max-width:672px; aspect-ratio:4961/2827; object-fit:contain; }
+}
+@media (min-width:1100px) {
+  .campaign-media { padding-bottom:40px; }
+  .campaign-media img { max-width:736px; }
+}
+/* Reserve a header slot rather than letting the cart tab cover editorial media. */
+@media (max-width:1099px) {
+  body[data-page="home"] .site-header { min-height:72px; padding-right:calc(var(--pad) + 68px); }
+  body[data-page="home"] .shopify-buy-frame--toggle { top:var(--home-cart-center,61px); right:var(--pad); }
+}
 .product-state { font:700 13px/1.5 'Courier New',monospace; margin-top:10px; }
 .product-state span { font-weight:400; color:var(--muted); }
 .dispatch { font-size:13px; margin-top:5px; overflow-wrap:anywhere; }
@@ -221,6 +235,25 @@ nav a:hover,.inline-link:hover { text-decoration:underline; text-underline-offse
 .commerce-label { margin-bottom:8px; }
 .shopify-commerce { width:100%; min-height:130px; }
 .commerce-notice { padding-block:16px; font-size:14px; }
+.size-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:4px; }
+.size-heading .commerce-label { margin:0; }
+.size-guide-trigger,.size-guide-close { min-height:44px; border:0; padding:8px 0; background:transparent; color:var(--ink); font:700 14px Arial,Helvetica,sans-serif; text-decoration:underline; text-underline-offset:4px; cursor:pointer; }
+.size-guide-trigger:disabled { opacity:.5; cursor:default; }
+.purchase-controls:has(.shopify-commerce:not([hidden])) > .field-hint { display:none; }
+html:has(.size-guide-dialog[open]) { overflow:hidden; }
+.size-guide-dialog { width:min(94vw,760px); max-width:94vw; max-height:90vh; max-height:90dvh; padding:0; border:1px solid var(--ink); color:var(--ink); background:#fff; margin:auto; overflow:hidden; }
+.size-guide-dialog[open] { display:flex; flex-direction:column; }
+.size-guide-dialog::backdrop { background:rgb(0 0 0 / .5); }
+.size-guide-header { flex-shrink:0; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 16px; border-bottom:1px solid var(--line); }
+.size-guide-header h2 { font-size:18px; margin:0 0 4px; }
+.size-guide-header p { font-size:14px; margin:0; }
+.size-guide-content { overflow-y:auto; min-height:0; padding:16px; overscroll-behavior:contain; }
+.size-guide-content img { display:block; width:100%; height:auto; }
+.size-guide-content table { border-collapse:collapse; width:100%; table-layout:fixed; font-size:14px; margin:16px 0; }
+.size-guide-content caption { text-align:left; font-weight:700; margin-bottom:12px; }
+.size-guide-content th,.size-guide-content td { padding:10px 4px; border:1px solid #ccc; text-align:center; overflow-wrap:break-word; }
+.size-guide-content thead th { background:#f4f4f4; }
+.size-guide-content p { font-size:14px; line-height:1.5; margin-top:12px; }
 
 /* Four columns only once the page padding and gaps leave at least 260px per card. */
 @media (min-width:1240px) {

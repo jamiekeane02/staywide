@@ -1,0 +1,16 @@
+[
+  {
+    "width": 375,
+    "imageWidth": 335,
+    "imageHeight": 191.21875,
+    "gapBefore": 88,
+    "gapAfter": 24
+  },
+  {
+    "width": 1440,
+    "imageWidth": 1295.40625,
+    "imageHeight": 738.375,
+    "gapBefore": 104,
+    "gapAfter": 24
+  }
+]

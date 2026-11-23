@@ -7,10 +7,10 @@ const flush = async () => { for(let i=0;i<20;i++) await Promise.resolve(); };
 async function fixture({ mismatch=false, missing=false, cdn=false }={}) {
   const nodes = { mount:{hidden:true},status:{textContent:''},notice:{hidden:true},body:{dataset:{page:'product',product:'hoodie-01'},appendChild:n=>n} };
   const events=[],components={},timers=new Map();let timerId=0,clients=0;
-  const variant={id:'gid://shopify/ProductVariant/1',available:true,price:{amount:'60.0',currencyCode:'EUR'},product:{id:'gid://shopify/Product/16690527011207'}};
-  const product={id:'hoodie-01',name:'Blower Hoodie',price:60,currency:'EUR',shopifyProductId:'16690527011207',listed:true};
+  const variant={id:'gid://shopify/ProductVariant/1',available:true,price:{amount:'55.0',currencyCode:'EUR'},product:{id:'gid://shopify/Product/16690527011207'}};
+  const product={id:'hoodie-01',name:'Blower Hoodie',price:55,currency:'EUR',shopifyProductId:'16690527011207',listed:true};
   const ui={createComponent(type,config){
-    components[type]={config,model:type==='cart'?null:{id:'gid://shopify/Product/16690527011207',variants:[{...variant,price:{amount:mismatch?'65':'60',currencyCode:'EUR'}}]},selectedVariant:variant,selectedQuantity:1};
+    components[type]={config,model:type==='cart'?null:{id:'gid://shopify/Product/16690527011207',variants:[{...variant,price:{amount:mismatch?'60':'55',currencyCode:'EUR'}}]},selectedVariant:variant,selectedQuantity:1};
     if(type==='product'&&missing)return;
     config.options[type].events.beforeRender?.(components[type]);
     config.options[type].events.afterInit(components[type]);
@@ -30,11 +30,11 @@ async function fixture({ mismatch=false, missing=false, cdn=false }={}) {
   const p=f.components.product,c=f.components.cart,pe=p.config.options.product.events,ce=c.config.options.cart.events;
   pe.addVariantToCart(p);assert.equal(f.events.length,0,'click is not success');
   ce.afterRender(c);assert.equal(f.events.length,0,'optimistic render is not success');
-  c.model={lineItems:[{title:'Blower Hoodie',variant:f.variant,quantity:1}],webUrl:'https://example.invalid/from-shopify',subtotalPriceV2:{amount:'60',currencyCode:'EUR'}};
-  ce.afterRender(c);assert.equal(f.events.length,1);assert.equal(f.events[0].name,'add_to_cart');assert.equal(f.events[0].data.value,60);
+  c.model={lineItems:[{title:'Blower Hoodie',variant:f.variant,quantity:1}],webUrl:'https://example.invalid/from-shopify',subtotalPriceV2:{amount:'55',currencyCode:'EUR'}};
+  ce.afterRender(c);assert.equal(f.events.length,1);assert.equal(f.events[0].name,'add_to_cart');assert.equal(f.events[0].data.value,55);
   ce.afterRender(c);assert.equal(f.events.length,1,'render cannot duplicate event');
   pe.addVariantToCart(p);ce.updateItemQuantity(c);c.model={...c.model,lineItems:[{...c.model.lineItems[0],quantity:2}]};ce.afterRender(c);assert.equal(f.events.length,1,'quantity edit cannot confirm failed add');
-  ce.openCheckout(c);assert.equal(f.events[1].name,'begin_checkout');assert(!f.events.some(e=>e.name==='purchase'));
+  assert.equal(c.config.options.cart.popup,true);ce.openCheckout(c);assert.equal(f.events[1].name,'begin_checkout');assert.equal(f.events.filter(e=>e.name==='begin_checkout').length,1);assert(!f.events.some(e=>e.name==='purchase'));
   const mismatch=await fixture({mismatch:true});assert.equal(mismatch.nodes.mount.hidden,true);assert.equal(mismatch.window.stayWideShopify.status,'unavailable');
   const missing=await fixture({missing:true});for(const fn of [...missing.timers.values()])fn();await flush();assert.equal(missing.window.stayWideShopify.status,'unavailable');assert(missing.window.stayWideShopify.reason.includes('hoodie-01'));
   const cdn=await fixture({cdn:true});cdn.script.listeners.error();await flush();assert.equal(cdn.window.stayWideShopify.status,'unavailable');assert(cdn.nodes.mount.hidden);assert(!cdn.nodes.notice.hidden);

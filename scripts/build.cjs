@@ -17,6 +17,7 @@ const assetVersion = createHash('sha256').update(Buffer.concat(assetFiles.map(fi
 const versionAssets = html => html.replace(/((?:src|href)="(?:\.\.\/|\/)?(?:js|css)\/[^"?]+\.(?:js|css))"/g, '$1?v=' + assetVersion + '"');
 const writePage = (file, html) => fs.writeFileSync(file, versionAssets(html));
 const config = require('../js/site-config.js');
+const sizeGuides = require('./size-guides.cjs');
 const { head, url } = require('./metadata.cjs');
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const fill = (template, values) => template.replace(/{{(\w+)}}/g, (_, key) => {
@@ -24,6 +25,16 @@ const fill = (template, values) => template.replace(/{{(\w+)}}/g, (_, key) => {
   return values[key];
 });
 const confirmed = (product, value) => !product.development && value != null && !String(value).includes('[');
+function sizeGuideDialog(kind) {
+  const guide = sizeGuides[kind];
+  if (!guide || !fs.existsSync('assets/size-guides/' + guide.image)) throw new Error('Missing size guide: ' + kind);
+  return `<dialog class="size-guide-dialog" id="size-guide-dialog" data-size-guide-dialog aria-labelledby="size-guide-title" aria-describedby="size-guide-category">
+    <header class="size-guide-header"><div><h2 id="size-guide-title">SIZE GUIDE</h2><p id="size-guide-category">${guide.category}</p></div><button type="button" class="size-guide-close" data-size-guide-close autofocus>CLOSE</button></header>
+    <div class="size-guide-content" tabindex="0" role="region" aria-label="Size chart and measurements"><img src="../assets/size-guides/${guide.image}" width="${guide.width}" height="${guide.height}" alt="${guide.category === 'HOODIES' ? 'Hoodie' : 'T-shirt'} size chart in ${kind === 'hoodie' ? 'centimetres' : 'inches'}; all measurements are also in the table below." loading="lazy" decoding="async">
+    <table><caption>${guide.units}</caption><thead><tr>${guide.headers.map(label => `<th scope="col">${escape(label)}</th>`).join('')}</tr></thead><tbody>${guide.rows.map(row => `<tr><th scope="row">${escape(row[0])}</th>${row.slice(1).map(value => `<td>${escape(value)}</td>`).join('')}</tr>`).join('')}</tbody></table>
+    ${guide.notes.map(note => `<p>${escape(note)}</p>`).join('')}</div>
+  </dialog>`;
+}
 // Approved numeric prices can be visible while development/commerce gates stay closed.
 const price = product => !Number.isFinite(product.price) ? '' : new Intl.NumberFormat('en-IE', { style: 'currency', currency: product.currency, minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(product.price);
 function media(product, image, prefix, lazy = true, sizes = '(min-width: 1800px) 850px, (min-width: 700px) 48vw, (min-width: 420px) 380px, calc(100vw - 40px)') {
@@ -64,6 +75,7 @@ for (const product of products) {
     ...Object.fromEntries(Object.entries(product).map(([key, value]) => [key, escape(value)])),
     head: head({ title: product.name + ' \u2014 Stay Wide', description: product.metaDescription || (product.development ? product.name + ' by Stay Wide.' : product.description), route: 'products/' + product.id + '.html', product }), brand: brand('../'), footer: footer('../'), consent: consent('../'), gallery: gallery(product), price: price(product) ? `<span class="detail-price">${price(product)}</span>` : '',
     unconfirmed: product.development ? 'hidden' : '',
+    sizeGuideDialog: sizeGuideDialog(product.kind),
     ...Object.fromEntries(['fit', 'description', 'materials', 'decoration', 'care', 'sizeGuide'].map(key => [key, confirmed(product, product[key]) ? escape(product[key]) : ''])),
     cards: products.filter(other => other.id !== product.id).map(other => card(other, '../', true, Math.min(3, products.length - 1))).join('\n')
   }));

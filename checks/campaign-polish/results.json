@@ -1,0 +1,702 @@
+{
+  "viewports": [
+    {
+      "width": 375,
+      "height": 812,
+      "imageWidth": 335,
+      "imageHeight": 190.890625,
+      "gapBefore": 40,
+      "gapAfter": 40,
+      "centered": true,
+      "insideCollection": true,
+      "overflow": false,
+      "loading": "lazy",
+      "priority": "auto",
+      "alt": "Boxer wearing red gloves in a gym, with another person exercising behind him and a Stay Wide graphic above.",
+      "linked": false,
+      "products": [
+        {
+          "id": "hoodie-01",
+          "price": "€55",
+          "href": "products/hoodie-01.html",
+          "top": 291,
+          "left": 20
+        },
+        {
+          "id": "hoodie-02",
+          "price": "€55",
+          "href": "products/hoodie-02.html",
+          "top": 291,
+          "left": 195.5
+        },
+        {
+          "id": "tshirt-01",
+          "price": "€25",
+          "href": "products/tshirt-01.html",
+          "top": 546.875,
+          "left": 20
+        },
+        {
+          "id": "tshirt-02",
+          "price": "€25",
+          "href": "products/tshirt-02.html",
+          "top": 546.875,
+          "left": 195.5
+        }
+      ],
+      "unwanted": false,
+      "anchor": {
+        "heading": 82,
+        "headerBottom": 72
+      },
+      "afterLoad": {
+        "width": 335,
+        "height": 190.890625,
+        "source": "http://127.0.0.1:8080/assets/campaign/stay-wide-campaign-800.webp",
+        "cartOverlapsCampaign": false,
+        "cartOverlapsFooter": false,
+        "toggle": {
+          "x": 303,
+          "y": 5,
+          "width": 52,
+          "height": 62,
+          "top": 5,
+          "right": 355,
+          "bottom": 67,
+          "left": 303
+        },
+        "image": {
+          "x": 20,
+          "y": 377.75,
+          "width": 335,
+          "height": 190.890625,
+          "top": 377.75,
+          "right": 355,
+          "bottom": 568.640625,
+          "left": 20
+        }
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "imageWidth": 350,
+      "imageHeight": 199.4375,
+      "gapBefore": 40,
+      "gapAfter": 40,
+      "centered": true,
+      "insideCollection": true,
+      "overflow": false,
+      "loading": "lazy",
+      "priority": "auto",
+      "alt": "Boxer wearing red gloves in a gym, with another person exercising behind him and a Stay Wide graphic above.",
+      "linked": false,
+      "products": [
+        {
+          "id": "hoodie-01",
+          "price": "€55",
+          "href": "products/hoodie-01.html",
+          "top": 291,
+          "left": 20
+        },
+        {
+          "id": "hoodie-02",
+          "price": "€55",
+          "href": "products/hoodie-02.html",
+          "top": 291,
+          "left": 203
+        },
+        {
+          "id": "tshirt-01",
+          "price": "€25",
+          "href": "products/tshirt-01.html",
+          "top": 556.25,
+          "left": 20
+        },
+        {
+          "id": "tshirt-02",
+          "price": "€25",
+          "href": "products/tshirt-02.html",
+          "top": 556.25,
+          "left": 203
+        }
+      ],
+      "unwanted": false,
+      "anchor": {
+        "heading": 82,
+        "headerBottom": 72
+      },
+      "afterLoad": {
+        "width": 350,
+        "height": 199.4375,
+        "source": "http://127.0.0.1:8080/assets/campaign/stay-wide-campaign-800.webp",
+        "cartOverlapsCampaign": false,
+        "cartOverlapsFooter": false,
+        "toggle": {
+          "x": 318,
+          "y": 5,
+          "width": 52,
+          "height": 62,
+          "top": 5,
+          "right": 370,
+          "bottom": 67,
+          "left": 318
+        },
+        "image": {
+          "x": 20,
+          "y": 401.5,
+          "width": 350,
+          "height": 199.4375,
+          "top": 401.5,
+          "right": 370,
+          "bottom": 600.9375,
+          "left": 20
+        }
+      }
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "imageWidth": 390,
+      "imageHeight": 222.234375,
+      "gapBefore": 40,
+      "gapAfter": 40,
+      "centered": true,
+      "insideCollection": true,
+      "overflow": false,
+      "loading": "lazy",
+      "priority": "auto",
+      "alt": "Boxer wearing red gloves in a gym, with another person exercising behind him and a Stay Wide graphic above.",
+      "linked": false,
+      "products": [
+        {
+          "id": "hoodie-01",
+          "price": "€55",
+          "href": "products/hoodie-01.html",
+          "top": 291,
+          "left": 20
+        },
+        {
+          "id": "hoodie-02",
+          "price": "€55",
+          "href": "products/hoodie-02.html",
+          "top": 291,
+          "left": 223
+        },
+        {
+          "id": "tshirt-01",
+          "price": "€25",
+          "href": "products/tshirt-01.html",
+          "top": 581.25,
+          "left": 20
+        },
+        {
+          "id": "tshirt-02",
+          "price": "€25",
+          "href": "products/tshirt-02.html",
+          "top": 581.25,
+          "left": 223
+        }
+      ],
+      "unwanted": false,
+      "anchor": {
+        "heading": 82,
+        "headerBottom": 72
+      },
+      "afterLoad": {
+        "width": 390,
+        "height": 222.234375,
+        "source": "http://127.0.0.1:8080/assets/campaign/stay-wide-campaign-800.webp",
+        "cartOverlapsCampaign": false,
+        "cartOverlapsFooter": false,
+        "toggle": {
+          "x": 358,
+          "y": 5,
+          "width": 52,
+          "height": 62,
+          "top": 5,
+          "right": 410,
+          "bottom": 67,
+          "left": 358
+        },
+        "image": {
+          "x": 20,
+          "y": 466.5,
+          "width": 390,
+          "height": 222.234375,
+          "top": 466.5,
+          "right": 410,
+          "bottom": 688.734375,
+          "left": 20
+        }
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "imageWidth": 683.90625,
+      "imageHeight": 389.71875,
+      "gapBefore": 56,
+      "gapAfter": 56,
+      "centered": true,
+      "insideCollection": true,
+      "overflow": false,
+      "loading": "lazy",
+      "priority": "auto",
+      "alt": "Boxer wearing red gloves in a gym, with another person exercising behind him and a Stay Wide graphic above.",
+      "linked": false,
+      "products": [
+        {
+          "id": "hoodie-01",
+          "price": "€55",
+          "href": "products/hoodie-01.html",
+          "top": 249.28125,
+          "left": 34.546875
+        },
+        {
+          "id": "hoodie-02",
+          "price": "€55",
+          "href": "products/hoodie-02.html",
+          "top": 249.28125,
+          "left": 390.5
+        },
+        {
+          "id": "tshirt-01",
+          "price": "€25",
+          "href": "products/tshirt-01.html",
+          "top": 721.71875,
+          "left": 34.546875
+        },
+        {
+          "id": "tshirt-02",
+          "price": "€25",
+          "href": "products/tshirt-02.html",
+          "top": 721.71875,
+          "left": 390.5
+        }
+      ],
+      "unwanted": false,
+      "anchor": {
+        "heading": 82.28125,
+        "headerBottom": 72
+      },
+      "afterLoad": {
+        "width": 683.90625,
+        "height": 389.71875,
+        "source": "http://127.0.0.1:8080/assets/campaign/stay-wide-campaign-1600.webp",
+        "cartOverlapsCampaign": false,
+        "cartOverlapsFooter": false,
+        "toggle": {
+          "x": 666.453125,
+          "y": 5,
+          "width": 52,
+          "height": 62,
+          "top": 5,
+          "right": 718.453125,
+          "bottom": 67,
+          "left": 666.453125
+        },
+        "image": {
+          "x": 34.546875,
+          "y": 466.15625,
+          "width": 683.90625,
+          "height": 389.71875,
+          "top": 466.15625,
+          "right": 718.453125,
+          "bottom": 855.875,
+          "left": 34.546875
+        }
+      }
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "imageWidth": 700,
+      "imageHeight": 398.890625,
+      "gapBefore": 56,
+      "gapAfter": 56,
+      "centered": true,
+      "insideCollection": true,
+      "overflow": false,
+      "loading": "lazy",
+      "priority": "auto",
+      "alt": "Boxer wearing red gloves in a gym, with another person exercising behind him and a Stay Wide graphic above.",
+      "linked": false,
+      "products": [
+        {
+          "id": "hoodie-01",
+          "price": "€55",
+          "href": "products/hoodie-01.html",
+          "top": 267.71875,
+          "left": 46.078125
+        },
+        {
+          "id": "hoodie-02",
+          "price": "€55",
+          "href": "products/hoodie-02.html",
+          "top": 267.71875,
+          "left": 518.5
+        },
+        {
+          "id": "tshirt-01",
+          "price": "€25",
+          "href": "products/tshirt-01.html",
+          "top": 885.734375,
+          "left": 46.078125
+        },
+        {
+          "id": "tshirt-02",
+          "price": "€25",
+          "href": "products/tshirt-02.html",
+          "top": 885.734375,
+          "left": 518.5
+        }
+      ],
+      "unwanted": false,
+      "anchor": {
+        "heading": 81.71875,
+        "headerBottom": 72
+      },
+      "afterLoad": {
+        "width": 700,
+        "height": 398.890625,
+        "source": "http://127.0.0.1:8080/assets/campaign/stay-wide-campaign-1600.webp",
+        "cartOverlapsCampaign": false,
+        "cartOverlapsFooter": false,
+        "toggle": {
+          "x": 910.921875,
+          "y": 5,
+          "width": 52,
+          "height": 62,
+          "top": 5,
+          "right": 962.921875,
+          "bottom": 67,
+          "left": 910.921875
+        },
+        "image": {
+          "x": 154.5,
+          "y": 225.75,
+          "width": 700,
+          "height": 398.890625,
+          "top": 225.75,
+          "right": 854.5,
+          "bottom": 624.640625,
+          "left": 154.5
+        }
+      }
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "imageWidth": 840,
+      "imageHeight": 478.65625,
+      "gapBefore": 64,
+      "gapAfter": 64,
+      "centered": true,
+      "insideCollection": true,
+      "overflow": false,
+      "loading": "lazy",
+      "priority": "auto",
+      "alt": "Boxer wearing red gloves in a gym, with another person exercising behind him and a Stay Wide graphic above.",
+      "linked": false,
+      "products": [
+        {
+          "id": "hoodie-01",
+          "price": "€55",
+          "href": "products/hoodie-01.html",
+          "top": 281.1875,
+          "left": 61.46875
+        },
+        {
+          "id": "hoodie-02",
+          "price": "€55",
+          "href": "products/hoodie-02.html",
+          "top": 281.1875,
+          "left": 375.484375
+        },
+        {
+          "id": "tshirt-01",
+          "price": "€25",
+          "href": "products/tshirt-01.html",
+          "top": 281.1875,
+          "left": 689.5
+        },
+        {
+          "id": "tshirt-02",
+          "price": "€25",
+          "href": "products/tshirt-02.html",
+          "top": 281.1875,
+          "left": 1003.515625
+        }
+      ],
+      "unwanted": false,
+      "anchor": {
+        "heading": 82.1875,
+        "headerBottom": 60.84375
+      },
+      "hover": "all four pass",
+      "afterLoad": {
+        "width": 840,
+        "height": 478.65625,
+        "source": "http://127.0.0.1:8080/assets/campaign/stay-wide-campaign-2400.webp",
+        "cartOverlapsCampaign": false,
+        "cartOverlapsFooter": false,
+        "toggle": {
+          "x": 1299,
+          "y": 353,
+          "width": 52,
+          "height": 62,
+          "top": 353,
+          "right": 1351,
+          "bottom": 415,
+          "left": 1299
+        },
+        "image": {
+          "x": 255.5,
+          "y": 185.203125,
+          "width": 840,
+          "height": 478.65625,
+          "top": 185.203125,
+          "right": 1095.5,
+          "bottom": 663.859375,
+          "left": 255.5
+        }
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "imageWidth": 840,
+      "imageHeight": 478.65625,
+      "gapBefore": 64,
+      "gapAfter": 64,
+      "centered": true,
+      "insideCollection": true,
+      "overflow": false,
+      "loading": "lazy",
+      "priority": "auto",
+      "alt": "Boxer wearing red gloves in a gym, with another person exercising behind him and a Stay Wide graphic above.",
+      "linked": false,
+      "products": [
+        {
+          "id": "hoodie-01",
+          "price": "€55",
+          "href": "products/hoodie-01.html",
+          "top": 286.515625,
+          "left": 64.796875
+        },
+        {
+          "id": "hoodie-02",
+          "price": "€55",
+          "href": "products/hoodie-02.html",
+          "top": 286.515625,
+          "left": 395.640625
+        },
+        {
+          "id": "tshirt-01",
+          "price": "€25",
+          "href": "products/tshirt-01.html",
+          "top": 286.515625,
+          "left": 726.5
+        },
+        {
+          "id": "tshirt-02",
+          "price": "€25",
+          "href": "products/tshirt-02.html",
+          "top": 286.515625,
+          "left": 1057.34375
+        }
+      ],
+      "unwanted": false,
+      "anchor": {
+        "heading": 81.515625,
+        "headerBottom": 60.84375
+      },
+      "hover": "all four pass",
+      "afterLoad": {
+        "width": 840,
+        "height": 478.65625,
+        "source": "http://127.0.0.1:8080/assets/campaign/stay-wide-campaign-2400.webp",
+        "cartOverlapsCampaign": false,
+        "cartOverlapsFooter": false,
+        "toggle": {
+          "x": 1373,
+          "y": 419,
+          "width": 52,
+          "height": 62,
+          "top": 419,
+          "right": 1425,
+          "bottom": 481,
+          "left": 1373
+        },
+        "image": {
+          "x": 292.5,
+          "y": 251.578125,
+          "width": 840,
+          "height": 478.65625,
+          "top": 251.578125,
+          "right": 1132.5,
+          "bottom": 730.234375,
+          "left": 292.5
+        }
+      }
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "imageWidth": 840,
+      "imageHeight": 478.65625,
+      "gapBefore": 64,
+      "gapAfter": 64,
+      "centered": true,
+      "insideCollection": true,
+      "overflow": false,
+      "loading": "lazy",
+      "priority": "auto",
+      "alt": "Boxer wearing red gloves in a gym, with another person exercising behind him and a Stay Wide graphic above.",
+      "linked": false,
+      "products": [
+        {
+          "id": "hoodie-01",
+          "price": "€55",
+          "href": "products/hoodie-01.html",
+          "top": 286.515625,
+          "left": 64.796875
+        },
+        {
+          "id": "hoodie-02",
+          "price": "€55",
+          "href": "products/hoodie-02.html",
+          "top": 286.515625,
+          "left": 395.640625
+        },
+        {
+          "id": "tshirt-01",
+          "price": "€25",
+          "href": "products/tshirt-01.html",
+          "top": 286.515625,
+          "left": 726.5
+        },
+        {
+          "id": "tshirt-02",
+          "price": "€25",
+          "href": "products/tshirt-02.html",
+          "top": 286.515625,
+          "left": 1057.34375
+        }
+      ],
+      "unwanted": false,
+      "anchor": {
+        "heading": 81.515625,
+        "headerBottom": 60.84375
+      },
+      "hover": "all four pass",
+      "afterLoad": {
+        "width": 840,
+        "height": 478.65625,
+        "source": "http://127.0.0.1:8080/assets/campaign/stay-wide-campaign-2400.webp",
+        "cartOverlapsCampaign": false,
+        "cartOverlapsFooter": false,
+        "toggle": {
+          "x": 1373,
+          "y": 469,
+          "width": 52,
+          "height": 62,
+          "top": 469,
+          "right": 1425,
+          "bottom": 531,
+          "left": 1373
+        },
+        "image": {
+          "x": 292.5,
+          "y": 345.578125,
+          "width": 840,
+          "height": 478.65625,
+          "top": 345.578125,
+          "right": 1132.5,
+          "bottom": 824.234375,
+          "left": 292.5
+        }
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "imageWidth": 840,
+      "imageHeight": 478.65625,
+      "gapBefore": 64,
+      "gapAfter": 64,
+      "centered": true,
+      "insideCollection": true,
+      "overflow": false,
+      "loading": "lazy",
+      "priority": "auto",
+      "alt": "Boxer wearing red gloves in a gym, with another person exercising behind him and a Stay Wide graphic above.",
+      "linked": false,
+      "products": [
+        {
+          "id": "hoodie-01",
+          "price": "€55",
+          "href": "products/hoodie-01.html",
+          "top": 287.234375,
+          "left": 133.5
+        },
+        {
+          "id": "hoodie-02",
+          "price": "€55",
+          "href": "products/hoodie-02.html",
+          "top": 287.234375,
+          "left": 550
+        },
+        {
+          "id": "tshirt-01",
+          "price": "€25",
+          "href": "products/tshirt-01.html",
+          "top": 287.234375,
+          "left": 966.5
+        },
+        {
+          "id": "tshirt-02",
+          "price": "€25",
+          "href": "products/tshirt-02.html",
+          "top": 287.234375,
+          "left": 1383
+        }
+      ],
+      "unwanted": false,
+      "anchor": {
+        "heading": 82.234375,
+        "headerBottom": 60.84375
+      },
+      "hover": "all four pass",
+      "afterLoad": {
+        "width": 840,
+        "height": 478.65625,
+        "source": "http://127.0.0.1:8080/assets/campaign/stay-wide-campaign-2400.webp",
+        "cartOverlapsCampaign": false,
+        "cartOverlapsFooter": false,
+        "toggle": {
+          "x": 1853,
+          "y": 509,
+          "width": 52,
+          "height": 62,
+          "top": 509,
+          "right": 1905,
+          "bottom": 571,
+          "left": 1853
+        },
+        "image": {
+          "x": 532.5,
+          "y": 425.359375,
+          "width": 840,
+          "height": 478.65625,
+          "top": 425.359375,
+          "right": 1372.5,
+          "bottom": 904.015625,
+          "left": 532.5
+        }
+      }
+    }
+  ],
+  "errors": []
+}

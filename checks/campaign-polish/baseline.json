@@ -1,0 +1,20 @@
+{
+  "files": {
+    "css/styles.css": "0f07d436516eba961e317c7abd696099b2995e95676141693f2b5d39b3e049ec",
+    "templates/home.html": "fd8289e9f5a5b3dab5566254cf556f53727043855eba98eba4329a250a0104bb",
+    "README.md": "7e2dbb9f4f7ab9f53d7c44d8bab6c467f179c44134286c3ebf96d03324dd7fde",
+    "js/catalog.js": "e6cffdd32a5e5a466c66152d8889132f8ac425f7d09ccef8da0676d0cad870aa",
+    "js/shopify-buy.js": "a50554de54977683fc846f48ee548e8cbe0de01dec8c55f3b697d5f59513ca5e",
+    "js/main.js": "32b9e2bc2d6aa948a23a5ad17c108df654e37f3cf5a3683bc8e4d156a56d629f",
+    "js/site-config.js": "058f712ae542bb03c27daa900a6c142165a929893a1fbd40dcfe885b198318a0",
+    "js/consent.js": "68d52394f476849c76c83b2b1bdc7cb6d4b0373d489ecd0602079c42d5352027",
+    "js/tracking.js": "f076d09e9f89d1f48a5c462330ea1fc5325f78c57fa24014efe0e7163e052825",
+    "js/size-guide.js": "b7913daf9f3f25089e1d3dd62d211000452fac46f01439c1353e5296ea7e08e7",
+    "templates/product.html": "01487e6a80c5e45feae2f658c81e4a84f7ec8e29f78cb5742404eec60b8f6ceb",
+    "scripts/build.cjs": "f25bc2eece8974ac16cf2d88a92ff8b6775bccc2d443921a51e558186daa4d46",
+    "scripts/metadata.cjs": "c0ce3f54ba7a2bb95d8aa3409920bcf714556e3c0fef7e8ee99c5d8c1fba23c5",
+    "sitemap.xml": "9d179ba6e2f0b723a3338ed409369baeb0c8a872a25b717207af8d6f89c2b1e3",
+    "robots.txt": "9dea797df5ad35131438d3ca55fff1fc278e889cdfd1bc4d6e31c0c305811b1c"
+  },
+  "homeHead": "<!doctype html>\n<html lang=\"en-IE\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"theme-color\" content=\"#ffffff\">\n  <title>Stay Wide</title>\n  <meta name=\"description\" content=\"Stay Wide.\">\n  <link rel=\"canonical\" href=\"https://staywide.cc/\">\n  <meta property=\"og:title\" content=\"Stay Wide\">\n  <meta property=\"og:description\" content=\"Stay Wide.\">\n  <meta property=\"og:url\" content=\"https://staywide.cc/\">\n  <meta property=\"og:type\" content=\"website\">\n  <meta property=\"og:site_name\" content=\"Stay Wide\">\n  <meta name=\"twitter:card\" content=\"summary_large_image\">\n  <meta name=\"twitter:title\" content=\"Stay Wide\">\n  <meta name=\"twitter:description\" content=\"Stay Wide.\">\n  <meta property=\"og:image\" content=\"https://staywide.cc/assets/brand/stay-wide-share.jpg\">\n  <meta property=\"og:image:width\" content=\"1200\">\n  <meta property=\"og:image:height\" content=\"630\">\n  <meta property=\"og:image:alt\" content=\"Stay Wide logo on white\">\n  <meta name=\"twitter:image\" content=\"https://staywide.cc/assets/brand/stay-wide-share.jpg\">\n  <meta name=\"twitter:image:alt\" content=\"Stay Wide logo on white\">\n  <link rel=\"icon\" type=\"image/x-icon\" sizes=\"16x16 32x32 48x48\" href=\"/assets/brand/favicon.ico\">\n  <link rel=\"icon\" type=\"image/png\" sizes=\"48x48\" href=\"/assets/brand/favicon-48.png\">\n  <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/assets/brand/apple-touch-icon.png\">\n  <script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"name\":\"Stay Wide\",\"url\":\"https://staywide.cc/\",\"publisher\":{\"@id\":\"https://staywide.cc/#organization\"}},{\"@type\":\"Organization\",\"@id\":\"https://staywide.cc/#organization\",\"name\":\"Stay Wide\",\"url\":\"https://staywide.cc/\",\"logo\":\"https://staywide.cc/assets/brand/stay-wide-logo.png\"}]}</script>\n  <link rel=\"stylesheet\" href=\"css/styles.css\">\n  <script src=\"js/catalog.js\" defer></script>\n  <script src=\"js/site-config.js\" defer></script>\n  <script src=\"js/consent.js\" defer></script>\n  <script src=\"js/tracking.js\" defer></script>\n  <script src=\"js/main.js\" defer></script>\n  <script src=\"js/shopify-buy.js\" defer></script>\n"
+}

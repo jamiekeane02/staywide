@@ -1,0 +1,18 @@
+{
+  "unchanged": [
+    "js/catalog.js",
+    "js/shopify-buy.js",
+    "js/main.js",
+    "js/home.js",
+    "js/site-config.js",
+    "js/consent.js",
+    "js/tracking.js",
+    "js/size-guide.js",
+    "templates/product.html",
+    "scripts/build.cjs",
+    "scripts/metadata.cjs",
+    "sitemap.xml",
+    "robots.txt"
+  ],
+  "homepageMetadata": "unchanged"
+}

@@ -102,9 +102,10 @@
   function options() {
     return {
       product: {
-        iframe: true, width: '100%', buttonDestination: 'cart', order: ['options', 'button'],
-        contents: { img: false, imgWithCarousel: false, title: false, variantTitle: false, price: false, unitPrice: false, description: false, quantity: false, buttonWithQuantity: false, options: true, button: true },
-        text: { button: 'ADD TO BAG', outOfStock: 'SOLD OUT', unavailable: 'UNAVAILABLE' },
+        iframe: true, width: '100%', buttonDestination: 'cart', order: ['options', 'fitNote', 'button'],
+        contents: { img: false, imgWithCarousel: false, title: false, variantTitle: false, price: false, unitPrice: false, description: false, quantity: false, buttonWithQuantity: false, options: true, fitNote: true, button: true },
+        templates: { fitNote: '<p style="font:14px/1.5 Arial,Helvetica,sans-serif;margin:10px 0 0;color:#666">{{data.text.fitNote}}</p>' },
+        text: { button: 'ADD TO BAG', outOfStock: 'SOLD OUT', unavailable: 'UNAVAILABLE', fitNote: product?.fitNote || '' },
         styles: {
           product: { 'font-family': font, 'max-width': '100%', 'margin': '0', 'text-align': 'left' },
           button: { ...button, width: '100%' }, buttonWrapper: { 'margin-top': '16px' },
@@ -118,9 +119,11 @@
         wrapper: { 'border': '1px solid #767676', 'border-radius': '0', 'max-width': '100%', width: '100%' }, option: { 'margin-bottom': '0', width: '100%' }
       } },
       cart: {
-        iframe: true, popup: false,
+        iframe: true, popup: true,
+        // Supported template customization retains Shopify's own cart.close action.
+        templates: { title: '<div class="{{data.classes.cart.header}}" data-element="cart.header"><h2 class="{{data.classes.cart.title}}" data-element="cart.title">{{data.text.title}}</h2><button type="button" class="{{data.classes.cart.close}}" data-element="cart.close" aria-label="Continue shopping, close your bag">CONTINUE SHOPPING</button></div>' },
         text: { title: 'YOUR BAG', empty: 'Your bag is empty.', button: 'CHECKOUT', total: 'SUBTOTAL', notice: 'Shipping and discount codes are added at checkout.' },
-        styles: { cart: { 'background-color': '#ffffff', 'font-family': font }, title: { color: '#161616' }, button, close: { 'min-width': '44px', 'min-height': '44px', ':focus': focus } },
+        styles: { cart: { 'background-color': '#ffffff', 'font-family': font }, header: { padding: '10px 20px', display: 'flex', 'align-items': 'center', 'justify-content': 'space-between', gap: '12px' }, title: { color: '#161616', margin: '0' }, button, close: { position: 'static', width: 'auto', height: 'auto', 'font-family': font, 'font-size': '12px', 'text-decoration': 'underline', 'min-width': '44px', 'min-height': '44px', ':focus': focus } },
         events: { afterRender: confirmAdd, updateItemQuantity: cancelPending, openCheckout: checkout }
       },
       // Supplied Shopify products have no cart images; omit generic bag placeholders.

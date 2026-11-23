@@ -9,11 +9,11 @@ const productPhoto = (name, view, alt, height) => ({
 const stayWideCatalog = {
   statuses: { available: 'AVAILABLE', sold_out: 'SOLD OUT', coming_soon: 'COMING SOON' },
   products: [
-    { id: 'hoodie-01', shopifyProductId: '16690527011207', name: 'Blower Hoodie', price: 60, metaDescription: 'Blower Hoodie by Stay Wide.', kind: 'hoodie', tone: '01', mark: '01', status: 'available', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], images: [
+    { id: 'hoodie-01', shopifyProductId: '16690527011207', name: 'Blower Hoodie', price: 55, metaDescription: 'Blower Hoodie by Stay Wide.', kind: 'hoodie', tone: '01', mark: '01', status: 'available', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], images: [
       productPhoto('hoodie-01-front', 'front', 'Blower Hoodie, black phone-print hoodie flat lay', 1474),
       productPhoto('hoodie-01-detail', 'print detail', 'Phone print and Stay Wide logo on Blower Hoodie', 1600)
     ] },
-    { id: 'hoodie-02', listed: true, shopifyProductId: '16718244217223', name: 'Claddagh Hoodie', price: 60, metaDescription: 'Claddagh Hoodie by Stay Wide.', kind: 'hoodie', tone: '02', mark: '02', images: [
+    { id: 'hoodie-02', listed: true, shopifyProductId: '16718244217223', name: 'Claddagh Hoodie', price: 55, metaDescription: 'Claddagh Hoodie by Stay Wide.', kind: 'hoodie', tone: '02', mark: '02', images: [
       productPhoto('hoodie-02-front', 'front', 'Stay Wide Claddagh Hoodie flat lay', 1600),
       productPhoto('hoodie-02-detail', 'print detail', 'Claddagh graphic and Stay Wide logo on black hoodie', 1600)
     ] },

@@ -1,0 +1,78 @@
+[
+  {
+    "source": "hoodie size chart.jpeg",
+    "file": "assets/size-guides/hoodie-size-chart.jpeg",
+    "width": 1560,
+    "height": 260,
+    "bytes": 79917,
+    "processing": "unchanged copy"
+  },
+  {
+    "source": "tsshirt size chart.jpeg",
+    "file": "assets/size-guides/tee-size-chart.jpeg",
+    "width": 1065,
+    "height": 736,
+    "bytes": 92995,
+    "processing": "unchanged copy"
+  },
+  {
+    "source": "stay wide campaign image.png",
+    "sourceDimensions": {
+      "width": 4961,
+      "height": 2827
+    },
+    "file": "assets/campaign/stay-wide-campaign-480.webp",
+    "width": 480,
+    "height": 274,
+    "bytes": 14520,
+    "processing": "full composition, WebP quality 0.9"
+  },
+  {
+    "source": "stay wide campaign image.png",
+    "sourceDimensions": {
+      "width": 4961,
+      "height": 2827
+    },
+    "file": "assets/campaign/stay-wide-campaign-800.webp",
+    "width": 800,
+    "height": 456,
+    "bytes": 26260,
+    "processing": "full composition, WebP quality 0.9"
+  },
+  {
+    "source": "stay wide campaign image.png",
+    "sourceDimensions": {
+      "width": 4961,
+      "height": 2827
+    },
+    "file": "assets/campaign/stay-wide-campaign-1200.webp",
+    "width": 1200,
+    "height": 684,
+    "bytes": 41432,
+    "processing": "full composition, WebP quality 0.9"
+  },
+  {
+    "source": "stay wide campaign image.png",
+    "sourceDimensions": {
+      "width": 4961,
+      "height": 2827
+    },
+    "file": "assets/campaign/stay-wide-campaign-1600.webp",
+    "width": 1600,
+    "height": 912,
+    "bytes": 59590,
+    "processing": "full composition, WebP quality 0.9"
+  },
+  {
+    "source": "stay wide campaign image.png",
+    "sourceDimensions": {
+      "width": 4961,
+      "height": 2827
+    },
+    "file": "assets/campaign/stay-wide-campaign-2400.webp",
+    "width": 2400,
+    "height": 1368,
+    "bytes": 97252,
+    "processing": "full composition, WebP quality 0.9"
+  }
+]

@@ -11,6 +11,7 @@
   <script src="../js/consent.js" defer></script>
   <script src="../js/tracking.js" defer></script>
   <script src="../js/main.js" defer></script>
+  <script src="../js/size-guide.js" defer></script>
   <script src="../js/shopify-buy.js" defer></script>
 </head>
 <body data-page="product" data-product="{{id}}">
@@ -34,7 +35,7 @@
         <p class="micro kicker">STAY WIDE / {{kind}}</p>
         <div class="product-title-row"><h1 id="product-title">{{name}}</h1>{{price}}</div>
         <div class="purchase-controls">
-          <p class="micro commerce-label">CHOOSE SIZE</p>
+          <div class="size-heading"><p class="micro commerce-label">CHOOSE SIZE</p><button class="size-guide-trigger" type="button" data-size-guide-open aria-haspopup="dialog" aria-controls="size-guide-dialog" disabled>SIZE GUIDE</button></div>
           <p class="field-hint" id="size-note">{{fitNote}}</p>
           <p class="form-status" data-shopify-status role="status">Loading shopping options...</p>
           <div class="shopify-commerce" data-shopify-product hidden></div>
@@ -55,6 +56,7 @@
     </section>
   </main>
 {{footer}}
+{{sizeGuideDialog}}
 <p class="commerce-notice section-pad" data-shopify-error role="status" hidden></p>
 {{consent}}
 </body>
