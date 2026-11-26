@@ -58,7 +58,10 @@ nav a:hover,.inline-link:hover { text-decoration:underline; text-underline-offse
 .placeholder-tag { position:absolute; bottom:12px; left:12px; right:34px; color:var(--muted); font:10px/1.4 'Courier New',monospace; }
 .product-arrow { position:absolute; bottom:8px; right:12px; font-size:23px; }
 .product-caption { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:4px 12px; margin-top:12px; font-size:14px; line-height:1.4; }
-.product-price { font:13px/1.5 'Courier New',monospace; white-space:nowrap; }
+.product-price { font:1rem/1.5 'Courier New',monospace; white-space:nowrap; }
+.price-was { color:var(--muted); text-decoration:line-through; }
+.price-now { color:var(--blue); font-weight:700; }
+.announcement.announcement-sale { justify-content:center; padding-block:10px; font-size:14px; font-weight:700; letter-spacing:.08em; }
 .product-card:hover strong { text-decoration:underline; text-underline-offset:4px; }
 /* Optional emphasis; no product is featured by default. Preserve document order. */
 .product-card[data-featured="true"] .product-caption::after { content:'Featured'; flex-basis:100%; font:11px/1.5 'Courier New',monospace; color:var(--blue); }
@@ -104,7 +107,7 @@ nav a:hover,.inline-link:hover { text-decoration:underline; text-underline-offse
 .purchase-panel>.kicker { margin-bottom:10px; }
 .product-title-row { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px; }
 .product-title-row h1 { font-size:clamp(32px,4vw,60px); letter-spacing:-.065em; }
-.detail-price { font:20px/1.5 'Courier New',monospace; white-space:nowrap; }
+.detail-price { font:1.5rem/1.5 'Courier New',monospace; white-space:nowrap; }
 .product-meta { font-size:13px; margin:14px 0 20px; }
 .product-meta>span { margin-left:14px; color:var(--muted); }
 .description-placeholder { font-size:14px; margin-block:24px; color:var(--muted); max-width:520px; }

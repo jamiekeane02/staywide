@@ -49,7 +49,14 @@ function sizeGuideDialog(kind) {
   </dialog>`;
 }
 // Approved numeric prices can be visible while development/commerce gates stay closed.
-const price = product => !Number.isFinite(product.price) ? '' : new Intl.NumberFormat('en-IE', { style: 'currency', currency: product.currency, minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(product.price);
+const price = product => {
+  if (!Number.isFinite(product.price)) return '';
+  const format = amount => new Intl.NumberFormat('en-IE', { style: 'currency', currency: product.currency, minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(amount);
+  const current = format(product.price);
+  if (!Number.isFinite(product.compareAtPrice) || product.compareAtPrice <= product.price) return current;
+  const original = format(product.compareAtPrice);
+  return `<s class="price-was" aria-label="Original price ${original}">${original}</s> <span class="price-now" aria-label="Sale price ${current}">${current}</span>`;
+};
 function media(product, image, prefix, lazy = true, sizes = '(min-width: 1800px) 850px, (min-width: 700px) 48vw, (min-width: 420px) 380px, calc(100vw - 40px)') {
   if (image.src) return `<img src="${escape(prefix + image.src)}" ${image.srcset ? `srcset="${escape(image.srcset)}"` : ''} sizes="${sizes}" width="${image.width || 800}" height="${image.height || 1000}" alt="${escape(image.alt)}" loading="${lazy ? 'lazy' : 'eager'}" ${!lazy ? 'fetchpriority="high"' : ''} decoding="async">`;
   return `<span class="garment garment-${product.kind}${image.view === 'back' ? ' garment-back' : ''}" aria-hidden="true"><span class="garment-mark">${image.view === 'back' ? 'BACK' : product.mark}</span></span><span class="placeholder-tag">${escape(image.view)} image placeholder</span>`;

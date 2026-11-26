@@ -37,8 +37,9 @@ async function fixture({ mismatch=false, missing=false, cdn=false, model, localP
   pe.addVariantToCart(p);ce.updateItemQuantity(c);c.model={...c.model,lineItems:[{...c.model.lineItems[0],quantity:2}]};ce.afterRender(c);assert.equal(f.events.length,1,'quantity edit cannot confirm failed add');
   assert.equal(c.config.options.cart.popup,true);ce.openCheckout(c);assert.equal(f.events[1].name,'begin_checkout');assert.equal(f.events.filter(e=>e.name==='begin_checkout').length,1);assert(!f.events.some(e=>e.name==='purchase'));
   const mismatch=await fixture({mismatch:true});assert.equal(mismatch.nodes.mount.hidden,true);assert.equal(mismatch.window.stayWideShopify.status,'unavailable');
-  for(const localProduct of require('../js/catalog.js').products.filter(p=>p.kind==='hoodie')) {
-    const model={id:'gid://shopify/Product/'+localProduct.shopifyProductId,variants:[{...f.variant},{...f.variant,id:'gid://shopify/ProductVariant/2'}]};
+  for(const localProduct of require('../js/catalog.js').products.filter(p=>p.listed!==false)) {
+    const saleVariant={...f.variant,price:{amount:String(localProduct.price),currencyCode:localProduct.currency}};
+    const model={id:'gid://shopify/Product/'+localProduct.shopifyProductId,variants:[{...saleVariant},{...saleVariant,id:'gid://shopify/ProductVariant/2'}]};
     const valid=await fixture({localProduct,model});assert.equal(valid.window.stayWideShopify.status,'ready');assert(valid.window.stayWideShopify.validation.passed);
     for(const [type,changed] of [
       ['product_id_mismatch',{...model,id:'gid://shopify/Product/999'}],
@@ -56,5 +57,5 @@ async function fixture({ mismatch=false, missing=false, cdn=false, model, localP
   }
   const missing=await fixture({missing:true});for(const fn of [...missing.timers.values()])fn();await flush();assert.equal(missing.window.stayWideShopify.status,'unavailable');assert(missing.window.stayWideShopify.reason.includes('hoodie-01'));
   const cdn=await fixture({cdn:true});cdn.script.listeners.error();await flush();assert.equal(cdn.window.stayWideShopify.status,'unavailable');assert(cdn.nodes.mount.hidden);assert(!cdn.nodes.notice.hidden);
-  console.log('PASS: single initialization; success-only/deduplicated add events; quantity cancellation; popup checkout; both hoodies validate every variant, all four diagnostic reasons, and sold-out state; missing product; CDN failure.');
+  console.log('PASS: single initialization; success-only/deduplicated add events; quantity cancellation; popup checkout; all four sale products validate every variant, all four diagnostic reasons, and sold-out state; missing product; CDN failure.');
 })().catch(e=>{console.error(e);process.exit(1)});

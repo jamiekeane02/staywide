@@ -9,19 +9,19 @@ const productPhoto = (name, view, alt, height) => ({
 const stayWideCatalog = {
   statuses: { available: 'AVAILABLE', sold_out: 'SOLD OUT', coming_soon: 'COMING SOON' },
   products: [
-    { id: 'hoodie-01', shopifyProductId: '16690527011207', name: 'Blower Hoodie', price: 55, metaDescription: 'Blower Hoodie by Stay Wide.', kind: 'hoodie', tone: '01', mark: '01', status: 'available', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], images: [
+    { id: 'hoodie-01', shopifyProductId: '16690527011207', name: 'Blower Hoodie', price: 50, compareAtPrice: 55, metaDescription: 'Blower Hoodie by Stay Wide.', kind: 'hoodie', tone: '01', mark: '01', status: 'available', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], images: [
       productPhoto('hoodie-01-front', 'front', 'Blower Hoodie, black phone-print hoodie flat lay', 1474),
       productPhoto('hoodie-01-detail', 'print detail', 'Phone print and Stay Wide logo on Blower Hoodie', 1600)
     ] },
-    { id: 'hoodie-02', listed: true, shopifyProductId: '16718244217223', name: 'Claddagh Hoodie', price: 55, metaDescription: 'Claddagh Hoodie by Stay Wide.', kind: 'hoodie', tone: '02', mark: '02', images: [
+    { id: 'hoodie-02', listed: true, shopifyProductId: '16718244217223', name: 'Claddagh Hoodie', price: 50, compareAtPrice: 55, metaDescription: 'Claddagh Hoodie by Stay Wide.', kind: 'hoodie', tone: '02', mark: '02', images: [
       productPhoto('hoodie-02-front', 'front', 'Stay Wide Claddagh Hoodie flat lay', 1600),
       productPhoto('hoodie-02-detail', 'print detail', 'Claddagh graphic and Stay Wide logo on black hoodie', 1600)
     ] },
-    { id: 'tshirt-01', shopifyProductId: '16690535891335', name: 'Stay Wide Tee', price: 25, metaDescription: 'Stay Wide Tee.', kind: 'tee', tone: '03', mark: '01', status: 'available', sizes: ['S', 'M', 'L', 'XL'], images: [
+    { id: 'tshirt-01', shopifyProductId: '16690535891335', name: 'Stay Wide Tee', price: 20, compareAtPrice: 25, metaDescription: 'Stay Wide Tee.', kind: 'tee', tone: '03', mark: '01', status: 'available', sizes: ['S', 'M', 'L', 'XL'], images: [
       productPhoto('tshirt-01-front', 'front', 'Stay Wide Tee, white T-shirt with blue logo flat lay', 1478),
       productPhoto('tshirt-01-detail', 'print detail', 'Blue Stay Wide logo and fabric detail on Stay Wide Tee', 1500)
     ] },
-    { id: 'tshirt-02', shopifyProductId: '16690540020103', name: 'Ashtray Tee', price: 25, metaDescription: 'Ashtray Tee by Stay Wide.', kind: 'tee', tone: '04', mark: '02', status: 'sold_out', sizes: ['S', 'M', 'L', 'XL'], images: [
+    { id: 'tshirt-02', shopifyProductId: '16690540020103', name: 'Ashtray Tee', price: 20, compareAtPrice: 25, metaDescription: 'Ashtray Tee by Stay Wide.', kind: 'tee', tone: '04', mark: '02', status: 'sold_out', sizes: ['S', 'M', 'L', 'XL'], images: [
       productPhoto('tshirt-02-front', 'front', 'Ashtray Tee, white ashtray-print T-shirt flat lay', 1458),
       productPhoto('tshirt-02-detail', 'print detail', 'Yellow ashtray print and fabric detail on Ashtray Tee', 1600)
     ] }
